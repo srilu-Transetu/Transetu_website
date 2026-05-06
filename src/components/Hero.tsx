@@ -21,8 +21,8 @@ export default function Hero() {
       <div className="container">
         <motion.div
           className="hero-content"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <motion.h1
@@ -33,7 +33,9 @@ export default function Hero() {
           >
             Seamless Travel.
             <br />
-            <span>Smarter</span> Solutions.
+            <span className="solutions-wrap">
+              <span className="text-gradient">Smarter</span> Solutions.
+            </span>
           </motion.h1>
 
           <motion.p
