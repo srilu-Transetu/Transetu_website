@@ -8,6 +8,14 @@ export default function Hero() {
   return (
     <section className="hero">
       <div className="hero-bg-wrapper">
+        {/* Background Image - Replaces Video */}
+        <img 
+          src="/assets/Background_image.png" 
+          alt="Transetu Hero Background" 
+          className="hero-bg-image-el"
+        />
+
+        {/* Video Background (Commented Out)
         <video
           autoPlay
           muted
@@ -17,6 +25,7 @@ export default function Hero() {
         >
           <source src="/assets/hero-2.mp4" type="video/mp4" />
         </video>
+        */}
       </div>
 
       <div className="container hero-container">
