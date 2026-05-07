@@ -31,7 +31,9 @@ export default function Products() {
       ],
       price: "₹2,999",
       image: "/products/GPS Tracker.png",
-      bestSeller: false
+      bestSeller: false,
+      href: "/product/gps-tracker",
+      buttonText: "View Details"
     },
     {
       name: "RFID Holders",

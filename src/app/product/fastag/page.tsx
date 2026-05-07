@@ -141,7 +141,7 @@ export default function FastagDetail() {
           <div className="benefits-layout">
             <div className="glass-card" style={{ padding: "0", overflow: "hidden", minHeight: "500px", display: "flex", alignItems: "center", justifyContent: "center" }}>
               <Image 
-                src="/assets/Car_image.png" 
+                src="/assets/Fastag_image.png" 
                 alt="FASTag Benefits" 
                 width={600} 
                 height={500} 
