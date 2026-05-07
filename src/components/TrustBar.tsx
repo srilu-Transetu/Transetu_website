@@ -7,22 +7,26 @@ export default function TrustBar() {
     {
       icon: <Gauge className="strip-icon" />,
       title: "Cashless Payments",
-      subtitle: "Fast & Convenient Toll Payments",
+      subtitle1: "Fast & Convenient",
+      subtitle2: "Toll Payments",
     },
     {
       icon: <Shield className="strip-icon" />,
       title: "Secure & Reliable",
-      subtitle: "100% Safe & Encrypted Transactions",
+      subtitle1: "100% Safe & Encrypted",
+      subtitle2: "Transactions",
     },
     {
       icon: <Clock className="strip-icon" />,
       title: "24/7 Support",
-      subtitle: "We're Here Anytime You Need Us",
+      subtitle1: "We're Here Anytime",
+      subtitle2: "You Need Us",
     },
     {
       icon: <Users className="strip-icon" />,
       title: "Trusted by Thousands",
-      subtitle: "Across Highways Across India",
+      subtitle1: "Across Highways",
+      subtitle2: "Across India",
     },
   ];
 
@@ -34,7 +38,8 @@ export default function TrustBar() {
             {item.icon}
             <div className="strip-content">
               <h4>{item.title}</h4>
-              <p>{item.subtitle}</p>
+              <p>{item.subtitle1}</p>
+              <p>{item.subtitle2}</p>
             </div>
           </div>
         ))}

@@ -347,27 +347,38 @@ ul {
    FEATURE STRIP (TRUST BAR)
    ======================== */
 .feature-strip {
-  background-color: var(--color-bg-strip);
-  padding: 28px 0;
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
   position: relative;
-  z-index: 5;
+  z-index: 20;
+  margin-top: -80px; /* Negative margin to overlap hero */
+  padding-bottom: 60px;
 }
 
 .strip-container {
+  background: rgba(8, 18, 38, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(66, 109, 253, 0.2);
+  border-radius: 16px;
+  padding: 30px 10px;
   display: flex;
   justify-content: space-between;
-  align-items: stretch;
+  align-items: center;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5), 
+              inset 0 0 30px rgba(66, 109, 253, 0.03);
 }
 
 .strip-item {
   flex: 1;
   display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  padding: 0 24px;
+  align-items: center;
+  gap: 18px;
+  padding: 0 25px;
   position: relative;
+  transition: all 0.3s ease;
+}
+
+.strip-item:hover {
+  transform: translateY(-3px);
 }
 
 .strip-item:not(:last-child)::after {
@@ -377,30 +388,36 @@ ul {
   top: 15%;
   height: 70%;
   width: 1px;
-  background-color: var(--color-border);
+  background: linear-gradient(to bottom, transparent, rgba(66, 109, 253, 0.25), transparent);
 }
 
 .strip-icon {
-  color: var(--color-accent-blue);
-  width: 26px;
-  height: 26px;
+  color: #3B82F6; /* Vibrant blue from image */
+  width: 48px;
+  height: 48px;
   flex-shrink: 0;
-  margin-top: 2px;
-  opacity: 0.85;
+  stroke-width: 1.5;
+  filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.4));
+}
+
+.strip-content {
+  display: flex;
+  flex-direction: column;
 }
 
 .strip-content h4 {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
-  color: var(--color-text-primary);
-  margin-bottom: 4px;
-  letter-spacing: 0.01em;
+  color: #FFFFFF;
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
 }
 
 .strip-content p {
-  font-size: 13px;
-  color: var(--color-text-secondary);
+  font-size: 14px;
+  color: #A0AEC0;
   line-height: 1.4;
+  font-weight: 400;
 }
 
 /* ========================
