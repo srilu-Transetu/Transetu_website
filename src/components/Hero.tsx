@@ -2,6 +2,7 @@
 
 import { CreditCard, MapPin, Box, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import TrustBar from "./TrustBar";
 
 export default function Hero() {
   return (
@@ -18,7 +19,7 @@ export default function Hero() {
         </video>
       </div>
 
-      <div className="container">
+      <div className="container hero-container">
         <motion.div
           className="hero-content"
           initial={{ opacity: 0, y: 30 }}
@@ -54,23 +55,17 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
-            <div className="feature-item">
-              <div className="feature-icon-wrapper">
-                <CreditCard className="feature-icon" />
-              </div>
-              <span className="feature-label">FASTag</span>
+            <div className="hero-feature-item">
+              <CreditCard className="hero-feature-icon" size={24} />
+              <span className="hero-feature-label">FASTag</span>
             </div>
-            <div className="feature-item">
-              <div className="feature-icon-wrapper">
-                <MapPin className="feature-icon" />
-              </div>
-              <span className="feature-label">GPS Tracking</span>
+            <div className="hero-feature-item">
+              <MapPin className="hero-feature-icon" size={24} />
+              <span className="hero-feature-label">GPS Tracking</span>
             </div>
-            <div className="feature-item">
-              <div className="feature-icon-wrapper">
-                <Box className="feature-icon" />
-              </div>
-              <span className="feature-label">RFID Holders</span>
+            <div className="hero-feature-item">
+              <Box className="hero-feature-icon" size={24} />
+              <span className="hero-feature-label">RFID Holders</span>
             </div>
           </motion.div>
 
@@ -88,8 +83,12 @@ export default function Hero() {
         </motion.div>
 
         <div className="hero-visual">
-          {/* Visual element placeholder if needed to balance the layout */}
+          {/* Visual balance */}
         </div>
+      </div>
+
+      <div className="hero-bottom-bar">
+        <TrustBar />
       </div>
     </section>
   );
