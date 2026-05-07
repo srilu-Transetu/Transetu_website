@@ -3,6 +3,7 @@
 import { Check, ShoppingCart, CreditCard, Car, MoveRight } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Products() {
   const products = [
@@ -16,7 +17,9 @@ export default function Products() {
       ],
       price: "₹500",
       image: "/products/Fastags.png",
-      bestSeller: true
+      bestSeller: true,
+      href: "/product/fastag",
+      buttonText: "View Details"
     },
     {
       name: "GPS Trackers",
@@ -101,10 +104,17 @@ export default function Products() {
 
                 <div className="product-purchase-footer">
                   <span className="product-price-value">{product.price}</span>
-                  <button className="product-buy-button">
-                    <ShoppingCart size={18} fill="currentColor" />
-                    <span>Buy Now</span>
-                  </button>
+                  {product.href ? (
+                    <Link href={product.href} className="product-buy-button" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <ShoppingCart size={18} fill="currentColor" />
+                      <span>{product.buttonText || "Buy Now"}</span>
+                    </Link>
+                  ) : (
+                    <button className="product-buy-button">
+                      <ShoppingCart size={18} fill="currentColor" />
+                      <span>{product.buttonText || "Buy Now"}</span>
+                    </button>
+                  )}
                 </div>
               </div>
             </motion.div>
