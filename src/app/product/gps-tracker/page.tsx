@@ -514,10 +514,10 @@ export default function GPSDetail() {
                 <p className="pricing-sub">Per vehicle. Essential tracking.</p>
               </div>
               <ul className="pricing-features">
-                <li><Check size={18} color="#2EB3E8" /> Real-time Tracking (10s updates)</li>
-                <li><Check size={18} color="#2EB3E8" /> 30-Day Route History</li>
-                <li><Check size={18} color="#2EB3E8" /> Mobile App Access</li>
-                <li><Check size={18} color="#2EB3E8" /> Standard Email Support</li>
+                <li><Check size={18} className="text-accent" /> Real-time Tracking (10s updates)</li>
+                <li><Check size={18} className="text-accent" /> 30-Day Route History</li>
+                <li><Check size={18} className="text-accent" /> Mobile App Access</li>
+                <li><Check size={18} className="text-accent" /> Standard Email Support</li>
               </ul>
               <button className="btn-pricing btn-outline w-full" onClick={() => handleProceedPayment("Basic Tracking Plan")}>Select Plan</button>
             </motion.div>
@@ -533,11 +533,11 @@ export default function GPSDetail() {
                 <p className="pricing-sub text-highlight">Save 20% compared to monthly.</p>
               </div>
               <ul className="pricing-features">
-                <li><Check size={18} color="#2EB3E8" /> Remote Engine Cut-off</li>
-                <li><Check size={18} color="#2EB3E8" /> 6-Month Route History</li>
-                <li><Check size={18} color="#2EB3E8" /> Advanced Geo-fencing</li>
-                <li><Check size={18} color="#2EB3E8" /> Analytics Dashboard</li>
-                <li><Check size={18} color="#2EB3E8" /> Priority 24/7 Support</li>
+                <li><Check size={18} className="text-accent" /> Remote Engine Cut-off</li>
+                <li><Check size={18} className="text-accent" /> 6-Month Route History</li>
+                <li><Check size={18} className="text-accent" /> Advanced Geo-fencing</li>
+                <li><Check size={18} className="text-accent" /> Analytics Dashboard</li>
+                <li><Check size={18} className="text-accent" /> Priority 24/7 Support</li>
               </ul>
               <button className="btn-pricing btn-primary w-full" onClick={() => handleProceedPayment("Advanced Fleet Plan")}>Get Started Now</button>
             </motion.div>
@@ -549,11 +549,11 @@ export default function GPSDetail() {
                 <p className="pricing-sub">For fleets with 50+ vehicles.</p>
               </div>
               <ul className="pricing-features">
-                <li><Check size={18} color="#2EB3E8" /> Unlimited History Retention</li>
-                <li><Check size={18} color="#2EB3E8" /> Custom API Integrations</li>
-                <li><Check size={18} color="#2EB3E8" /> Advanced Multi-user Roles</li>
-                <li><Check size={18} color="#2EB3E8" /> White-label Options</li>
-                <li><Check size={18} color="#2EB3E8" /> Dedicated Account Manager</li>
+                <li><Check size={18} className="text-accent" /> Unlimited History Retention</li>
+                <li><Check size={18} className="text-accent" /> Custom API Integrations</li>
+                <li><Check size={18} className="text-accent" /> Advanced Multi-user Roles</li>
+                <li><Check size={18} className="text-accent" /> White-label Options</li>
+                <li><Check size={18} className="text-accent" /> Dedicated Account Manager</li>
               </ul>
               <button className="btn-pricing btn-outline w-full" onClick={() => handleProceedPayment("Enterprise Plan")}>Contact Sales</button>
             </motion.div>
@@ -581,9 +581,9 @@ export default function GPSDetail() {
               </div>
               
               <div className="cta-trust">
-                <div className="trust-item"><CheckCircle2 size={16} /> Bank-Grade Security</div>
-                <div className="trust-item"><CheckCircle2 size={16} /> 99.99% Uptime SLA</div>
-                <div className="trust-item"><CheckCircle2 size={16} /> 24/7 Expert Support</div>
+                <div className="trust-item"><CheckCircle2 size={16} className="text-accent" /> Bank-Grade Security</div>
+                <div className="trust-item"><CheckCircle2 size={16} className="text-accent" /> 99.99% Uptime SLA</div>
+                <div className="trust-item"><CheckCircle2 size={16} className="text-accent" /> 24/7 Expert Support</div>
               </div>
             </div>
           </div>
