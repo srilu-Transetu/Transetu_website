@@ -5,12 +5,13 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { 
   Check, Zap, Shield, Globe, 
-  ArrowRight, X, MousePointerClick, 
+  ArrowRight, ArrowLeft, X, MousePointerClick, 
   MapPin, Clock, LayoutDashboard, Bell, 
   Truck, Bus, Package, Building2, 
   Settings, Signal, Wrench, PlayCircle, Loader2, CheckCircle2,
   Smartphone, Activity, Navigation, Lock, Server, BarChart3, Users,
-  ChevronRight, CreditCard, Landmark, Wallet
+  ChevronRight, CreditCard, Landmark, Wallet, ShieldCheck, Upload,
+  Zap as ZapIcon
 } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
@@ -88,49 +89,79 @@ export default function GPSDetail() {
       
       {/* 1. Hero Section */}
       <section className="gps-hero">
-        {/* Animated Background Elements */}
-        <div className="hero-bg-elements">
-          <div className="hero-grid"></div>
-          <div className="hero-glow-orb orb-1"></div>
-          <div className="hero-glow-orb orb-2"></div>
-          
-          <div className="hero-scanner"></div>
+        <Link href="/#products" className="gps-back-nav-btn">
+          <ArrowLeft size={20} />
+          <span>Back to Products</span>
+        </Link>
+        <div className="gps-hero-bg-elements">
+          <div className="gps-hero-overlay-dark"></div>
+          <div className="gps-cta-particle-bg"></div>
+          <div className="gps-hero-glow-orb orb-1"></div>
+          <div className="gps-hero-glow-orb orb-2"></div>
+          <div className="gps-hero-scanner"></div>
         </div>
 
         <div className="gps-hero-content">
           <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }}>
-            <span className="hero-badge">Enterprise GPS Solutions</span>
+            <span className="gps-hero-badge">Enterprise GPS Solutions</span>
             <h1 className="gps-title">Real-Time Fleet Intelligence<br /><span>for Modern Transport</span></h1>
             <p className="gps-subtitle">Monitor, manage, and secure your vehicles with enterprise-grade GPS tracking built for real-world transport operations and smart mobility infrastructure.</p>
-            <div className="hero-buttons">
-              <Link href="#pricing" className="btn-glow-premium">
-                Explore Plans <ArrowRight size={20} />
+            <div className="gps-hero-buttons">
+              <Link href="#pricing" className="gps-btn-glow-premium">
+                <span className="flex items-center justify-center gap-2">Explore Plans <ArrowRight size={20} /></span>
               </Link>
-              <button className="btn-glow-secondary" onClick={() => handleProceedPayment("Enterprise Consultation")}>
-                Request Enterprise Demo
+              <button className="gps-btn-glow-secondary" onClick={() => handleProceedPayment("Enterprise Consultation")}>
+                <span className="flex items-center justify-center gap-2">Request Enterprise Demo <ZapIcon size={20} /></span>
               </button>
+            </div>
+
+            <div className="gps-cta-trust mt-12" style={{ marginTop: '48px', opacity: 0.8 }}>
+              <div className="gps-trust-item"><CheckCircle2 size={16} className="text-accent" /> AIS-140 Certified</div>
+              <div className="gps-trust-item"><CheckCircle2 size={16} className="text-accent" /> Real-time Analytics</div>
+              <div className="gps-trust-item"><CheckCircle2 size={16} className="text-accent" /> 24/7 Fleet Support</div>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Trust & Business Credibility Strip */}
-      <section className="trust-strip">
+      <section className="gps-trust-strip">
         <div className="gps-container">
-          <div className="trust-content">
-            <span className="trust-label">Trusted Infrastructure Platform</span>
-            <div className="trust-metrics">
-              <div className="t-metric"><Shield size={18} /> Enterprise Grade</div>
-              <div className="t-metric"><Server size={18} /> 99.9% Uptime</div>
-              <div className="t-metric"><Globe size={18} /> Nationwide Coverage</div>
-              <div className="t-metric"><Users size={18} /> 10,000+ Fleets</div>
+          <div className="gps-trust-content">
+            <div className="gps-trust-brand-side">
+              <span className="gps-trust-label">Trusted Infrastructure Platform</span>
+              <h3 className="gps-trust-main-heading">Enterprise Grade Fleet<br />Intelligence Systems</h3>
             </div>
-            <div className="partner-logos">
-              {/* Using placeholders for partner logos to maintain realism */}
-              <div className="partner-logo">TATA Motors</div>
-              <div className="partner-logo">Ashok Leyland</div>
-              <div className="partner-logo">Mahindra</div>
-              <div className="partner-logo">Ecom Express</div>
+            
+            <div className="gps-trust-metrics-grid">
+              <div className="gps-t-metric-card">
+                <div className="gps-t-icon-box"><Shield size={20} /></div>
+                <div className="gps-t-info">
+                  <h4>Enterprise Grade</h4>
+                  <p>Secured architecture</p>
+                </div>
+              </div>
+              <div className="gps-t-metric-card">
+                <div className="gps-t-icon-box"><Server size={20} /></div>
+                <div className="gps-t-info">
+                  <h4>99.9% Uptime</h4>
+                  <p>Mission critical SLA</p>
+                </div>
+              </div>
+              <div className="gps-t-metric-card">
+                <div className="gps-t-icon-box"><Globe size={20} /></div>
+                <div className="gps-t-info">
+                  <h4>Nationwide</h4>
+                  <p>Complete coverage</p>
+                </div>
+              </div>
+              
+              <div className="gps-partner-marquee-container">
+                <div className="gps-partner-logo-v2">TATA MOTORS</div>
+                <div className="gps-partner-logo-v2">ASHOK LEYLAND</div>
+                <div className="gps-partner-logo-v2">MAHINDRA</div>
+                <div className="gps-partner-logo-v2">ECOM EXPRESS</div>
+              </div>
             </div>
           </div>
         </div>
@@ -144,22 +175,22 @@ export default function GPSDetail() {
             className="text-center mb-16"
           >
             <h2 className="gps-section-title">Why Businesses Choose <span>Transetu</span></h2>
-            <p className="section-desc max-w-2xl mx-auto">Delivering unparalleled reliability and precision for mission-critical transport operations.</p>
+            <p className="gps-section-desc max-w-2xl mx-auto text-center">Delivering unparalleled reliability and precision for mission-critical transport operations.</p>
           </motion.div>
           
           <motion.div 
-            className="why-grid"
+            className="gps-why-grid"
             initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
           >
             {whyChooseUs.map((item, index) => (
-              <motion.div key={index} className="why-card glass-panel" variants={fadeInUp}>
-                <div className="why-icon-wrap">
+              <motion.div key={index} className="gps-why-card gps-glass-panel" variants={fadeInUp}>
+                <div className="gps-why-icon-wrap">
                   {item.icon}
-                  <div className="icon-glow"></div>
+                  <div className="gps-icon-glow"></div>
                 </div>
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
-                <div className="why-card-border"></div>
+                <div className="gps-why-card-border"></div>
               </motion.div>
             ))}
           </motion.div>
@@ -168,30 +199,28 @@ export default function GPSDetail() {
 
       {/* 3. Features Grid */}
       <section className="gps-section bg-gradient-blue relative">
-        {/* Animated background gradient */}
-        <div className="animated-bg-gradient"></div>
-        
+        <div className="gps-animated-bg-gradient"></div>
         <div className="gps-container">
           <motion.div 
             initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}
             className="text-center mb-16"
           >
             <h2 className="gps-section-title">Next-Gen <span>Features</span></h2>
-            <p className="section-desc max-w-2xl mx-auto">Everything you need to manage your fleet securely and efficiently.</p>
+            <p className="gps-section-desc max-w-2xl mx-auto text-center">Everything you need to manage your fleet securely and efficiently.</p>
           </motion.div>
           
           <motion.div 
-            className="features-grid"
+            className="gps-features-grid"
             initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
           >
             {features.map((feature, index) => (
-              <motion.div key={index} className="glass-panel feature-card-premium" variants={fadeInUp}>
-                <div className="feature-icon-premium">
+              <motion.div key={index} className="gps-glass-panel gps-feature-card-premium" variants={fadeInUp}>
+                <div className="gps-feature-icon-premium">
                   {feature.icon}
                 </div>
-                <h3 className="feature-title">{feature.title}</h3>
-                <p className="feature-desc">{feature.desc}</p>
-                <div className="feature-hover-glow"></div>
+                <h3 className="gps-feature-title">{feature.title}</h3>
+                <p className="gps-feature-desc">{feature.desc}</p>
+                <div className="gps-feature-hover-glow"></div>
               </motion.div>
             ))}
           </motion.div>
@@ -206,114 +235,108 @@ export default function GPSDetail() {
             className="text-center mb-16"
           >
             <h2 className="gps-section-title">Command <span>Center</span></h2>
-            <p className="section-desc max-w-2xl mx-auto">Monitor operations with enterprise-grade real-time fleet telemetry.</p>
+            <p className="gps-section-desc max-w-2xl mx-auto text-center">Monitor operations with enterprise-grade real-time fleet telemetry.</p>
           </motion.div>
           
-          <div className="command-layout">
-            {/* Left Side: Analytics */}
+          <div className="gps-command-layout">
             <motion.div 
-              className="command-analytics"
+              className="gps-command-analytics"
               initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
             >
-              <div className="analytics-card">
-                <div className="analytics-header">
-                  <div className="analytics-icon"><Truck size={20} /></div>
-                  <span className="trend-up">+12%</span>
+              <div className="gps-analytics-card">
+                <div className="gps-analytics-header">
+                  <div className="gps-analytics-icon"><Truck size={20} /></div>
+                  <span className="gps-trend-up">+12%</span>
                 </div>
-                <div className="analytics-body">
-                  <div className="analytics-val">1,240</div>
-                  <div className="analytics-label">Active Vehicles</div>
+                <div className="gps-analytics-body">
+                  <div className="gps-analytics-val">1,240</div>
+                  <div className="gps-analytics-label">Active Vehicles</div>
                 </div>
-                <div className="analytics-graph graph-1"></div>
-                <div className="pulse-indicator status-green"></div>
+                <div className="gps-analytics-graph gps-graph-1"></div>
+                <div className="gps-pulse-indicator gps-status-green"></div>
               </div>
 
-              <div className="analytics-card">
-                <div className="analytics-header">
-                  <div className="analytics-icon"><Signal size={20} /></div>
-                  <span className="trend-up">+5%</span>
+              <div className="gps-analytics-card">
+                <div className="gps-analytics-header">
+                  <div className="gps-analytics-icon"><Signal size={20} /></div>
+                  <span className="gps-trend-up">+5%</span>
                 </div>
-                <div className="analytics-body">
-                  <div className="analytics-val">98.5%</div>
-                  <div className="analytics-label">Vehicles Online</div>
+                <div className="gps-analytics-body">
+                  <div className="gps-analytics-val">98.5%</div>
+                  <div className="gps-analytics-label">Vehicles Online</div>
                 </div>
-                <div className="analytics-graph graph-2"></div>
-                <div className="pulse-indicator status-blue"></div>
+                <div className="gps-analytics-graph gps-graph-2"></div>
+                <div className="gps-pulse-indicator gps-status-blue"></div>
               </div>
 
-              <div className="analytics-card alert-card">
-                <div className="analytics-header">
-                  <div className="analytics-icon"><Bell size={20} /></div>
-                  <span className="trend-down">-2%</span>
+              <div className="gps-analytics-card gps-alert-card">
+                <div className="gps-analytics-header">
+                  <div className="gps-analytics-icon"><Bell size={20} /></div>
+                  <span className="gps-trend-down">-2%</span>
                 </div>
-                <div className="analytics-body">
-                  <div className="analytics-val">3</div>
-                  <div className="analytics-label">Emergency Alerts</div>
+                <div className="gps-analytics-body">
+                  <div className="gps-analytics-val">3</div>
+                  <div className="gps-analytics-label">Emergency Alerts</div>
                 </div>
-                <div className="analytics-graph graph-3"></div>
-                <div className="pulse-indicator status-red"></div>
+                <div className="gps-analytics-graph gps-graph-3"></div>
+                <div className="gps-pulse-indicator gps-status-red"></div>
               </div>
 
-              <div className="analytics-card">
-                <div className="analytics-header">
-                  <div className="analytics-icon"><Server size={20} /></div>
-                  <span className="trend-neutral">Stable</span>
+              <div className="gps-analytics-card">
+                <div className="gps-analytics-header">
+                  <div className="gps-analytics-icon"><Server size={20} /></div>
+                  <span className="gps-trend-neutral">Stable</span>
                 </div>
-                <div className="analytics-body">
-                  <div className="analytics-val">99.99%</div>
-                  <div className="analytics-label">System Uptime</div>
+                <div className="gps-analytics-body">
+                  <div className="gps-analytics-val">99.99%</div>
+                  <div className="gps-analytics-label">System Uptime</div>
                 </div>
-                <div className="analytics-graph graph-4"></div>
-                <div className="pulse-indicator status-green"></div>
+                <div className="gps-analytics-graph gps-graph-4"></div>
+                <div className="gps-pulse-indicator gps-status-green"></div>
               </div>
             </motion.div>
 
-            {/* Right Side: Live Map UI */}
             <motion.div 
-              className="command-map-wrapper"
+              className="gps-command-map-wrapper"
               initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
             >
-              <div className="live-map-ui">
-                <div className="map-grid-bg"></div>
+              <div className="gps-live-map-ui">
+                <div className="gps-map-grid-bg"></div>
                 
-                {/* Simulated Map Elements */}
-                <svg className="map-routes" viewBox="0 0 800 600">
-                  <path d="M 100 500 L 200 400 L 400 450 L 550 250 L 700 150" className="map-route-line active" />
-                  <path d="M 50 200 L 150 250 L 250 150 L 450 200 L 600 400" className="map-route-line" />
+                <svg className="gps-map-routes" viewBox="0 0 800 600">
+                  <path d="M 100 500 L 200 400 L 400 450 L 550 250 L 700 150" className="gps-map-route-line active" />
+                  <path d="M 50 200 L 150 250 L 250 150 L 450 200 L 600 400" className="gps-map-route-line" />
                 </svg>
 
-                {/* Animated Pins */}
-                <div className="map-pin pin-1">
-                  <div className="pin-core"></div>
-                  <div className="pin-radar"></div>
+                <div className="gps-map-pin pin-1">
+                  <div className="gps-pin-core"></div>
+                  <div className="gps-pin-radar"></div>
                 </div>
-                <div className="map-pin pin-2">
-                  <div className="pin-core"></div>
-                  <div className="pin-radar"></div>
+                <div className="gps-map-pin pin-2">
+                  <div className="gps-pin-core"></div>
+                  <div className="gps-pin-radar"></div>
                 </div>
-                <div className="map-pin pin-3 warning">
-                  <div className="pin-core"></div>
-                  <div className="pin-radar"></div>
-                </div>
-
-                {/* Telemetry Cards Overlay */}
-                <div className="telemetry-card t-card-1">
-                  <div className="t-header">MH 12 AB 1234</div>
-                  <div className="t-row"><span>Speed:</span> 65 km/h</div>
-                  <div className="t-row"><span>Fuel:</span> 78%</div>
-                  <div className="t-status">Live Tracking</div>
+                <div className="gps-map-pin pin-3 warning">
+                  <div className="gps-pin-core"></div>
+                  <div className="gps-pin-radar"></div>
                 </div>
 
-                <div className="telemetry-card t-card-2">
-                  <div className="t-header">DL 01 CD 5678</div>
-                  <div className="t-row"><span>Speed:</span> 0 km/h</div>
-                  <div className="t-row"><span>Status:</span> Idling</div>
-                  <div className="t-status warning">Check Required</div>
+                <div className="gps-telemetry-card t-card-1">
+                  <div className="gps-t-header">MH 12 AB 1234</div>
+                  <div className="gps-t-row"><span>Speed:</span> 65 km/h</div>
+                  <div className="gps-t-row"><span>Fuel:</span> 78%</div>
+                  <div className="gps-t-status">Live Tracking</div>
                 </div>
 
-                {/* Holographic Overlays */}
-                <div className="holo-overlay"></div>
-                <div className="map-scanner"></div>
+                <div className="gps-telemetry-card t-card-2">
+                  <div className="gps-t-header">DL 01 CD 5678</div>
+                  <div className="gps-t-row"><span>Speed:</span> 0 km/h</div>
+                  <div className="gps-t-row"><span>Status:</span> Idling</div>
+                  <div className="gps-t-status warning">Check Required</div>
+                </div>
+
+                <div className="gps-holo-overlay"></div>
+                <div className="gps-map-scanner"></div>
               </div>
             </motion.div>
           </div>
@@ -323,33 +346,33 @@ export default function GPSDetail() {
       {/* 5. Mobile App Ecosystem Section */}
       <section className="gps-section bg-dark-1 overflow-hidden relative">
         <div className="gps-container">
-          <div className="mobile-ecosystem-layout">
+          <div className="gps-mobile-ecosystem-layout">
             <motion.div 
-              className="mobile-content"
+              className="gps-mobile-content"
               initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
             >
               <h2 className="gps-section-title text-left" style={{ marginBottom: "20px" }}>Track Anywhere.<br /><span>Control Anytime.</span></h2>
-              <p className="mobile-desc">
+              <p className="gps-mobile-desc">
                 Access enterprise command center intelligence on the go. Native mobile applications for iOS and Android.
               </p>
               
-              <ul className="mobile-features">
+              <ul className="gps-mobile-features">
                 <li>
-                  <div className="m-icon"><MapPin size={20} /></div>
+                  <div className="gps-m-icon"><MapPin size={20} /></div>
                   <div>
                     <h4>Live Tracking</h4>
                     <p>Sub-second location updates on an interactive mobile map.</p>
                   </div>
                 </li>
                 <li>
-                  <div className="m-icon"><Bell size={20} /></div>
+                  <div className="gps-m-icon"><Bell size={20} /></div>
                   <div>
                     <h4>Instant Alerts</h4>
                     <p>Push notifications for speeding, geo-fence breaches, and ignition.</p>
                   </div>
                 </li>
                 <li>
-                  <div className="m-icon"><Settings size={20} /></div>
+                  <div className="gps-m-icon"><Settings size={20} /></div>
                   <div>
                     <h4>Remote Monitoring</h4>
                     <p>Immobilize vehicles or run diagnostics remotely via the app.</p>
@@ -357,55 +380,53 @@ export default function GPSDetail() {
                 </li>
               </ul>
               
-              <div className="mobile-badges">
-                <div className="store-badge">Get it on Google Play</div>
-                <div className="store-badge">Download on App Store</div>
+              <div className="gps-mobile-badges">
+                <div className="gps-store-badge">Get it on Google Play</div>
+                <div className="gps-store-badge">Download on App Store</div>
               </div>
             </motion.div>
             
             <motion.div 
-              className="mobile-mockup-wrapper"
+              className="gps-mobile-mockup-wrapper"
               initial={{ opacity: 0, scale: 0.9, rotate: -5 }} whileInView={{ opacity: 1, scale: 1, rotate: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="smartphone-mockup">
-                <div className="phone-notch"></div>
-                <div className="phone-screen">
-                  {/* Simulated App UI */}
-                  <div className="app-header">
-                    <div className="app-menu"><div className="hamburger"></div></div>
-                    <div className="app-title">Transetu Fleet</div>
-                    <div className="app-profile"></div>
+              <div className="gps-smartphone-mockup">
+                <div className="gps-phone-notch"></div>
+                <div className="gps-phone-screen">
+                  <div className="gps-app-header">
+                    <div className="gps-app-menu"><div className="gps-hamburger"></div></div>
+                    <div className="gps-app-title">Transetu Fleet</div>
+                    <div className="gps-app-profile"></div>
                   </div>
-                  <div className="app-map">
-                    <div className="app-map-grid"></div>
-                    <div className="app-pin"></div>
-                    <svg className="app-route" viewBox="0 0 200 300"><path d="M 50 250 L 100 150 L 150 100" /></svg>
+                  <div className="gps-app-map">
+                    <div className="gps-app-map-grid"></div>
+                    <div className="gps-app-pin"></div>
+                    <svg className="gps-app-route" viewBox="0 0 200 300"><path d="M 50 250 L 100 150 L 150 100" /></svg>
                     
-                    <div className="app-floating-card">
-                      <div className="af-title">Vehicle #402</div>
-                      <div className="af-status">In Transetu • 55 km/h</div>
-                      <div className="af-bar"><div className="af-progress"></div></div>
+                    <div className="gps-app-floating-card">
+                      <div className="gps-af-title">Vehicle #402</div>
+                      <div className="gps-af-status">In Transetu • 55 km/h</div>
+                      <div className="gps-af-bar"><div className="gps-af-progress"></div></div>
                     </div>
                   </div>
-                  <div className="app-bottom-nav">
-                    <div className="nav-item active"><MapPin size={20} /></div>
-                    <div className="nav-item"><Activity size={20} /></div>
-                    <div className="nav-item"><Bell size={20} /></div>
-                    <div className="nav-item"><Settings size={20} /></div>
+                  <div className="gps-app-bottom-nav">
+                    <div className="gps-nav-item active"><MapPin size={20} /></div>
+                    <div className="gps-nav-item"><Activity size={20} /></div>
+                    <div className="gps-nav-item"><Bell size={20} /></div>
+                    <div className="gps-nav-item"><Settings size={20} /></div>
                   </div>
                 </div>
-                <div className="phone-glow"></div>
+                <div className="gps-phone-glow"></div>
               </div>
               
-              {/* Floating Notifications */}
               <motion.div 
-                className="floating-notification f-notif-1"
+                className="gps-floating-notification f-notif-1"
                 animate={{ y: [0, -10, 0] }} transition={{ duration: 4, repeat: Infinity }}
               >
                 <CheckCircle2 size={16} color="#10B981" /> Delivery Completed
               </motion.div>
               <motion.div 
-                className="floating-notification f-notif-2"
+                className="gps-floating-notification f-notif-2"
                 animate={{ y: [0, 10, 0] }} transition={{ duration: 5, repeat: Infinity, delay: 1 }}
               >
                 <Bell size={16} color="#F59E0B" /> Over-speeding Alert
@@ -417,29 +438,29 @@ export default function GPSDetail() {
 
       {/* 6. Industries Section */}
       <section className="gps-section bg-gradient-blue relative">
-        <div className="industries-bg-texture"></div>
+        <div className="gps-industries-bg-texture"></div>
         <div className="gps-container">
           <motion.div 
             initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}
             className="text-center mb-16"
           >
             <h2 className="gps-section-title">Built For <span>Your Industry</span></h2>
-            <p className="section-desc max-w-2xl mx-auto">Tailored intelligence for every sector of transport and logistics.</p>
+            <p className="gps-section-desc max-w-2xl mx-auto text-center">Tailored intelligence for every sector of transport and logistics.</p>
           </motion.div>
           
           <motion.div 
-            className="industries-grid"
+            className="gps-industries-grid"
             initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
           >
             {industries.map((industry, index) => (
-              <motion.div key={index} className="industry-card-premium" variants={fadeInUp}>
-                <div className="industry-icon-premium">
+              <motion.div key={index} className="gps-industry-card-premium" variants={fadeInUp}>
+                <div className="gps-industry-icon-premium">
                   {industry.icon}
-                  <div className="industry-icon-bg"></div>
+                  <div className="gps-industry-icon-bg"></div>
                 </div>
                 <h3>{industry.title}</h3>
                 <p>{industry.desc}</p>
-                <div className="industry-hover-glow"></div>
+                <div className="gps-industry-hover-glow"></div>
               </motion.div>
             ))}
           </motion.div>
@@ -454,43 +475,34 @@ export default function GPSDetail() {
             className="text-center mb-16"
           >
             <h2 className="gps-section-title">Seamless <span>Deployment</span></h2>
-            <p className="section-desc max-w-2xl mx-auto">Get your fleet connected and monitored in four simple steps.</p>
+            <p className="gps-section-desc max-w-2xl mx-auto text-center">Get your fleet connected and monitored in four simple steps.</p>
           </motion.div>
           
-          <div className="process-flow">
-            <div className="process-connecting-line">
-              <div className="process-progress-animated"></div>
+          <div className="gps-process-flow">
+            <div className="gps-process-connecting-line">
+              <div className="gps-process-progress-animated"></div>
             </div>
             
-            <div className="process-nodes">
-              <motion.div className="process-node" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
-                <div className="p-icon-glow"><MousePointerClick size={30} /></div>
-                <div className="p-phase">Phase 01</div>
-                <h3>Hardware Selection</h3>
-                <p>Choose from our range of OBD, wired, or wireless trackers.</p>
-              </motion.div>
-
-              <motion.div className="process-node mt-12" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}>
-                <div className="p-icon-glow"><Wrench size={30} /></div>
-                <div className="p-phase">Phase 02</div>
-                <h3>Expert Installation</h3>
-                <p>Covert installation by certified technicians nationwide.</p>
-              </motion.div>
-
-              <motion.div className="process-node" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.5 }}>
-                <div className="p-icon-glow"><Signal size={30} /></div>
-                <div className="p-phase">Phase 03</div>
-                <h3>Cloud Activation</h3>
-                <p>Devices sync instantly with our secure enterprise cloud.</p>
-              </motion.div>
-
-              <motion.div className="process-node mt-12" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.7 }}>
-                <div className="p-icon-glow"><LayoutDashboard size={30} /></div>
-                <div className="p-phase">Phase 04</div>
-                <h3>Live Monitoring</h3>
-                <p>Access full tracking capabilities via web and mobile.</p>
-              </motion.div>
-            </div>
+            <motion.div 
+              className="gps-process-nodes"
+              initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
+            >
+              {[
+                { step: "01", title: "Site Audit", icon: <MapPin size={28} />, desc: "Complete fleet and terminal infrastructure assessment." },
+                { step: "02", title: "Installation", icon: <Wrench size={28} />, desc: "Expert on-site hardware deployment and unit testing." },
+                { step: "03", title: "Activation", icon: <Signal size={28} />, desc: "Secure platform onboarding and telemetry sync." },
+                { step: "04", title: "Operations", icon: <Activity size={28} />, desc: "24/7 command center monitoring and management." }
+              ].map((node, i) => (
+                <motion.div key={i} className="gps-process-card-modern" variants={fadeInUp}>
+                  <div className="gps-p-number">{node.step}</div>
+                  <div className="gps-p-icon-modern">
+                    {node.icon}
+                  </div>
+                  <h3 className="gps-p-title-modern">{node.title}</h3>
+                  <p className="gps-p-desc-modern">{node.desc}</p>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </div>
       </section>
@@ -503,90 +515,98 @@ export default function GPSDetail() {
             className="text-center mb-16"
           >
             <h2 className="gps-section-title">Subscription <span>Plans</span></h2>
-            <p className="section-desc max-w-2xl mx-auto">Transparent pricing tailored for fleets of all sizes.</p>
+            <p className="gps-section-desc max-w-2xl mx-auto text-center">Transparent pricing tailored for fleets of all sizes.</p>
           </motion.div>
           
-          <div className="pricing-premium-grid">
-            <motion.div className="glass-panel pricing-card-premium" variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-              <div className="pricing-header">
+          <motion.div 
+            className="gps-pricing-premium-grid"
+            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
+          >
+            <motion.div className="gps-glass-panel gps-pricing-card-premium" variants={fadeInUp}>
+              <div className="gps-pricing-header">
                 <h3>Basic Tracking</h3>
-                <div className="price">₹2,999<span>/yr</span></div>
-                <p className="pricing-sub">Per vehicle. Essential tracking.</p>
+                <div className="gps-price">₹2,999<span>/yr</span></div>
+                <p className="gps-pricing-sub">Per vehicle. Essential tracking.</p>
               </div>
-              <ul className="pricing-features">
+              <ul className="gps-pricing-features">
                 <li><Check size={18} className="text-accent" /> Real-time Tracking (10s updates)</li>
                 <li><Check size={18} className="text-accent" /> 30-Day Route History</li>
                 <li><Check size={18} className="text-accent" /> Mobile App Access</li>
                 <li><Check size={18} className="text-accent" /> Standard Email Support</li>
               </ul>
-              <button className="btn-pricing btn-outline w-full" onClick={() => handleProceedPayment("Basic Tracking Plan")}>Select Plan</button>
+                <button className="gps-btn-pricing gps-btn-outline w-full" onClick={() => handleProceedPayment("Basic Tracking Plan")}>
+                  Select Plan
+                </button>
             </motion.div>
             
-            <motion.div className="glass-panel pricing-card-premium highlighted" variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ delay: 0.2 }}>
+            <motion.div className="gps-glass-panel gps-pricing-card-premium highlighted" variants={fadeInUp}>
               <div className="popular-badge-animated">
-                <div className="badge-glow"></div>
                 MOST POPULAR
               </div>
-              <div className="pricing-header">
+              <div className="gps-pricing-header">
                 <h3>Advanced Fleet</h3>
-                <div className="price">₹4,999<span>/yr</span></div>
-                <p className="pricing-sub text-highlight">Save 20% compared to monthly.</p>
+                <div className="gps-price">₹4,999<span>/yr</span></div>
+                <p className="gps-pricing-sub gps-text-highlight">Save 20% compared to monthly.</p>
               </div>
-              <ul className="pricing-features">
+              <ul className="gps-pricing-features">
                 <li><Check size={18} className="text-accent" /> Remote Engine Cut-off</li>
                 <li><Check size={18} className="text-accent" /> 6-Month Route History</li>
                 <li><Check size={18} className="text-accent" /> Advanced Geo-fencing</li>
                 <li><Check size={18} className="text-accent" /> Analytics Dashboard</li>
                 <li><Check size={18} className="text-accent" /> Priority 24/7 Support</li>
               </ul>
-              <button className="btn-pricing btn-primary w-full" onClick={() => handleProceedPayment("Advanced Fleet Plan")}>Get Started Now</button>
+              <button className="gps-btn-pricing gps-btn-primary w-full" onClick={() => handleProceedPayment("Advanced Fleet Plan")}>Get Started Now</button>
             </motion.div>
 
-            <motion.div className="glass-panel pricing-card-premium" variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ delay: 0.4 }}>
-              <div className="pricing-header">
+            <motion.div className="gps-glass-panel gps-pricing-card-premium" variants={fadeInUp}>
+              <div className="gps-pricing-header">
                 <h3>Enterprise</h3>
-                <div className="price">Custom</div>
-                <p className="pricing-sub">For fleets with 50+ vehicles.</p>
+                <div className="gps-price">Custom</div>
+                <p className="gps-pricing-sub">For fleets with 50+ vehicles.</p>
               </div>
-              <ul className="pricing-features">
+              <ul className="gps-pricing-features">
                 <li><Check size={18} className="text-accent" /> Unlimited History Retention</li>
                 <li><Check size={18} className="text-accent" /> Custom API Integrations</li>
                 <li><Check size={18} className="text-accent" /> Advanced Multi-user Roles</li>
                 <li><Check size={18} className="text-accent" /> White-label Options</li>
                 <li><Check size={18} className="text-accent" /> Dedicated Account Manager</li>
               </ul>
-              <button className="btn-pricing btn-outline w-full" onClick={() => handleProceedPayment("Enterprise Plan")}>Contact Sales</button>
+                <button className="gps-btn-pricing gps-btn-primary w-full" onClick={() => handleProceedPayment("Enterprise Solutions")}>
+                  Select Plan
+                </button>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* 9. Enhanced CTA Section */}
       <section className="gps-section bg-dark-1 border-t border-white/5">
         <div className="gps-container">
-          <div className="cta-premium-banner">
-            <div className="cta-particle-bg"></div>
-            <div className="cta-glow-core"></div>
+          <motion.div 
+            className="gps-cta-premium-banner"
+            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
+          >
+            <div className="gps-cta-particle-bg"></div>
             
-            <div className="cta-content relative z-10">
-              <h2 className="cta-heading">Transform Your Fleet Operations Today</h2>
-              <p className="cta-desc">
+            <div className="gps-cta-content relative z-10">
+              <h2 className="gps-cta-heading">Transform Your Fleet Operations Today</h2>
+              <p className="gps-cta-desc">
                 Join enterprise fleets optimizing operations with our advanced tracking platform.
               </p>
               
-              <div className="cta-actions">
-                <button className="btn-glow-premium lg" onClick={() => handleProceedPayment("General Inquiry")}>
-                  Start Your Transformation <ArrowRight size={24} />
+              <div className="gps-cta-actions">
+                <button className="gps-btn-glow-premium lg" onClick={() => handleProceedPayment("General Inquiry")}>
+                  <span className="flex items-center justify-center gap-3">Start Your Transformation <ArrowRight size={24} /></span>
                 </button>
               </div>
               
-              <div className="cta-trust">
-                <div className="trust-item"><CheckCircle2 size={16} className="text-accent" /> Bank-Grade Security</div>
-                <div className="trust-item"><CheckCircle2 size={16} className="text-accent" /> 99.99% Uptime SLA</div>
-                <div className="trust-item"><CheckCircle2 size={16} className="text-accent" /> 24/7 Expert Support</div>
+              <div className="gps-cta-trust">
+                <div className="gps-trust-item"><CheckCircle2 size={16} className="text-accent" /> Bank-Grade Security</div>
+                <div className="gps-trust-item"><CheckCircle2 size={16} className="text-accent" /> 99.99% Uptime SLA</div>
+                <div className="gps-trust-item"><CheckCircle2 size={16} className="text-accent" /> 24/7 Expert Support</div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -594,60 +614,60 @@ export default function GPSDetail() {
 
       {/* 10. Enhanced Payment & Subscription Modal */}
       {showPaymentForm && (
-        <div className="modal-overlay" onClick={() => setShowPaymentForm(false)}>
+        <div className="gps-modal-overlay" onClick={() => setShowPaymentForm(false)}>
           <motion.div 
-            className="payment-modal-premium" 
+            className="gps-payment-modal-premium" 
             onClick={(e) => e.stopPropagation()}
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
           >
-            <button className="modal-close" onClick={() => setShowPaymentForm(false)}><X size={24} /></button>
+            <button className="gps-modal-close" onClick={() => setShowPaymentForm(false)}><X size={24} /></button>
             
             {isSuccess ? (
-              <div className="modal-success">
+              <div className="gps-modal-success">
                 <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: "spring", stiffness: 200, delay: 0.2 }}>
-                  <div className="success-icon-wrap">
+                  <div className="gps-success-icon-wrap">
                     <CheckCircle2 size={60} color="#10B981" />
-                    <div className="success-pulse"></div>
+                    <div className="gps-success-pulse"></div>
                   </div>
                 </motion.div>
                 <h3>Request Secured!</h3>
                 <p>Your enterprise request has been received. Our deployment team will contact you within 2 hours.</p>
-                <div className="secure-badge mt-6 inline-flex"><Lock size={14} /> Encrypted Transmission</div>
+                <div className="gps-secure-badge mt-6" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#64748B', fontSize: '0.85rem', justifyContent: 'center', marginTop: '24px' }}><Lock size={14} /> Encrypted Transmission</div>
               </div>
             ) : (
               <>
-                <div className="modal-header">
+                <div className="gps-modal-header">
                   <h3>Complete Configuration</h3>
                   <p>Configure your <span>{selectedPlan}</span> deployment.</p>
                 </div>
                 
-                <form className="modal-form" onSubmit={handleSubmit}>
-                  <div className="form-grid">
-                    <div className="form-group">
+                <form className="gps-modal-form" onSubmit={handleSubmit}>
+                  <div className="gps-form-grid">
+                    <div className="gps-form-group">
                       <label>Full Name</label>
-                      <input type="text" placeholder="Enter your full name" required className="premium-input" />
+                      <input type="text" placeholder="Enter your full name" required className="gps-premium-input" />
                     </div>
                     
-                    <div className="form-group">
+                    <div className="gps-form-group">
                       <label>Company Name</label>
-                      <input type="text" placeholder="Enter company name" required className="premium-input" />
+                      <input type="text" placeholder="Enter company name" required className="gps-premium-input" />
                     </div>
                     
-                    <div className="form-group">
+                    <div className="gps-form-group">
                       <label>Mobile Number</label>
-                      <input type="tel" placeholder="Enter 10-digit number" required pattern="[0-9]{10}" className="premium-input" />
+                      <input type="tel" placeholder="Enter 10-digit number" required pattern="[0-9]{10}" className="gps-premium-input" />
                     </div>
-
-                    <div className="form-group">
+ 
+                    <div className="gps-form-group">
                       <label>Email Address</label>
-                      <input type="email" placeholder="Enter work email" required className="premium-input" />
+                      <input type="email" placeholder="Enter work email" required className="gps-premium-input" />
                     </div>
-
-                    <div className="form-group">
+ 
+                    <div className="gps-form-group">
                       <label>Fleet Size</label>
-                      <select required defaultValue="" className="premium-input">
+                      <select required defaultValue="" className="gps-premium-input">
                         <option value="" disabled>Select vehicle count</option>
                         <option value="1-5">1 - 5 Vehicles</option>
                         <option value="6-20">6 - 20 Vehicles</option>
@@ -655,50 +675,48 @@ export default function GPSDetail() {
                         <option value="50+">50+ Vehicles (Enterprise)</option>
                       </select>
                     </div>
-
-                    <div className="form-group">
+ 
+                    <div className="gps-form-group">
                       <label>Billing Cycle</label>
-                      <select required defaultValue="" className="premium-input">
+                      <select required defaultValue="" className="gps-premium-input">
                         <option value="" disabled>Select duration</option>
                         <option value="monthly">Monthly Billing</option>
                         <option value="yearly">Annual Billing (20% Off)</option>
                       </select>
                     </div>
                   </div>
-
-                  {/* Payment Method Selection - Visual Only */}
-                  <div className="payment-method-section mt-6">
-                    <label className="text-sm text-slate-300 font-medium mb-3 block">Select Payment Method</label>
-                    <div className="payment-options">
-                      <div className={`payment-option ${paymentMethod === 'upi' ? 'active' : ''}`} onClick={() => setPaymentMethod('upi')}>
+ 
+                  <div className="gps-payment-method-section" style={{ marginTop: '30px' }}>
+                    <label style={{ fontSize: '0.85rem', fontWeight: '600', color: 'var(--gps-text-secondary)', marginBottom: '12px', display: 'block' }}>Select Payment Method</label>
+                    <div className="gps-payment-options">
+                      <div className={`gps-payment-option ${paymentMethod === 'upi' ? 'active' : ''}`} onClick={() => setPaymentMethod('upi')}>
                         <Smartphone size={20} /> UPI / QR
                       </div>
-                      <div className={`payment-option ${paymentMethod === 'card' ? 'active' : ''}`} onClick={() => setPaymentMethod('card')}>
+                      <div className={`gps-payment-option ${paymentMethod === 'card' ? 'active' : ''}`} onClick={() => setPaymentMethod('card')}>
                         <CreditCard size={20} /> Credit Card
                       </div>
-                      <div className={`payment-option ${paymentMethod === 'net' ? 'active' : ''}`} onClick={() => setPaymentMethod('net')}>
+                      <div className={`gps-payment-option ${paymentMethod === 'net' ? 'active' : ''}`} onClick={() => setPaymentMethod('net')}>
                         <Landmark size={20} /> Net Banking
                       </div>
                     </div>
                   </div>
                   
-                  <button type="submit" disabled={isProcessing} className="btn-glow-premium w-full mt-8" style={{ padding: "18px" }}>
+                  <button type="submit" disabled={isProcessing} className="gps-btn-glow-premium lg w-full" style={{ width: '100%', marginTop: '30px', padding: "18px" }}>
                     {isProcessing ? (
-                      <span className="flex items-center justify-center gap-2">
+                      <span className="flex items-center justify-center gap-3">
                         <Loader2 className="animate-spin" size={20} />
                         Establishing Secure Connection...
                       </span>
                     ) : (
-                      <span className="flex items-center justify-center gap-2">
+                      <span className="flex items-center justify-center gap-3">
                         <Lock size={18} /> Proceed to Secure Checkout
                       </span>
                     )}
                   </button>
                   
-                  {/* Razorpay / Secure Trust indicators */}
-                  <div className="secure-checkout-footer">
+                  <div className="gps-secure-checkout-footer">
                     <span>Secured by</span>
-                    <div className="razorpay-placeholder">Razorpay</div>
+                    <div className="gps-razorpay-placeholder">Razorpay</div>
                     <span>• 256-bit SSL Encryption</span>
                   </div>
                 </form>

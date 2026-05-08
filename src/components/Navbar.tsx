@@ -6,8 +6,10 @@ import { PhoneCall } from "lucide-react";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
@@ -16,7 +18,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
+    <nav className={`navbar ${(mounted && isScrolled) ? "scrolled" : ""}`}>
       <div className="container">
         <Link href="/" className="nav-logo">
           <img src="/assets/logo.png" alt="Transetu Logo" />
