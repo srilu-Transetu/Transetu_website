@@ -45,7 +45,9 @@ export default function Products() {
       ],
       price: "₹150",
       image: "/products/RFID Holders.png",
-      bestSeller: false
+      bestSeller: false,
+      href: "/product/rfid-holder",
+      buttonText: "View Details"
     }
   ];
 
