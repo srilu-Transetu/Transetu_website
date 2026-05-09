@@ -16,7 +16,7 @@ export default function Products() {
         "Recharge Anytime"
       ],
       price: "₹500",
-      image: "/products/Fastags.png",
+      image: "/products/fastags.png",
       bestSeller: true,
       href: "/product/fastag",
       buttonText: "View Details"
@@ -30,7 +30,7 @@ export default function Products() {
         "History Reports"
       ],
       price: "₹2,999",
-      image: "/products/GPS Tracker.png",
+      image: "/products/gps-tracker.png",
       bestSeller: false,
       href: "/product/gps-tracker",
       buttonText: "View Details"
@@ -44,7 +44,7 @@ export default function Products() {
         "Lightweight"
       ],
       price: "₹150",
-      image: "/products/RFID Holders.png",
+      image: "/products/rfid-holders.png",
       bestSeller: false,
       href: "/product/rfid-holder",
       buttonText: "View Details"
