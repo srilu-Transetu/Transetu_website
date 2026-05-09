@@ -30,10 +30,10 @@ export default function Navbar() {
           <Link href="#about" className="nav-link">About Us</Link>
         </div>
 
-        <button className="btn-contact">
+        <Link href="#contact" className="btn-contact">
           <PhoneCall size={18} />
           <span>Contact Us</span>
-        </button>
+        </Link>
       </div>
     </nav>
   );
