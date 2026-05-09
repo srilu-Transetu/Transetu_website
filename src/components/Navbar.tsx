@@ -17,15 +17,38 @@ export default function Navbar() {
       setIsScrolled(window.scrollY > 20);
     };
 
-    // Set initial active link based on hash or path
-    const hash = window.location.hash.replace("#", "");
-    if (hash) {
-      setActiveLink(hash);
-    } else if (pathname === "/") {
-      setActiveLink("home");
+    window.addEventListener("scroll", handleScroll);
+
+    // Only run IntersectionObserver on the home page
+    if (pathname === "/") {
+      const sections = ["home", "products", "about", "contact"];
+      const observers = sections.map((sectionId) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  setActiveLink(sectionId);
+                }
+              });
+            },
+            { threshold: 0.5 } // Trigger when 50% of section is visible
+          );
+          observer.observe(element);
+          return observer;
+        }
+        return null;
+      });
+
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+        observers.forEach((observer) => observer?.disconnect());
+      };
+    } else if (pathname.startsWith("/product")) {
+      setActiveLink("products");
     }
 
-    window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [pathname]);
 
