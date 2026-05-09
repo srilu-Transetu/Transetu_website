@@ -9,23 +9,24 @@ export default function Footer() {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-column">
-            <img src="/assets/logo.png" alt="Transetu" className="footer-logo" />
+            <img src="/assets/Footer_logo.png" alt="Transetu" className="footer-logo" />
             <p className="footer-desc">
               Seamless travel solutions including FASTag, GPS tracking, and premium accessories for your journey.
             </p>
           </div>
 
           <div className="footer-column">
-            <h4>Company</h4>
+            <h4>Quick Links</h4>
             <ul className="footer-links">
               <li><Link href="/" className="footer-link">Home</Link></li>
               <li><Link href="#products" className="footer-link">Products</Link></li>
               <li><Link href="#about" className="footer-link">About Us</Link></li>
+              <li><Link href="#contact" className="footer-link">Contact Us</Link></li>
             </ul>
           </div>
 
           <div className="footer-column">
-            <h4>Contact</h4>
+            <h4>Contact Info</h4>
             <ul className="footer-contact">
               <li>
                 <Phone size={18} style={{ color: 'var(--color-accent-blue)' }} /> 
@@ -45,10 +46,6 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <p>© 2026 Transetu. All rights reserved.</p>
-          <div className="footer-legal">
-            <Link href="#" className="footer-link">Privacy Policy</Link>
-            <Link href="#" className="footer-link">Terms</Link>
-          </div>
         </div>
       </div>
     </footer>

@@ -2,6 +2,7 @@
 
 import { CreditCard, MapPin, Box, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import TrustBar from "./TrustBar";
 
 export default function Hero() {
@@ -84,10 +85,12 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
-            <button className="btn-primary">
+            <Link href="/#products" className="btn-primary" style={{ textDecoration: 'none' }}>
               Explore Products <ArrowRight size={18} />
-            </button>
-            <button className="btn-secondary">Learn More</button>
+            </Link>
+            <Link href="/#about" className="btn-secondary" style={{ textDecoration: 'none' }}>
+              Learn More
+            </Link>
           </motion.div>
         </motion.div>
 

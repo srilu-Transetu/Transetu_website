@@ -103,7 +103,7 @@ export default function Contact() {
 
                 <div className="form-group">
                   <label>Message</label>
-                  <textarea placeholder="How can we help you today?" rows={4} required></textarea>
+                  <textarea placeholder="How can we help you today?" rows={3} required></textarea>
                 </div>
 
                 <button type="submit" className="submit-btn">
