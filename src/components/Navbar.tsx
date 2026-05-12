@@ -87,10 +87,16 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <Link href="/#contact" className="btn-contact" onClick={() => handleLinkClick("contact")}>
-          <PhoneCall size={18} />
-          <span>Contact Us</span>
-        </Link>
+        <div className="nav-actions" style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+          <Link href="/#contact" className="btn-contact" onClick={() => handleLinkClick("contact")}>
+            <PhoneCall size={18} />
+            <span>Contact Us</span>
+          </Link>
+          
+          <Link href="/signup" className="btn-signup">
+            <span>Sign Up</span>
+          </Link>
+        </div>
       </div>
     </nav>
   );

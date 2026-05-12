@@ -36,11 +36,20 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.8 }}
+            className="hero-welcome-container"
+          >
+            <span className="hero-welcome-title">Welcome to Transetu</span>
+          </motion.div>
+
           <motion.h1
             className="hero-heading"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
           >
             Seamless Travel.
             <br />
@@ -53,17 +62,28 @@ export default function Hero() {
             className="hero-p"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
           >
             Transetu provides reliable FASTag solutions, GPS tracking systems,
             and premium holders for a smoother journey.
           </motion.p>
 
           <motion.div
-            className="hero-features"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
+            className="hero-cta-wrapper"
+          >
+            <Link href="/signup" className="btn-fastag" style={{ textDecoration: 'none' }}>
+              Check FASTag Status <ArrowRight size={18} />
+            </Link>
+          </motion.div>
+
+          <motion.div
+            className="hero-features"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
           >
             <div className="hero-feature-item">
               <CreditCard className="hero-feature-icon" size={24} />
@@ -71,11 +91,11 @@ export default function Hero() {
             </div>
             <div className="hero-feature-item">
               <MapPin className="hero-feature-icon" size={24} />
-              <span className="hero-feature-label">GPS Tracking</span>
+              <span className="hero-feature-label">GPS Trackers</span>
             </div>
             <div className="hero-feature-item">
               <Box className="hero-feature-icon" size={24} />
-              <span className="hero-feature-label">RFID Holders</span>
+              <span className="hero-feature-label">FASTag Holders</span>
             </div>
           </motion.div>
 
@@ -83,10 +103,10 @@ export default function Hero() {
             className="hero-actions"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
+            transition={{ delay: 1.0, duration: 0.8 }}
           >
             <Link href="/#products" className="btn-primary" style={{ textDecoration: 'none' }}>
-              Explore Products <ArrowRight size={18} />
+              Explore Products
             </Link>
             <Link href="/#about" className="btn-secondary" style={{ textDecoration: 'none' }}>
               Learn More
