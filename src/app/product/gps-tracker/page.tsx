@@ -21,13 +21,17 @@ import Link from "next/link";
 export default function GPSDetail() {
   const [showPaymentForm, setShowPaymentForm] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState("");
+  const [selectedPrice, setSelectedPrice] = useState("");
   const [isProcessing, setIsProcessing] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState("upi");
+  const [formStep, setFormStep] = useState(1); // 1: Details, 2: Checkout
 
-  const handleProceedPayment = (planName: string) => {
+  const handleProceedPayment = (planName: string, price: string) => {
     setSelectedPlan(planName);
+    setSelectedPrice(price);
     setShowPaymentForm(true);
+    setFormStep(1);
     setIsProcessing(false);
     setIsSuccess(false);
   };
@@ -105,12 +109,12 @@ export default function GPSDetail() {
           <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }}>
             <span className="gps-hero-badge">Enterprise GPS Solutions</span>
             <h1 className="gps-title">Real-Time Fleet Intelligence<br /><span>for Modern Transport</span></h1>
-            <p className="gps-subtitle">Monitor, manage, and secure your vehicles with enterprise-grade GPS tracking built for real-world transport operations and smart mobility infrastructure.</p>
+            <p className="gps-subtitle">Monitor, manage, and secure your vehicles with enterprise-grade GPS Trackers built for real-world transport operations and smart mobility infrastructure.</p>
             <div className="gps-hero-buttons">
               <Link href="#pricing" className="gps-btn-glow-premium">
                 <span className="flex items-center justify-center gap-2">Explore Plans <ArrowRight size={20} /></span>
               </Link>
-              <button className="gps-btn-glow-secondary" onClick={() => handleProceedPayment("Enterprise Consultation")}>
+              <button className="gps-btn-glow-secondary" onClick={() => handleProceedPayment("Basic Tracker", "₹4,500")}>
                 <span className="flex items-center justify-center gap-2">Request Enterprise Demo <ZapIcon size={20} /></span>
               </button>
             </div>
@@ -157,10 +161,28 @@ export default function GPSDetail() {
               </div>
               
               <div className="gps-partner-marquee-container">
-                <div className="gps-partner-logo-v2">TATA MOTORS</div>
-                <div className="gps-partner-logo-v2">ASHOK LEYLAND</div>
-                <div className="gps-partner-logo-v2">MAHINDRA</div>
-                <div className="gps-partner-logo-v2">ECOM EXPRESS</div>
+                <div className="gps-partner-marquee-track">
+                  <div className="gps-partner-logo-v2">TATA MOTORS</div>
+                  <div className="gps-partner-logo-v2">ASHOK LEYLAND</div>
+                  <div className="gps-partner-logo-v2">MAHINDRA</div>
+                  <div className="gps-partner-logo-v2">ECOM EXPRESS</div>
+                  <div className="gps-partner-logo-v2">DELHIVERY</div>
+                  <div className="gps-partner-logo-v2">BLUE DART</div>
+                  {/* Duplicate for infinite loop */}
+                  <div className="gps-partner-logo-v2">TATA MOTORS</div>
+                  <div className="gps-partner-logo-v2">ASHOK LEYLAND</div>
+                  <div className="gps-partner-logo-v2">MAHINDRA</div>
+                  <div className="gps-partner-logo-v2">ECOM EXPRESS</div>
+                  <div className="gps-partner-logo-v2">DELHIVERY</div>
+                  <div className="gps-partner-logo-v2">BLUE DART</div>
+                  {/* Third set to ensure no gaps */}
+                  <div className="gps-partner-logo-v2">TATA MOTORS</div>
+                  <div className="gps-partner-logo-v2">ASHOK LEYLAND</div>
+                  <div className="gps-partner-logo-v2">MAHINDRA</div>
+                  <div className="gps-partner-logo-v2">ECOM EXPRESS</div>
+                  <div className="gps-partner-logo-v2">DELHIVERY</div>
+                  <div className="gps-partner-logo-v2">BLUE DART</div>
+                </div>
               </div>
             </div>
           </div>
@@ -514,67 +536,83 @@ export default function GPSDetail() {
             initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}
             className="text-center mb-16"
           >
+            <div className="ais-140-badge-wrapper mb-6">
+              <span className="ais-140-badge">AIS-140 GPS TRACKER</span>
+            </div>
             <h2 className="gps-section-title">Subscription <span>Plans</span></h2>
-            <p className="gps-section-desc max-w-2xl mx-auto text-center">Transparent pricing tailored for fleets of all sizes.</p>
+            <p className="gps-section-desc max-w-2xl mx-auto text-center">Transparent pricing tailored for personal and government-compliant tracking.</p>
           </motion.div>
           
           <motion.div 
-            className="gps-pricing-premium-grid"
-            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
+            className="gps-deployment-hub-container"
+            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}
           >
-            <motion.div className="gps-glass-panel gps-pricing-card-premium" variants={fadeInUp}>
-              <div className="gps-pricing-header">
-                <h3>Basic Tracking</h3>
-                <div className="gps-price">₹2,999<span>/yr</span></div>
-                <p className="gps-pricing-sub">Per vehicle. Essential tracking.</p>
-              </div>
-              <ul className="gps-pricing-features">
-                <li><Check size={18} className="text-accent" /> Real-time Tracking (10s updates)</li>
-                <li><Check size={18} className="text-accent" /> 30-Day Route History</li>
-                <li><Check size={18} className="text-accent" /> Mobile App Access</li>
-                <li><Check size={18} className="text-accent" /> Standard Email Support</li>
-              </ul>
-                <button className="gps-btn-pricing gps-btn-outline w-full" onClick={() => handleProceedPayment("Basic Tracking Plan")}>
-                  Select Plan
-                </button>
-            </motion.div>
-            
-            <motion.div className="gps-glass-panel gps-pricing-card-premium highlighted" variants={fadeInUp}>
-              <div className="popular-badge-animated">
-                MOST POPULAR
-              </div>
-              <div className="gps-pricing-header">
-                <h3>Advanced Fleet</h3>
-                <div className="gps-price">₹4,999<span>/yr</span></div>
-                <p className="gps-pricing-sub gps-text-highlight">Save 20% compared to monthly.</p>
-              </div>
-              <ul className="gps-pricing-features">
-                <li><Check size={18} className="text-accent" /> Remote Engine Cut-off</li>
-                <li><Check size={18} className="text-accent" /> 6-Month Route History</li>
-                <li><Check size={18} className="text-accent" /> Advanced Geo-fencing</li>
-                <li><Check size={18} className="text-accent" /> Analytics Dashboard</li>
-                <li><Check size={18} className="text-accent" /> Priority 24/7 Support</li>
-              </ul>
-              <button className="gps-btn-pricing gps-btn-primary w-full" onClick={() => handleProceedPayment("Advanced Fleet Plan")}>Get Started Now</button>
-            </motion.div>
+            <div className="gps-deployment-hub">
+              {/* Left Side: Basic Tracker */}
+              <div className="gps-hub-plan basic">
+                <div className="gps-hub-plan-content">
+                  <div className="gps-hub-header">
+                    <div className="gps-hub-badge">Personal Mobility</div>
+                    <div className="gps-hub-icon-wrap"><Shield size={40} /></div>
+                    <h3>Basic Tracker</h3>
+                    <p className="gps-hub-price">₹4,500 <span className="gps-hub-unit">One-time Deployment</span></p>
+                  </div>
+                  
+                  <div className="gps-hub-body">
+                    <p className="gps-hub-desc">Professional grade tracking for individual vehicle security and fleet visibility.</p>
+                    <ul className="gps-hub-feature-list">
+                      <li><CheckCircle2 size={18} /> Real-time GNSS Positioning</li>
+                      <li><CheckCircle2 size={18} /> 90-Day Telemetry Storage</li>
+                      <li><CheckCircle2 size={18} /> Instant Geo-Fence Alerts</li>
+                      <li><CheckCircle2 size={18} /> Engine Immobilization Ready</li>
+                      <li><CheckCircle2 size={18} /> Mobile App Control Center</li>
+                    </ul>
+                  </div>
 
-            <motion.div className="gps-glass-panel gps-pricing-card-premium" variants={fadeInUp}>
-              <div className="gps-pricing-header">
-                <h3>Enterprise</h3>
-                <div className="gps-price">Custom</div>
-                <p className="gps-pricing-sub">For fleets with 50+ vehicles.</p>
+                  <button className="gps-hub-btn-basic" onClick={() => handleProceedPayment("Basic Tracker", "₹4,500")}>
+                    Apply Now <ArrowRight size={20} />
+                  </button>
+                </div>
               </div>
-              <ul className="gps-pricing-features">
-                <li><Check size={18} className="text-accent" /> Unlimited History Retention</li>
-                <li><Check size={18} className="text-accent" /> Custom API Integrations</li>
-                <li><Check size={18} className="text-accent" /> Advanced Multi-user Roles</li>
-                <li><Check size={18} className="text-accent" /> White-label Options</li>
-                <li><Check size={18} className="text-accent" /> Dedicated Account Manager</li>
-              </ul>
-                <button className="gps-btn-pricing gps-btn-primary w-full" onClick={() => handleProceedPayment("Enterprise Solutions")}>
-                  Select Plan
-                </button>
-            </motion.div>
+
+              {/* Central Divider */}
+              <div className="gps-hub-divider">
+                <div className="gps-hub-divider-line top"></div>
+                <div className="gps-hub-divider-center">
+                  <div className="gps-hub-orb">
+                    <Zap size={24} />
+                  </div>
+                </div>
+                <div className="gps-hub-divider-line bottom"></div>
+              </div>
+
+              {/* Right Side: Government Tracker */}
+              <div className="gps-hub-plan government">
+                <div className="gps-hub-plan-content">
+                  <div className="gps-hub-header">
+                    <div className="gps-hub-badge premium">Government Compliance</div>
+                    <div className="gps-hub-icon-wrap"><Building2 size={40} /></div>
+                    <h3>Government Tracker</h3>
+                    <p className="gps-hub-price">₹10,500 <span className="gps-hub-unit">Compliance Package</span></p>
+                  </div>
+
+                  <div className="gps-hub-body">
+                    <p className="gps-hub-desc">Certified AIS-140 infrastructure for commercial fleets and government mandates.</p>
+                    <ul className="gps-hub-feature-list highlight">
+                      <li><CheckCircle2 size={18} /> AIS-140 Certified Hardware</li>
+                      <li><CheckCircle2 size={18} /> Integrated SOS / Panic Button</li>
+                      <li><CheckCircle2 size={18} /> Multi-IP Data Transmission</li>
+                      <li><CheckCircle2 size={18} /> CDAC & State Server Sync</li>
+                      <li><CheckCircle2 size={18} /> 2-Year Platform Warranty</li>
+                    </ul>
+                  </div>
+
+                  <button className="gps-hub-btn-gov" onClick={() => handleProceedPayment("Government Tracker", "₹10,500")}>
+                    Secure Compliance <ArrowRight size={20} />
+                  </button>
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -595,7 +633,7 @@ export default function GPSDetail() {
               </p>
               
               <div className="gps-cta-actions">
-                <button className="gps-btn-glow-premium lg" onClick={() => handleProceedPayment("General Inquiry")}>
+                <button className="gps-btn-glow-premium lg" onClick={() => handleProceedPayment("Basic Tracker", "₹4,500")}>
                   <span className="flex items-center justify-center gap-3">Start Your Transformation <ArrowRight size={24} /></span>
                 </button>
               </div>
@@ -632,93 +670,175 @@ export default function GPSDetail() {
                     <div className="gps-success-pulse"></div>
                   </div>
                 </motion.div>
-                <h3>Request Secured!</h3>
-                <p>Your enterprise request has been received. Our deployment team will contact you within 2 hours.</p>
-                <div className="gps-secure-badge mt-6" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#64748B', fontSize: '0.85rem', justifyContent: 'center', marginTop: '24px' }}><Lock size={14} /> Encrypted Transmission</div>
+                <h3>Application Submitted!</h3>
+                <p>Your GPS Tracker application for <span>{selectedPlan}</span> has been received. Our team will contact you shortly for installation.</p>
+                <div className="gps-secure-badge mt-6" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#64748B', fontSize: '0.85rem', justifyContent: 'center', marginTop: '24px' }}><Lock size={14} /> Application ID: TS-{Math.floor(Math.random() * 100000)}</div>
               </div>
             ) : (
               <>
                 <div className="gps-modal-header">
-                  <h3>Complete Configuration</h3>
-                  <p>Configure your <span>{selectedPlan}</span> deployment.</p>
+                  <h3>GPS Tracker Application</h3>
+                  <p>Apply for <span>{selectedPlan}</span> ({selectedPrice})</p>
                 </div>
                 
-                <form className="gps-modal-form" onSubmit={handleSubmit}>
-                  <div className="gps-form-grid">
-                    <div className="gps-form-group">
-                      <label>Full Name</label>
-                      <input type="text" placeholder="Enter your full name" required className="gps-premium-input" />
-                    </div>
-                    
-                    <div className="gps-form-group">
-                      <label>Company Name</label>
-                      <input type="text" placeholder="Enter company name" required className="gps-premium-input" />
-                    </div>
-                    
-                    <div className="gps-form-group">
-                      <label>Mobile Number</label>
-                      <input type="tel" placeholder="Enter 10-digit number" required pattern="[0-9]{10}" className="gps-premium-input" />
-                    </div>
- 
-                    <div className="gps-form-group">
-                      <label>Email Address</label>
-                      <input type="email" placeholder="Enter work email" required className="gps-premium-input" />
-                    </div>
- 
-                    <div className="gps-form-group">
-                      <label>Fleet Size</label>
-                      <select required defaultValue="" className="gps-premium-input">
-                        <option value="" disabled>Select vehicle count</option>
-                        <option value="1-5">1 - 5 Vehicles</option>
-                        <option value="6-20">6 - 20 Vehicles</option>
-                        <option value="21-50">21 - 50 Vehicles</option>
-                        <option value="50+">50+ Vehicles (Enterprise)</option>
-                      </select>
-                    </div>
- 
-                    <div className="gps-form-group">
-                      <label>Billing Cycle</label>
-                      <select required defaultValue="" className="gps-premium-input">
-                        <option value="" disabled>Select duration</option>
-                        <option value="monthly">Monthly Billing</option>
-                        <option value="yearly">Annual Billing (20% Off)</option>
-                      </select>
-                    </div>
-                  </div>
- 
-                  <div className="gps-payment-method-section" style={{ marginTop: '30px' }}>
-                    <label style={{ fontSize: '0.85rem', fontWeight: '600', color: 'var(--gps-text-secondary)', marginBottom: '12px', display: 'block' }}>Select Payment Method</label>
-                    <div className="gps-payment-options">
-                      <div className={`gps-payment-option ${paymentMethod === 'upi' ? 'active' : ''}`} onClick={() => setPaymentMethod('upi')}>
-                        <Smartphone size={20} /> UPI / QR
+                <form className="gps-modal-form" onSubmit={(e) => {
+                  if (formStep === 1) {
+                    e.preventDefault();
+                    setFormStep(2);
+                  } else {
+                    handleSubmit(e);
+                  }
+                }}>
+                  {formStep === 1 ? (
+                    <div className="gps-form-container">
+                      <div className="gps-form-section-title">Personal & Vehicle Details</div>
+                      <div className="gps-form-grid">
+                        <div className="gps-form-group">
+                          <label>Full Name <span className="mandatory">*</span></label>
+                          <input type="text" placeholder="Enter your full name" required className="gps-premium-input" />
+                        </div>
+                        <div className="gps-form-group">
+                          <label>Mobile Number <span className="mandatory">*</span></label>
+                          <input type="tel" placeholder="Enter 10-digit number" required pattern="[0-9]{10}" className="gps-premium-input" />
+                        </div>
+                        <div className="gps-form-group">
+                          <label>Email Address <span className="mandatory">*</span></label>
+                          <input type="email" placeholder="Enter email address" required className="gps-premium-input" />
+                        </div>
+                        <div className="gps-form-group">
+                          <label>Vehicle Number <span className="mandatory">*</span></label>
+                          <input type="text" placeholder="e.g. MH 12 AB 1234" required className="gps-premium-input" />
+                        </div>
+                        <div className="gps-form-group">
+                          <label>Vehicle Type</label>
+                          <select className="gps-premium-input">
+                            <option value="car">Car / SUV</option>
+                            <option value="truck">Truck / Commercial</option>
+                            <option value="bus">Bus / Coach</option>
+                            <option value="bike">Two-Wheeler</option>
+                          </select>
+                        </div>
+                        <div className="gps-form-group">
+                          <label>Pincode</label>
+                          <input type="text" placeholder="6-digit pincode" pattern="[0-9]{6}" className="gps-premium-input" />
+                        </div>
                       </div>
-                      <div className={`gps-payment-option ${paymentMethod === 'card' ? 'active' : ''}`} onClick={() => setPaymentMethod('card')}>
-                        <CreditCard size={20} /> Credit Card
+
+                      <div className="gps-form-section-title" style={{ marginTop: '30px' }}>Documentation (Mandatory)</div>
+                      <div className="gps-form-grid">
+                        <div className="gps-form-group">
+                          <label>RC Number <span className="mandatory">*</span></label>
+                          <input type="text" placeholder="Enter RC Number" required className="gps-premium-input" />
+                        </div>
+                        <div className="gps-form-group">
+                          <label>PAN Number <span className="mandatory">*</span></label>
+                          <input type="text" placeholder="Enter PAN Number" required pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" className="gps-premium-input" />
+                        </div>
+                        <div className="gps-form-group">
+                          <label>Aadhaar Number <span className="mandatory">*</span></label>
+                          <input type="text" placeholder="12-digit Aadhaar" required pattern="[0-9]{12}" className="gps-premium-input" />
+                        </div>
+                        <div className="gps-form-group">
+                          <label>Preferred Installation Date</label>
+                          <input type="date" className="gps-premium-input" />
+                        </div>
                       </div>
-                      <div className={`gps-payment-option ${paymentMethod === 'net' ? 'active' : ''}`} onClick={() => setPaymentMethod('net')}>
-                        <Landmark size={20} /> Net Banking
+
+                      <div className="gps-form-section-title" style={{ marginTop: '30px' }}>Upload Documents</div>
+                      <div className="gps-form-grid">
+                        <div className="gps-form-group">
+                          <label>Upload RC Document</label>
+                          <div className="gps-file-upload-wrapper">
+                            <input type="file" id="rc-upload" className="gps-file-input" />
+                            <label htmlFor="rc-upload" className="gps-file-label"><Upload size={18} /> Choose File</label>
+                          </div>
+                        </div>
+                        <div className="gps-form-group">
+                          <label>Upload ID Proof (Aadhaar/PAN)</label>
+                          <div className="gps-file-upload-wrapper">
+                            <input type="file" id="id-upload" className="gps-file-input" />
+                            <label htmlFor="id-upload" className="gps-file-label"><Upload size={18} /> Choose File</label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="gps-form-group" style={{ marginTop: '20px' }}>
+                        <label>Installation Address</label>
+                        <textarea rows={3} placeholder="Full address for installation" className="gps-premium-input"></textarea>
+                      </div>
+
+                      <div className="gps-form-group" style={{ marginTop: '20px' }}>
+                        <label>Notes / Remarks</label>
+                        <textarea rows={2} placeholder="Any specific requirements?" className="gps-premium-input"></textarea>
+                      </div>
+                      
+                      <button type="submit" className="gps-btn-glow-premium lg w-full" style={{ marginTop: '40px' }}>
+                        Next: Review & Payment <ArrowRight size={20} />
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="gps-checkout-container">
+                      <div className="gps-order-summary-card">
+                        <div className="gps-order-row">
+                          <span>Selected Plan</span>
+                          <span>{selectedPlan}</span>
+                        </div>
+                        <div className="gps-order-row">
+                          <span>Plan Duration</span>
+                          <span>1 Year Subscription</span>
+                        </div>
+                        <div className="gps-order-row">
+                          <span>Device Cost</span>
+                          <span>Included</span>
+                        </div>
+                        <div className="gps-order-total">
+                          <span>Final Amount</span>
+                          <span>{selectedPrice}</span>
+                        </div>
+                      </div>
+
+                      <div className="gps-payment-method-section" style={{ marginTop: '40px' }}>
+                        <label className="gps-section-subtitle-small">Select Payment Method</label>
+                        <div className="gps-payment-options">
+                          <div className={`gps-payment-option ${paymentMethod === 'upi' ? 'active' : ''}`} onClick={() => setPaymentMethod('upi')}>
+                            <Smartphone size={24} />
+                            <span>UPI / QR</span>
+                          </div>
+                          <div className={`gps-payment-option ${paymentMethod === 'card' ? 'active' : ''}`} onClick={() => setPaymentMethod('card')}>
+                            <CreditCard size={24} />
+                            <span>Credit Card</span>
+                          </div>
+                          <div className={`gps-payment-option ${paymentMethod === 'net' ? 'active' : ''}`} onClick={() => setPaymentMethod('net')}>
+                            <Landmark size={24} />
+                            <span>Net Banking</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="gps-checkout-actions" style={{ display: 'flex', gap: '15px', marginTop: '40px' }}>
+                        <button type="button" className="gps-btn-glow-secondary" onClick={() => setFormStep(1)} style={{ flex: '1' }}>
+                          Back
+                        </button>
+                        <button type="submit" disabled={isProcessing} className="gps-btn-glow-premium" style={{ flex: '2' }}>
+                          {isProcessing ? (
+                            <span className="flex items-center justify-center gap-3">
+                              <Loader2 className="animate-spin" size={20} /> Processing...
+                            </span>
+                          ) : (
+                            <span className="flex items-center justify-center gap-3">
+                              Pay & Apply Now <ShieldCheck size={20} />
+                            </span>
+                          )}
+                        </button>
+                      </div>
+
+                      <div className="gps-secure-checkout-footer" style={{ marginTop: '30px' }}>
+                        <div className="flex items-center gap-2 text-xs opacity-60">
+                          <Lock size={12} /> SSL Secured • PCI Compliant • Encrypted
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  
-                  <button type="submit" disabled={isProcessing} className="gps-btn-glow-premium lg w-full" style={{ width: '100%', marginTop: '30px', padding: "18px" }}>
-                    {isProcessing ? (
-                      <span className="flex items-center justify-center gap-3">
-                        <Loader2 className="animate-spin" size={20} />
-                        Establishing Secure Connection...
-                      </span>
-                    ) : (
-                      <span className="flex items-center justify-center gap-3">
-                        <Lock size={18} /> Proceed to Secure Checkout
-                      </span>
-                    )}
-                  </button>
-                  
-                  <div className="gps-secure-checkout-footer">
-                    <span>Secured by</span>
-                    <div className="gps-razorpay-placeholder">Razorpay</div>
-                    <span>• 256-bit SSL Encryption</span>
-                  </div>
+                  )}
                 </form>
               </>
             )}
