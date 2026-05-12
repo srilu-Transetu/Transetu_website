@@ -769,18 +769,176 @@
   gap: 30px;
 }
 
-.fastag-pricing-card-premium {
-  padding: 60px 45px;
-  border-radius: 28px;
+.fastag-pricing-single-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 40px 0;
+}
+
+.fastag-pricing-hero-wrapper {
+  background: rgba(18, 18, 21, 0.4);
+  backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 40px;
+  display: flex;
+  overflow: hidden;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+}
+
+.fastag-pricing-hero-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(46, 179, 232, 0.5), transparent);
+  z-index: 2;
+}
+
+.fastag-pricing-visual {
+  flex: 1;
+  background: radial-gradient(circle at center, rgba(46, 179, 232, 0.1) 0%, transparent 80%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--fastag-border);
+  justify-content: center;
+  padding: 60px;
   position: relative;
-  z-index: 1;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+}
+
+.fastag-pricing-visual::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--fastag-accent), transparent);
+  box-shadow: 0 0 15px var(--fastag-accent);
+  opacity: 0.3;
+  animation: scanVisual 4s linear infinite;
+}
+
+@keyframes scanVisual {
+  0% { transform: translateY(-100px); }
+  100% { transform: translateY(600px); }
+}
+
+.fastag-visual-tag-badge {
+  background: rgba(46, 179, 232, 0.1);
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: var(--fastag-accent);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  border: 1px solid rgba(46, 179, 232, 0.2);
+}
+
+.fastag-visual-main {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fastag-visual-icon-wrap {
+  position: relative;
+  z-index: 2;
+  color: var(--fastag-accent);
+  filter: drop-shadow(0 0 20px var(--fastag-accent-glow));
+}
+
+.fastag-visual-rings {
+  position: absolute;
+  inset: 0;
+  border: 2px dashed rgba(46, 179, 232, 0.2);
+  border-radius: 50%;
+  animation: spin 20s linear infinite;
+}
+
+.fastag-visual-rings-inner {
+  position: absolute;
+  inset: 20px;
+  border: 1px solid rgba(46, 179, 232, 0.1);
+  border-radius: 50%;
+  animation: spin 15s linear infinite reverse;
+}
+
+.fastag-pricing-info {
+  flex: 1.5;
+  padding: 80px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.fastag-info-header {
+  margin-bottom: 40px;
+}
+
+.fastag-info-header h3 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 5px;
+  letter-spacing: -2px;
+  background: linear-gradient(to right, #fff, var(--fastag-accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fastag-info-header .fastag-price {
+  font-size: 3.5rem;
+  margin: 15px 0;
+  color: #fff;
+}
+
+.fastag-info-features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.fastag-feature-item-v2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 16px 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.fastag-feature-item-v2:hover {
+  background: rgba(46, 179, 232, 0.05);
+  border-color: rgba(46, 179, 232, 0.2);
+  transform: translateX(5px);
+}
+
+.fastag-feature-item-v2 span {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--fastag-text-primary);
+}
+
+.fastag-feature-icon-box {
+  color: var(--fastag-accent);
+}
+
+.fastag-pricing-card-premium.single-card {
+  display: none; /* Hide old card */
 }
 
 .fastag-pricing-card-premium:hover {
@@ -962,11 +1120,24 @@
   font-size: 1rem;
   outline: none;
   transition: all 0.3s ease;
+  width: 100%;
+}
+
+.fastag-premium-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .fastag-premium-input:focus {
   border-color: var(--fastag-accent);
   background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 15px rgba(46, 179, 232, 0.2);
+}
+
+.fastag-form-group.optional label::after {
+  content: ' (Optional)';
+  font-size: 0.75rem;
+  color: #64748B;
+  font-weight: 400;
 }
 
 .fastag-payment-options {
@@ -1028,11 +1199,27 @@
 @media (max-width: 768px) {
   .fastag-title { font-size: 2.8rem; }
   .fastag-trust-metrics-grid { grid-template-columns: 1fr; }
-  .fastag-services-grid, .fastag-pricing-premium-grid, .fastag-process-nodes { grid-template-columns: 1fr; }
-  .fastag-pricing-card-premium.highlighted {
-    transform: scale(1);
-    animation: none;
-    margin: 20px 0;
+  .fastag-services-grid, .fastag-process-nodes { grid-template-columns: 1fr; }
+  .fastag-pricing-hero-wrapper {
+    flex-direction: column;
+    border-radius: 24px;
+  }
+  .fastag-pricing-visual {
+    padding: 40px 20px;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  .fastag-pricing-info {
+    padding: 40px 20px;
+  }
+  .fastag-info-features-grid {
+    grid-template-columns: 1fr;
+  }
+  .fastag-info-header h3 {
+    font-size: 1.8rem;
+  }
+  .fastag-info-header .fastag-price {
+    font-size: 2.5rem;
   }
   .fastag-form-grid { grid-template-columns: 1fr; }
   .fastag-payment-options { grid-template-columns: 1fr; }

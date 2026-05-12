@@ -20,19 +20,44 @@ export default function FastagDetail() {
   const [selectedPlan, setSelectedPlan] = useState("");
   const [isProcessing, setIsProcessing] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [vehicleNumber, setVehicleNumber] = useState("");
-  const [vehicleNumberError, setVehicleNumberError] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("upi");
+  
+  // Form State
+  const [formData, setFormData] = useState({
+    fullName: "",
+    mobile: "",
+    email: "",
+    vehicleNumber: "",
+    rcNumber: "",
+    panNumber: "",
+    aadhaarNumber: "",
+    rechargeAmount: "100",
+  });
 
-  const handleVehicleNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const val = e.target.value.toUpperCase().replace(/[^A-Z0-9 ]/g, "");
-    setVehicleNumber(val);
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
     
-    const vehicleRegex = /^[A-Z]{2}\s?[0-9]{1,2}\s?[A-Z]{1,3}\s?[0-9]{4}$/;
-    if (val && !vehicleRegex.test(val)) {
-      setVehicleNumberError("Invalid format (e.g. MH 12 AB 1234)");
-    } else {
-      setVehicleNumberError("");
+    // Clear error when user types
+    if (errors[name]) {
+      setErrors(prev => {
+        const newErrors = { ...prev };
+        delete newErrors[name];
+        return newErrors;
+      });
+    }
+
+    // Special validation for vehicle number
+    if (name === "vehicleNumber") {
+      const val = value.toUpperCase().replace(/[^A-Z0-9 ]/g, "");
+      setFormData(prev => ({ ...prev, vehicleNumber: val }));
+      
+      const vehicleRegex = /^[A-Z]{2}\s?[0-9]{1,2}\s?[A-Z]{1,3}\s?[0-9]{4}$/;
+      if (val && !vehicleRegex.test(val)) {
+        setErrors(prev => ({ ...prev, vehicleNumber: "Invalid format (e.g. MH 12 AB 1234)" }));
+      }
     }
   };
 
@@ -41,8 +66,17 @@ export default function FastagDetail() {
     setShowPaymentForm(true);
     setIsProcessing(false);
     setIsSuccess(false);
-    setVehicleNumber("");
-    setVehicleNumberError("");
+    setFormData({
+      fullName: "",
+      mobile: "",
+      email: "",
+      vehicleNumber: "",
+      rcNumber: "",
+      panNumber: "",
+      aadhaarNumber: "",
+      rechargeAmount: "100",
+    });
+    setErrors({});
   };
 
   const mainServices = [
@@ -67,7 +101,18 @@ export default function FastagDetail() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (vehicleNumberError) return;
+    
+    // Final Validation
+    const newErrors: Record<string, string> = {};
+    if (!formData.rcNumber) newErrors.rcNumber = "RC Number is required";
+    if (!formData.panNumber) newErrors.panNumber = "PAN Number is required";
+    if (!formData.vehicleNumber) newErrors.vehicleNumber = "Vehicle Number is required";
+    
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
     setIsProcessing(true);
     setTimeout(() => {
       setIsProcessing(false);
@@ -317,7 +362,7 @@ export default function FastagDetail() {
         </div>
       </section>
 
-      {/* 6. Pricing Section - Fixed alignment */}
+      {/* 6. Pricing Section - Updated to single centered card */}
       <section id="pricing" className="fastag-section bg-gradient-blue relative">
         <div className="fastag-container">
           <motion.div 
@@ -328,61 +373,59 @@ export default function FastagDetail() {
             <p className="fastag-section-desc max-w-2xl mx-auto text-center">Transparent pricing structures for every mobility scale.</p>
           </motion.div>
           
-          <motion.div 
-            className="fastag-pricing-premium-grid"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-          >
-            <motion.div className="fastag-glass-panel fastag-pricing-card-premium" variants={fadeInUp}>
-              <div className="fastag-pricing-header">
-                <h3>Individual Mobility</h3>
-                <div className="fastag-price">₹499<span>/one-time</span></div>
-                <p className="fastag-pricing-sub">Optimized for private transit vehicles.</p>
+          <div className="fastag-pricing-single-container">
+            <motion.div 
+              className="fastag-pricing-hero-wrapper"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={fadeInUp}
+            >
+              <div className="fastag-pricing-visual">
+                <div className="fastag-visual-tag-badge">Certified Tech</div>
+                <div className="fastag-visual-main">
+                  <div className="fastag-visual-rings"></div>
+                  <div className="fastag-visual-rings-inner"></div>
+                  <div className="fastag-visual-icon-wrap">
+                    <Car size={80} strokeWidth={1.5} />
+                  </div>
+                </div>
+                <div className="fastag-cta-trust mt-8">
+                  <div className="fastag-trust-item"><CheckCircle2 size={16} className="text-accent" /> Active RFID</div>
+                  <div className="fastag-trust-item"><CheckCircle2 size={16} className="text-accent" /> Secure Chip</div>
+                </div>
               </div>
-              <ul className="fastag-pricing-features">
-                <li><Check size={18} className="text-accent" /> Priority Fulfillment</li>
-                <li><Check size={18} className="text-accent" /> ₹200 Security Deposit</li>
-                <li><Check size={18} className="text-accent" /> ₹100 Wallet Balance</li>
-                <li><Check size={18} className="text-accent" /> Cloud Dashboard Access</li>
-              </ul>
-              <button className="fastag-btn-pricing fastag-btn-outline" onClick={() => handleProceedPayment("Personal Vehicle Tag")}>Apply Now</button>
-            </motion.div>
-            
-            <motion.div className="fastag-glass-panel fastag-pricing-card-premium highlighted" variants={fadeInUp}>
-              <div className="fastag-popular-badge-animated">MOST POPULAR</div>
-              <div className="fastag-pricing-header">
-                <h3>Gateway Replenishment</h3>
-                <div className="fastag-price">₹0<span>/fee</span></div>
-                <p className="fastag-pricing-sub fastag-text-highlight">High-velocity transit with zero friction.</p>
+
+              <div className="fastag-pricing-info">
+                <div className="fastag-info-header">
+                  <span className="fastag-tech-label">DEPLOYMENT PLAN</span>
+                  <h3>Individual Mobility</h3>
+                  <div className="fastag-price">₹500<span>/one-time</span></div>
+                  <p className="fastag-pricing-sub">Enterprise-grade FASTag infrastructure optimized for private transit vehicles.</p>
+                </div>
+
+                <div className="fastag-info-features-grid">
+                  {[
+                    { label: "Priority Fulfillment", icon: <Zap size={18} /> },
+                    { label: "₹200 Security Deposit", icon: <Shield size={18} /> },
+                    { label: "₹100 Wallet Balance", icon: <Wallet size={18} /> },
+                    { label: "Cloud Dashboard Access", icon: <Globe size={18} /> },
+                    { label: "Real-time Tracking", icon: <Activity size={18} /> },
+                    { label: "24/7 Premium Support", icon: <Users size={18} /> }
+                  ].map((feature, idx) => (
+                    <div key={idx} className="fastag-feature-item-v2">
+                      <div className="fastag-feature-icon-box">{feature.icon}</div>
+                      <span>{feature.label}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <button className="fastag-btn-glow-premium lg w-full" onClick={() => handleProceedPayment("Individual Mobility")}>
+                  <span className="flex items-center justify-center gap-3">Apply for FASTag Now <ArrowRight size={20} /></span>
+                </button>
               </div>
-              <ul className="fastag-pricing-features">
-                <li><Check size={18} className="text-accent" /> Zero-Latency Replenishment</li>
-                <li><Check size={18} className="text-accent" /> Real-Time Transit Alerts</li>
-                <li><Check size={18} className="text-accent" /> Automated Low-Balance Triggers</li>
-                <li><Check size={18} className="text-accent" /> Auto-recharge Protocols</li>
-                <li><Check size={18} className="text-accent" /> 24/7 Priority Support</li>
-              </ul>
-              <button className="fastag-btn-pricing fastag-btn-primary" onClick={() => handleProceedPayment("FASTag Recharge")}>Recharge Now</button>
             </motion.div>
-            
-            <motion.div className="fastag-glass-panel fastag-pricing-card-premium" variants={fadeInUp}>
-              <div className="fastag-pricing-header">
-                <h3>Enterprise Logistics</h3>
-                <div className="fastag-price">Custom</div>
-                <p className="fastag-pricing-sub">Scalable solutions for fleet operators.</p>
-              </div>
-              <ul className="fastag-pricing-features">
-                <li><Check size={18} className="text-accent" /> Accelerated Provisioning</li>
-                <li><Check size={18} className="text-accent" /> Bulk Asset Management</li>
-                <li><Check size={18} className="text-accent" /> Enterprise Compliance Reporting</li>
-                <li><Check size={18} className="text-accent" /> Dedicated Solutions Architect</li>
-                <li><Check size={18} className="text-accent" /> API Transit Integration</li>
-              </ul>
-              <button className="fastag-btn-pricing fastag-btn-outline" onClick={() => handleProceedPayment("Corporate Solutions")}>Contact Sales</button>
-            </motion.div>
-          </motion.div>
+          </div>
         </div>
       </section>
       {/* 7. Final CTA Section - Updated with Background Image */}
@@ -452,63 +495,133 @@ export default function FastagDetail() {
                 <form className="fastag-modal-form" onSubmit={handleSubmit}>
                   <div className="fastag-form-grid">
                     <div className="fastag-form-group">
-                      <label>Registrant Name</label>
-                      <input type="text" placeholder="Legal full name" required className="fastag-premium-input" />
-                    </div>
-                    
-                    <div className="fastag-form-group">
-                      <label>Contact Number</label>
-                      <input type="tel" placeholder="10-digit mobile number" required pattern="[0-9]{10}" className="fastag-premium-input" />
-                    </div>
-                    
-                    {!selectedPlan.includes("Recharge") && (
-                      <div className="fastag-form-group">
-                        <label>Vehicle Type</label>
-                        <select required defaultValue="" className="fastag-premium-input">
-                          <option value="" disabled>Select vehicle type</option>
-                          <option value="car">Car / Jeep / Van</option>
-                          <option value="lcv">Light Commercial Vehicle</option>
-                          <option value="bus">Bus / Truck</option>
-                        </select>
-                      </div>
-                    )}
- 
-                    <div className="fastag-form-group">
-                      <label>Registration Number</label>
+                      <label>Full Name *</label>
                       <input 
                         type="text" 
+                        name="fullName"
+                        placeholder="Legal full name" 
+                        required 
+                        value={formData.fullName}
+                        onChange={handleInputChange}
+                        className="fastag-premium-input" 
+                      />
+                    </div>
+                    
+                    <div className="fastag-form-group">
+                      <label>Mobile Number *</label>
+                      <input 
+                        type="tel" 
+                        name="mobile"
+                        placeholder="10-digit mobile number" 
+                        required 
+                        pattern="[0-9]{10}" 
+                        value={formData.mobile}
+                        onChange={handleInputChange}
+                        className="fastag-premium-input" 
+                      />
+                    </div>
+
+                    <div className="fastag-form-group">
+                      <label>Email Address *</label>
+                      <input 
+                        type="email" 
+                        name="email"
+                        placeholder="your@email.com" 
+                        required 
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        className="fastag-premium-input" 
+                      />
+                    </div>
+                    
+                    <div className="fastag-form-group">
+                      <label>Vehicle Number *</label>
+                      <input 
+                        type="text" 
+                        name="vehicleNumber"
                         placeholder="e.g. MH 12 AB 1234" 
                         required 
-                        value={vehicleNumber}
-                        onChange={handleVehicleNumberChange}
+                        value={formData.vehicleNumber}
+                        onChange={handleInputChange}
                         className="fastag-premium-input"
-                        style={{ borderColor: vehicleNumberError ? "#EF4444" : "" }}
+                        style={{ borderColor: errors.vehicleNumber ? "#EF4444" : "" }}
                       />
-                      {vehicleNumberError && (
-                        <span style={{ color: "#EF4444", fontSize: "0.75rem" }}>{vehicleNumberError}</span>
+                      {errors.vehicleNumber && (
+                        <span style={{ color: "#EF4444", fontSize: "0.75rem" }}>{errors.vehicleNumber}</span>
                       )}
                     </div>
- 
-                    {selectedPlan.includes("Recharge") && (
-                      <div className="fastag-form-group" style={{ gridColumn: 'span 2' }}>
-                        <label>Recharge Amount (₹)</label>
-                        <input type="number" placeholder="Enter amount (Min ₹100)" min="100" required className="fastag-premium-input" />
-                      </div>
-                    )}
- 
-                    {!selectedPlan.includes("Recharge") && (
-                      <div className="fastag-form-group" style={{ gridColumn: 'span 2' }}>
-                        <label>Documentation Upload</label>
-                        <div style={{ position: 'relative' }}>
-                          <input type="file" required accept=".jpg,.jpeg,.png,.pdf" className="fastag-premium-input" style={{ width: '100%', cursor: 'pointer', opacity: 0, position: 'absolute', inset: 0, zIndex: 10 }} />
-                          <div className="fastag-premium-input" style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#64748B' }}>
-                            <Upload size={18} /> Select RC document (PDF/JPG)
-                          </div>
+
+                    <div className="fastag-form-group">
+                      <label>RC Number *</label>
+                      <input 
+                        type="text" 
+                        name="rcNumber"
+                        placeholder="Registration Certificate No." 
+                        required 
+                        value={formData.rcNumber}
+                        onChange={handleInputChange}
+                        className="fastag-premium-input"
+                        style={{ borderColor: errors.rcNumber ? "#EF4444" : "" }}
+                      />
+                      {errors.rcNumber && (
+                        <span style={{ color: "#EF4444", fontSize: "0.75rem" }}>{errors.rcNumber}</span>
+                      )}
+                    </div>
+
+                    <div className="fastag-form-group">
+                      <label>PAN Number *</label>
+                      <input 
+                        type="text" 
+                        name="panNumber"
+                        placeholder="ABCDE1234F" 
+                        required 
+                        value={formData.panNumber}
+                        onChange={handleInputChange}
+                        className="fastag-premium-input"
+                        style={{ borderColor: errors.panNumber ? "#EF4444" : "" }}
+                      />
+                      {errors.panNumber && (
+                        <span style={{ color: "#EF4444", fontSize: "0.75rem" }}>{errors.panNumber}</span>
+                      )}
+                    </div>
+
+                    <div className="fastag-form-group optional">
+                      <label>Aadhaar Number</label>
+                      <input 
+                        type="text" 
+                        name="aadhaarNumber"
+                        placeholder="12-digit Aadhaar" 
+                        value={formData.aadhaarNumber}
+                        onChange={handleInputChange}
+                        className="fastag-premium-input" 
+                      />
+                    </div>
+
+                    <div className="fastag-form-group">
+                      <label>Recharge Amount (₹) *</label>
+                      <input 
+                        type="number" 
+                        name="rechargeAmount"
+                        placeholder="Min ₹100" 
+                        min="100" 
+                        required 
+                        value={formData.rechargeAmount}
+                        onChange={handleInputChange}
+                        className="fastag-premium-input" 
+                      />
+                    </div>
+
+                    <div className="fastag-form-group" style={{ gridColumn: 'span 2' }}>
+                      <label>Upload RC Document *</label>
+                      <div style={{ position: 'relative' }}>
+                        <input type="file" required accept=".jpg,.jpeg,.png,.pdf" className="fastag-premium-input" style={{ width: '100%', cursor: 'pointer', opacity: 0, position: 'absolute', inset: 0, zIndex: 10 }} />
+                        <div className="fastag-premium-input" style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#64748B' }}>
+                          <Upload size={18} /> Select RC document (PDF/JPG)
                         </div>
                       </div>
-                    )}
+                    </div>
                   </div>
- 
+
                   <div className="fastag-payment-method-section" style={{ marginTop: '30px' }}>
                     <label style={{ fontSize: '0.85rem', fontWeight: '600', color: 'var(--fastag-text-secondary)', marginBottom: '12px', display: 'block' }}>Select Payment Method</label>
                     <div className="fastag-payment-options">
@@ -524,7 +637,7 @@ export default function FastagDetail() {
                     </div>
                   </div>
                   
-                  <button type="submit" disabled={isProcessing || !!vehicleNumberError} className="fastag-btn-glow-premium lg w-full" style={{ width: '100%', marginTop: '30px', padding: "18px" }}>
+                  <button type="submit" disabled={isProcessing || Object.keys(errors).length > 0} className="fastag-btn-glow-premium lg w-full" style={{ width: '100%', marginTop: '30px', padding: "18px" }}>
                     {isProcessing ? (
                       <span className="flex items-center justify-center gap-3">
                         <Loader2 className="animate-spin" size={20} />

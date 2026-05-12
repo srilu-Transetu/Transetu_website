@@ -26,17 +26,17 @@ export default function Products() {
       tagline: "Real-time vehicle tracking for safety, security and better control.",
       features: [
         "Live Tracking",
-        "Geo-Fencing",
-        "History Reports"
+        "History Reports",
+        "AIS - 140 GPS Tracker"
       ],
-      price: "₹2,999",
+      price: "₹10,500",
       image: "/products/gps-tracker.png",
       bestSeller: false,
       href: "/product/gps-tracker",
       buttonText: "View Details"
     },
     {
-      name: "RFID Holders",
+      name: "FASTag Holder",
       tagline: "Durable and stylish holders to protect your FASTag while driving.",
       features: [
         "Premium Quality",
