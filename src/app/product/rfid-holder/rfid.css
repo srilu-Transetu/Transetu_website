@@ -1171,13 +1171,65 @@
   color: var(--rfid-accent);
 }
 
-@media (max-width: 992px) {
+/* Purchase Section Responsiveness */
+@media (max-width: 1024px) {
   .rfid-showcase-v3 {
     grid-template-columns: 1fr;
     gap: 50px;
   }
   .rfid-section-title-v3 {
+    font-size: 3rem;
+    text-align: center;
+  }
+  .rfid-product-visual-box {
+    padding: 40px 30px;
+  }
+  .rfid-showcase-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .rfid-header-v3 {
+    align-items: center;
+  }
+  .rfid-pricing-tag-v3 {
+    text-align: center;
+  }
+  .rfid-p-summary-v3 {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .rfid-p-benefits-v3 {
+    justify-items: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .rfid-section-title-v3 {
+    font-size: 2.2rem;
+  }
+  .rfid-p-name-v3 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  .rfid-p-tag-val {
     font-size: 2.8rem;
+    justify-content: center;
+  }
+  .rfid-interaction-box-v3 {
+    padding: 25px;
+    width: 100%;
+  }
+  .rfid-p-benefits-v3 {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    text-align: left;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -1185,23 +1237,20 @@
   .rfid-p-tag-val {
     font-size: 2.5rem;
   }
-  .rfid-p-benefits-v3 {
-    grid-template-columns: 1fr;
-  }
   .rfid-header-v3 {
-    flex-direction: column;
-    gap: 20px;
-    align-items: flex-start;
-  }
-  .rfid-pricing-tag-v3 {
-    text-align: left;
+    align-items: center;
   }
   .rfid-visual-stats-v3 {
     grid-template-columns: 1fr;
   }
   .rfid-security-badges-v3 {
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
+  }
+  .rfid-q-wrap-v3 {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
   }
 }
 
@@ -1344,62 +1393,182 @@
   0% { transform: scale(1); opacity: 0.2; }
   100% { transform: scale(2); opacity: 0; }
 }
-/* --- Technical Specifications --- */
-.rfid-specs-grid {
+/* --- Technical Specifications V2 --- */
+.rfid-specs-container-v2 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-  margin-top: 40px;
+  grid-template-columns: 1.2fr 2fr;
+  gap: 60px;
+  align-items: center;
+  margin-top: 50px;
 }
 
-.rfid-spec-card {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--rfid-border);
+.rfid-specs-visual-aside {
+  position: relative;
+}
+
+.rfid-specs-blueprint {
+  position: relative;
+  background: rgba(46, 179, 232, 0.03);
+  border-radius: 30px;
+  padding: 40px;
+  border: 1px solid rgba(46, 179, 232, 0.1);
+  overflow: visible;
+}
+
+.rfid-blueprint-image {
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 20px 50px rgba(0,0,0,0.5));
+}
+
+.rfid-blueprint-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.rfid-blueprint-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(46, 179, 232, 0.1) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.rfid-blueprint-annotations {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.rfid-annotation {
+  position: absolute;
+  padding: 8px 16px;
+  background: rgba(11, 23, 42, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--rfid-accent);
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--rfid-accent);
+  white-space: nowrap;
+  z-index: 3;
+}
+
+.rfid-annotation::before {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 1px;
+  background: var(--rfid-accent);
+}
+
+.rfid-a1 { top: 15%; right: -20px; }
+.rfid-a1::before { right: 100%; top: 50%; width: 60px; transform: rotate(-15deg); transform-origin: right; }
+
+.rfid-a2 { bottom: 25%; left: -30px; }
+.rfid-a2::before { left: 100%; top: 50%; width: 50px; transform: rotate(10deg); transform-origin: left; }
+
+.rfid-a3 { bottom: 10%; right: 10px; }
+.rfid-a3::before { right: 100%; bottom: 100%; width: 40px; transform: rotate(45deg); transform-origin: right; }
+
+.rfid-specs-grid-v2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.rfid-spec-card-v2 {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   padding: 24px;
   border-radius: 20px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.rfid-spec-card:hover {
-  background: rgba(46, 179, 232, 0.05);
+.rfid-spec-card-v2:hover {
+  background: rgba(255, 255, 255, 0.05);
   border-color: var(--rfid-accent);
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transform: translateX(10px);
 }
 
-.rfid-spec-icon {
-  width: 48px;
-  height: 48px;
+.rfid-spec-header-v2 {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.rfid-spec-icon-v2 {
+  width: 44px;
+  height: 44px;
   background: rgba(46, 179, 232, 0.1);
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--rfid-accent);
-  flex-shrink: 0;
 }
 
-.rfid-spec-info {
+.rfid-spec-titles-v2 {
   display: flex;
   flex-direction: column;
 }
 
-.rfid-spec-label {
-  font-size: 0.8rem;
+.rfid-spec-label-v2 {
+  font-size: 0.7rem;
   color: var(--rfid-text-secondary);
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-.rfid-spec-value {
+.rfid-spec-value-v2 {
   font-size: 1.1rem;
-  font-weight: 700;
   color: #fff;
+  font-weight: 700;
+}
+
+.rfid-spec-desc-v2 {
+  font-size: 0.85rem;
+  color: var(--rfid-text-secondary);
+  line-height: 1.5;
+}
+
+.rfid-spec-glow-v2 {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(46, 179, 232, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.rfid-spec-card-v2:hover .rfid-spec-glow-v2 {
+  opacity: 1;
+}
+
+@media (max-width: 1200px) {
+  .rfid-specs-container-v2 {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .rfid-specs-visual-aside {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .rfid-specs-grid-v2 {
+    grid-template-columns: 1fr;
+  }
+  .rfid-annotation {
+    display: none;
+  }
 }
 
 /* --- Vehicle Compatibility --- */
@@ -1460,30 +1629,116 @@
 }
 
 
+@media (max-width: 1024px) {
+  .rfid-section {
+    padding: 100px 20px;
+  }
+
+  .rfid-trust-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .rfid-trust-brand-side {
+    align-items: center;
+  }
+
+  .rfid-trust-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rfid-partner-marquee-container {
+    grid-column: span 2;
+    justify-content: center;
+  }
+
+  .rfid-benefit-image-container {
+    height: auto;
+    min-height: 700px;
+  }
+
+  .rfid-benefit-content-overlay {
+    bottom: 40px;
+    left: 40px;
+    right: 40px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .rfid-title { font-size: 2.8rem; }
-  .rfid-trust-metrics-grid { grid-template-columns: 1fr; }
-  .rfid-services-grid, .rfid-process-nodes, .rfid-specs-grid, .rfid-compatibility-grid { grid-template-columns: 1fr; }
+  .rfid-section { padding: 80px 20px; }
+  
+  .rfid-section-title {
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+  }
+
+  .rfid-section-desc {
+    font-size: 1rem;
+    margin-bottom: 40px;
+  }
+  
+  .rfid-trust-main-heading {
+    font-size: 1.6rem;
+  }
+
+  .rfid-trust-metrics-grid { 
+    grid-template-columns: 1fr; 
+  }
+  
+  .rfid-services-grid, .rfid-process-nodes, .rfid-specs-grid, .rfid-compatibility-grid { 
+    grid-template-columns: 1fr; 
+  }
+  
   .rfid-form-grid { grid-template-columns: 1fr; }
   .rfid-payment-options { grid-template-columns: 1fr; }
   .rfid-cta-heading { font-size: 2.5rem; }
   .rfid-payment-modal-premium { padding: 40px 20px; }
-  .rfid-benefits-layout { 
-    grid-template-columns: 1fr; 
-    gap: 40px;
+  
+  .rfid-benefit-image-container {
+    height: auto;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
   }
+
+  .rfid-benefit-image-wrapper {
+    position: relative;
+    height: 300px;
+    width: 100%;
+  }
+
+  .rfid-benefit-content-overlay {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px 20px;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    background: var(--rfid-bg);
+  }
+
   .rfid-tech-info-card {
     padding: 30px 20px;
   }
-  .rfid-benefit-image-wrapper {
-    max-width: 100%;
-    margin: 0 auto;
-  }
+  
   .rfid-service-card-premium {
     padding: 35px 25px;
   }
+  
   .rfid-process-card-modern {
     padding: 40px 25px;
+  }
+
+  .rfid-partner-marquee-container {
+    grid-column: span 1;
+    gap: 40px;
+    margin-top: 30px;
+    padding-top: 30px;
+    justify-content: center;
   }
 }
 

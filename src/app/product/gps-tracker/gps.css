@@ -232,6 +232,16 @@
   flex-wrap: wrap;
 }
 
+@media (max-width: 480px) {
+  .gps-hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  .gps-btn-glow-premium, .gps-btn-glow-secondary {
+    width: 100%;
+  }
+}
+
 .gps-btn-glow-premium {
   background: linear-gradient(135deg, var(--gps-accent) 0%, #0369a1 100%);
   color: #fff;
@@ -321,7 +331,7 @@
 /* 2. Why Choose Us Grid */
 .gps-why-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
 }
 
@@ -1158,6 +1168,22 @@
   .gps-pricing-premium-grid { grid-template-columns: 1fr; max-width: 450px; }
   .gps-pricing-card-premium.highlighted { transform: scale(1); margin: 30px 0; }
   .gps-pricing-card-premium.highlighted:hover { transform: translateY(-5px); }
+  .gps-section { padding: 80px 20px; }
+}
+
+@media (max-width: 768px) {
+  .gps-section-title { font-size: 2.5rem; letter-spacing: -1px; }
+  .gps-title { font-size: 2.8rem; }
+  .gps-hero { padding: 120px 20px 60px; }
+  .gps-why-grid, .gps-features-grid, .gps-industries-grid, .gps-process-nodes, .gps-pricing-premium-grid { grid-template-columns: 1fr; }
+  .gps-command-map-wrapper { height: 350px; }
+  .gps-mobile-content { padding-right: 0; text-align: center; }
+  .gps-mobile-features li { text-align: left; }
+  .gps-smartphone-mockup { width: 280px; height: 570px; }
+  .gps-payment-modal-premium { padding: 0; border-radius: 20px; }
+  .gps-modal-header { padding: 30px 20px; }
+  .gps-modal-form { padding: 20px; }
+  .gps-cta-premium-banner { padding: 80px 20px; border-radius: 20px; }
 }
 
 

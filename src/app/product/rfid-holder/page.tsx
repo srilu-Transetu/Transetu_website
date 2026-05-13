@@ -286,31 +286,49 @@ export default function FASTagHolderPage() {
             <p className="rfid-section-desc max-w-2xl mx-auto text-center">Built for performance, designed for longevity.</p>
           </motion.div>
 
-          <div className="rfid-specs-grid">
-            {[
-              { label: "Material", value: "ABS Polymer", icon: <Shield size={20} /> },
-              { label: "Mounting", value: "3M Adhesive", icon: <Zap size={20} /> },
-              { label: "Compatibility", value: "All FASTag Types", icon: <Check size={20} /> },
-              { label: "Heat Resistance", value: "Up to 85°C", icon: <Sun size={20} /> },
-              { label: "Waterproof", value: "Yes", icon: <Activity size={20} /> },
-              { label: "Installation", value: "Self Installation", icon: <Settings size={20} /> },
-              { label: "Vehicle Support", value: "Cars, SUVs, Trucks", icon: <Car size={20} /> },
-              { label: "Finish", value: "Premium UV Coat", icon: <Package size={20} /> }
-            ].map((spec, i) => (
-              <motion.div 
-                key={i} 
-                className="rfid-spec-card"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.05 }}
-              >
-                <div className="rfid-spec-icon">{spec.icon}</div>
-                <div className="rfid-spec-info">
-                  <span className="rfid-spec-label">{spec.label}</span>
-                  <span className="rfid-spec-value">{spec.value}</span>
+          <div className="rfid-specs-container-v2">
+            <div className="rfid-specs-visual-aside">
+              <div className="rfid-specs-blueprint">
+                <div className="rfid-blueprint-image">
+                  <Image src="/assets/Fastag_image.png" alt="Hardware Blueprint" width={400} height={400} className="rfid-blueprint-img" />
+                  <div className="rfid-blueprint-overlay"></div>
                 </div>
-              </motion.div>
-            ))}
+                <div className="rfid-blueprint-annotations">
+                  <div className="rfid-annotation rfid-a1"><span>UV Protection Layer</span></div>
+                  <div className="rfid-annotation rfid-a2"><span>ABS Polymer Frame</span></div>
+                  <div className="rfid-annotation rfid-a3"><span>3M Industrial Grip</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div className="rfid-specs-grid-v2">
+              {[
+                { label: "Material Composition", value: "High-Density ABS Polymer", desc: "Industrial-grade thermoplastic built for extreme durability.", icon: <Shield size={22} /> },
+                { label: "Thermal Stability", value: "Up to 85°C / 185°F", desc: "Engineered to maintain integrity under direct summer solar radiation.", icon: <Sun size={22} /> },
+                { label: "Adhesive Protocol", value: "Genuine 3M VHB", desc: "High-bond acrylic foam tape for vibration-resistant mounting.", icon: <Zap size={22} /> },
+                { label: "Signal Transparency", value: "100% RF Pass-through", desc: "Zero interference with passive RFID transmission frequencies.", icon: <Activity size={22} /> },
+                { label: "Mounting Profile", value: "Low-Profile Slimfit", desc: "Minimal footprint for zero obstruction of driver visibility.", icon: <MousePointerClick size={22} /> },
+                { label: "Finish Quality", value: "Matte UV-Inhibitor", desc: "Resists discoloration and brittleness from long-term UV exposure.", icon: <Package size={22} /> }
+              ].map((spec, i) => (
+                <motion.div 
+                  key={i} 
+                  className="rfid-spec-card-v2"
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                >
+                  <div className="rfid-spec-header-v2">
+                    <div className="rfid-spec-icon-v2">{spec.icon}</div>
+                    <div className="rfid-spec-titles-v2">
+                      <span className="rfid-spec-label-v2">{spec.label}</span>
+                      <h4 className="rfid-spec-value-v2">{spec.value}</h4>
+                    </div>
+                  </div>
+                  <p className="rfid-spec-desc-v2">{spec.desc}</p>
+                  <div className="rfid-spec-glow-v2"></div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

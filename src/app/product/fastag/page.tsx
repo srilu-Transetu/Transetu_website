@@ -182,7 +182,7 @@ export default function FastagDetail() {
           <div className="fastag-trust-content">
             <div className="fastag-trust-brand-side">
               <span className="fastag-trust-label">Certified NETC Partner</span>
-              <h3 className="fastag-trust-main-heading">The Infrastructure Choice<br />for Modern Transit</h3>
+              <h3 className="fastag-trust-main-heading">The Infrastructure Choice <br className="fastag-br-desktop" /> for Modern Transit</h3>
             </div>
             
             <div className="fastag-trust-metrics-grid">
