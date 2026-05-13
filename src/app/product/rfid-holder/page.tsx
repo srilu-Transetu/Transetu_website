@@ -9,59 +9,60 @@ import {
   ArrowRight, ArrowLeft, Wallet, QrCode, X, MousePointerClick, 
   ShieldCheck, Upload, Loader2, CheckCircle2, Landmark, 
   ChevronRight, Building2, Server, Users, Activity, Lock, 
-  Sun, Settings, Package, ShoppingCart, Eye, Truck
+  Sun, Settings, Package, ShoppingCart, Eye, Truck,
+  Plus, Minus, MessageSquare
 } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import "./rfid.css";
 import Link from "next/link";
 
-export default function RFIDHolderPage() {
+export default function FASTagHolderPage() {
   const [showPaymentForm, setShowPaymentForm] = useState(false);
-  const [selectedPlan, setSelectedPlan] = useState("");
+  const [selectedPlan, setSelectedPlan] = useState("FASTag Holder");
   const [isProcessing, setIsProcessing] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [vehicleNumber, setVehicleNumber] = useState("");
-  const [vehicleNumberError, setVehicleNumberError] = useState("");
+  const [quantity, setQuantity] = useState(1);
   const [paymentMethod, setPaymentMethod] = useState("upi");
 
-  const handleVehicleNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const val = e.target.value.toUpperCase().replace(/[^A-Z0-9 ]/g, "");
-    setVehicleNumber(val);
-    
-    const vehicleRegex = /^[A-Z]{2}\s?[0-9]{1,2}\s?[A-Z]{1,3}\s?[0-9]{4}$/;
-    if (val && !vehicleRegex.test(val)) {
-      setVehicleNumberError("Invalid format (e.g. MH 12 AB 1234)");
-    } else {
-      setVehicleNumberError("");
-    }
-  };
+  // Form Fields
+  const [fullName, setFullName] = useState("");
+  const [mobileNumber, setMobileNumber] = useState("");
+  const [email, setEmail] = useState("");
+  const [address, setAddress] = useState("");
+  const [pincode, setPincode] = useState("");
+  const [notes, setNotes] = useState("");
 
-  const handleProceedPayment = (planName: string) => {
-    setSelectedPlan(planName);
+  const handleProceedPayment = () => {
+    setSelectedPlan("FASTag Holder");
     setShowPaymentForm(true);
     setIsProcessing(false);
     setIsSuccess(false);
-    setVehicleNumber("");
-    setVehicleNumberError("");
   };
 
   const mainServices = [
-    { icon: <Shield size={32} />, title: "Matte Black Edition", desc: "Premium matte finish with zero light reflection. Engineered for executive vehicles." },
-    { icon: <Eye size={32} />, title: "Crystal Clear Edition", desc: "Transparent high-density polymer for a minimalist, factory-integrated look." },
-    { icon: <Truck size={32} />, title: "Titanium Silver", desc: "Reinforced edges with metallic aesthetic coating for heavy-duty performance." },
+    { icon: <Shield size={32} />, title: "Matte Black Edition", desc: "Glare-free premium finish for modern vehicles. Engineered for a sleek, integrated look." },
+    { icon: <Eye size={32} />, title: "Crystal Clear Edition", desc: "Transparent minimal design for a seamless windshield appearance. Practically invisible once installed." },
+    { icon: <Truck size={32} />, title: "Titanium Silver", desc: "Metallic premium finish for commercial and heavy-duty vehicles. Built for maximum durability." },
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (vehicleNumberError) return;
     setIsProcessing(true);
+    // Simulate payment processing
     setTimeout(() => {
       setIsProcessing(false);
       setIsSuccess(true);
       setTimeout(() => {
         setShowPaymentForm(false);
         setIsSuccess(false);
+        // Reset form
+        setFullName("");
+        setMobileNumber("");
+        setEmail("");
+        setAddress("");
+        setPincode("");
+        setNotes("");
       }, 4000);
     }, 2500);
   };
@@ -98,21 +99,21 @@ export default function RFIDHolderPage() {
         <div className="rfid-hero-content">
           <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }}>
             <span className="rfid-hero-badge">Premium Vehicle Accessories</span>
-            <h1 className="rfid-title">Precision RFID Protection<br /><span>For Modern Mobility</span></h1>
-            <p className="rfid-subtitle">Secure your transit credentials with enterprise-grade electromagnetic shield holders. Engineered for durability, styled for elite vehicle aesthetics.</p>
+            <h1 className="rfid-title">Premium FASTag Holders<br /><span>For Seamless Travel</span></h1>
+            <p className="rfid-subtitle">High-quality windshield mounting solutions designed for durability, easy installation, and a clean automotive aesthetic.</p>
             <div className="rfid-hero-buttons">
-              <Link href="#pricing" className="rfid-btn-glow-premium">
-                <span className="flex items-center justify-center gap-2">View Variants <ArrowRight size={20} /></span>
-              </Link>
-              <button className="rfid-btn-glow-secondary" onClick={() => {document.getElementById('overview')?.scrollIntoView({ behavior: 'smooth' })}}>
+              <button onClick={() => {document.getElementById('purchase')?.scrollIntoView({ behavior: 'smooth' })}} className="rfid-btn-glow-premium">
+                <span className="flex items-center justify-center gap-2">Buy Now <ArrowRight size={20} /></span>
+              </button>
+              <button className="rfid-btn-glow-secondary" onClick={() => {document.getElementById('specs')?.scrollIntoView({ behavior: 'smooth' })}}>
                 <span className="flex items-center justify-center gap-2">Technical Specs <Settings size={20} /></span>
               </button>
             </div>
             
             <div className="rfid-cta-trust mt-12" style={{ marginTop: '48px', opacity: 0.8 }}>
-              <div className="rfid-trust-item"><CheckCircle2 size={16} className="text-accent" /> Heat Resistant</div>
-              <div className="rfid-trust-item"><CheckCircle2 size={16} className="text-accent" /> Industrial Grade Adhesive</div>
-              <div className="rfid-trust-item"><CheckCircle2 size={16} className="text-accent" /> UV Protected</div>
+              <div className="rfid-trust-item"><CheckCircle2 size={16} className="text-accent" /> Heat Resistant Material</div>
+              <div className="rfid-trust-item"><CheckCircle2 size={16} className="text-accent" /> Strong Adhesive Grip</div>
+              <div className="rfid-trust-item"><CheckCircle2 size={16} className="text-accent" /> Weather Resistant</div>
             </div>
           </motion.div>
         </div>
@@ -124,28 +125,28 @@ export default function RFIDHolderPage() {
           <div className="rfid-trust-content">
             <div className="rfid-trust-brand-side">
               <span className="rfid-trust-label">Quality Assured Hardware</span>
-              <h3 className="rfid-trust-main-heading">Enterprise Grade<br />Tolling Accessories</h3>
+              <h3 className="rfid-trust-main-heading">Premium Automotive<br />Accessories</h3>
             </div>
             
             <div className="rfid-trust-metrics-grid">
               <div className="rfid-t-metric-card">
                 <div className="rfid-t-icon-box"><Shield size={20} /></div>
                 <div className="rfid-t-info">
-                  <h4>Military Grade</h4>
-                  <p>High-density polymer</p>
+                  <h4>ABS Polymer</h4>
+                  <p>Durable construction</p>
                 </div>
               </div>
               <div className="rfid-t-metric-card">
                 <div className="rfid-t-icon-box"><Zap size={20} /></div>
                 <div className="rfid-t-info">
-                  <h4>Signal Neutral</h4>
-                  <p>Zero interference</p>
+                  <h4>Secure Mount</h4>
+                  <p>3M Adhesive grip</p>
                 </div>
               </div>
               <div className="rfid-t-metric-card">
                 <div className="rfid-t-icon-box"><Sun size={20} /></div>
                 <div className="rfid-t-info">
-                  <h4>Heat Shield</h4>
+                  <h4>Heat Proof</h4>
                   <p>Up to 85°C resistance</p>
                 </div>
               </div>
@@ -192,15 +193,15 @@ export default function RFIDHolderPage() {
         </div>
       </section>
 
-      {/* 4. Benefits Section - Redesigned based on the tech overview image */}
+      {/* 4. Benefits Section */}
       <section className="rfid-section bg-dark-2">
         <div className="rfid-container">
           <motion.div 
             initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}
             className="text-center mb-16"
           >
-            <h2 className="rfid-section-title">Next-Gen <span>Features</span></h2>
-            <p className="rfid-section-desc max-w-2xl mx-auto text-center">Engineered for durability and elite aesthetic performance on the road.</p>
+            <h2 className="rfid-section-title">Essential <span>Benefits</span></h2>
+            <p className="rfid-section-desc max-w-2xl mx-auto text-center">Engineered for durability and clean organization on your windshield.</p>
           </motion.div>
           
           <div className="rfid-benefits-layout">
@@ -211,7 +212,7 @@ export default function RFIDHolderPage() {
               <div className="rfid-benefit-image-wrapper">
                 <Image 
                   src="/assets/Fastag_image.png" 
-                  alt="RFID Technology Overview" 
+                  alt="FASTag Technology Overview" 
                   fill
                   className="object-cover"
                 />
@@ -219,9 +220,9 @@ export default function RFIDHolderPage() {
               
               <div className="rfid-benefit-content-overlay">
                 {[
-                  { label: "DURABILITY CORE", title: "Military Polymers", desc: "Engineered high-density materials for maximum longevity and resistance to heat warping." },
-                  { label: "AESTHETIC FINISH", title: "UV Protection", desc: "Advanced optical coatings that maintain an elegant look through years of exposure." },
-                  { label: "PRECISION FIT", title: "3M Industrial", desc: "Heavy-duty no-residue mounting for secure and clean installation on any glass surface." }
+                  { label: "DURABILITY CORE", title: "Heat Resistant Build", desc: "Premium ABS polymer material that withstands high windshield temperatures without warping." },
+                  { label: "AESTHETIC FINISH", title: "Premium Finish", desc: "Sleek automotive-grade coating that resists UV fading and maintains a clean look." },
+                  { label: "PRECISION FIT", title: "Strong Adhesive Grip", desc: "Genuine 3M industrial-strength adhesive for secure mounting and easy, residue-free removal." }
                 ].map((tech, idx) => (
                   <motion.div 
                     key={idx} 
@@ -241,7 +242,7 @@ export default function RFIDHolderPage() {
         </div>
       </section>
 
-      {/* 5. Seamless Activation - Redesigned UI */}
+      {/* 5. Installation Workflow */}
       <section className="rfid-section bg-dark-1">
         <div className="rfid-container">
           <motion.div 
@@ -259,9 +260,9 @@ export default function RFIDHolderPage() {
             >
               {[
                 { icon: <MousePointerClick size={28} />, title: "Clean Surface", step: "01", desc: "Wipe your windshield area with a microfiber cloth to ensure a debris-free bond." },
-                { icon: <ShieldCheck size={28} />, title: "Attach Holder", step: "02", desc: "Peel the 3M industrial adhesive and secure the holder in your desired position." },
-                { icon: <CreditCard size={28} />, title: "Insert FASTag", step: "03", desc: "Slide your active FASTag card into the precision-cut electromagnetic shield slot." },
-                { icon: <Zap size={28} />, title: "Ready to Use", step: "04", desc: "Your tag is now protected and ready for seamless, friction-free highway transit." }
+                { icon: <ShieldCheck size={28} />, title: "Attach Holder", step: "02", desc: "Peel the 3M adhesive and secure the holder in your desired position." },
+                { icon: <CreditCard size={28} />, title: "Insert FASTag", step: "03", desc: "Slide your active FASTag card into the precision-cut holder slot." },
+                { icon: <Zap size={28} />, title: "Ready to Use", step: "04", desc: "Your tag is now organized and ready for seamless, reliable highway transit." }
               ].map((node, i) => (
                 <motion.div key={i} className="rfid-process-card-modern" variants={fadeInUp}>
                   <div className="rfid-p-number">{node.step}</div>
@@ -274,77 +275,200 @@ export default function RFIDHolderPage() {
           </div>
         </div>
       </section>
-
-      {/* 6. Pricing Section - Fixed alignment */}
-      <section id="pricing" className="rfid-section bg-gradient-blue relative">
+      {/* 6. Technical Specifications Section */}
+      <section id="specs" className="rfid-section bg-dark-2">
         <div className="rfid-container">
           <motion.div 
             initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}
             className="text-center mb-16"
           >
-            <h2 className="rfid-section-title">Select Your <span>Variant</span></h2>
-            <p className="rfid-section-desc max-w-2xl mx-auto text-center">Transparent pricing structures for every vehicle scale and fleet type.</p>
+            <h2 className="rfid-section-title">Technical <span>Specifications</span></h2>
+            <p className="rfid-section-desc max-w-2xl mx-auto text-center">Built for performance, designed for longevity.</p>
           </motion.div>
+
+          <div className="rfid-specs-grid">
+            {[
+              { label: "Material", value: "ABS Polymer", icon: <Shield size={20} /> },
+              { label: "Mounting", value: "3M Adhesive", icon: <Zap size={20} /> },
+              { label: "Compatibility", value: "All FASTag Types", icon: <Check size={20} /> },
+              { label: "Heat Resistance", value: "Up to 85°C", icon: <Sun size={20} /> },
+              { label: "Waterproof", value: "Yes", icon: <Activity size={20} /> },
+              { label: "Installation", value: "Self Installation", icon: <Settings size={20} /> },
+              { label: "Vehicle Support", value: "Cars, SUVs, Trucks", icon: <Car size={20} /> },
+              { label: "Finish", value: "Premium UV Coat", icon: <Package size={20} /> }
+            ].map((spec, i) => (
+              <motion.div 
+                key={i} 
+                className="rfid-spec-card"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.05 }}
+              >
+                <div className="rfid-spec-icon">{spec.icon}</div>
+                <div className="rfid-spec-info">
+                  <span className="rfid-spec-label">{spec.label}</span>
+                  <span className="rfid-spec-value">{spec.value}</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 7. Vehicle Compatibility Section */}
+      <section className="rfid-section bg-dark-1">
+        <div className="rfid-container">
+          <motion.div 
+            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}
+            className="text-center mb-16"
+          >
+            <h2 className="rfid-section-title">Vehicle <span>Compatibility</span></h2>
+            <p className="rfid-section-desc max-w-2xl mx-auto text-center">Our holders are designed to fit seamlessly on a wide range of vehicles.</p>
+          </motion.div>
+
+          <div className="rfid-compatibility-grid">
+            {[
+              { title: "Cars", desc: "Sleek fit for all sedan and hatchback models.", icon: <Car size={32} /> },
+              { title: "SUVs", desc: "Durable mounting for large windshield surfaces.", icon: <Car size={32} /> },
+              { title: "Trucks", desc: "Heavy-duty builds for long-haul transport.", icon: <Truck size={32} /> },
+              { title: "Fleet Vehicles", desc: "Standardized solution for corporate fleets.", icon: <Building2 size={32} /> },
+              { title: "Commercial Vehicles", desc: "Reliable performance for logistics and delivery.", icon: <Package size={32} /> }
+            ].map((item, i) => (
+              <motion.div 
+                key={i} 
+                className="rfid-compat-card"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: i * 0.1 }}
+              >
+                <div className="rfid-compat-icon-box">{item.icon}</div>
+                <h3 className="rfid-compat-title">{item.title}</h3>
+                <p className="rfid-compat-desc">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 8. Premium Purchase Section */}
+      <section id="purchase" className="rfid-purchase-section-v3">
+        <div className="rfid-container">
+          <div className="rfid-purchase-bg-overlay"></div>
           
           <motion.div 
-            className="rfid-pricing-premium-grid"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
+            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}
+            className="text-center mb-16"
           >
-            <motion.div className="rfid-glass-panel rfid-pricing-card-premium" variants={fadeInUp}>
-              <div className="rfid-pricing-header">
-                <h3>Standard Holder</h3>
-                <div className="rfid-price">₹150<span>/unit</span></div>
-                <p className="rfid-pricing-sub">Optimized for private transit.</p>
-              </div>
-              <ul className="rfid-pricing-features">
-                <li><Check size={18} className="text-accent" /> Priority Fulfillment</li>
-                <li><Check size={18} className="text-accent" /> 3M Industrial Mounting</li>
-                <li><Check size={18} className="text-accent" /> Standard Finish</li>
-                <li><Check size={18} className="text-accent" /> 1-Year Warranty</li>
-              </ul>
-              <button className="rfid-btn-pricing rfid-btn-outline" onClick={() => handleProceedPayment("Standard Holder")}>Select Variant</button>
-            </motion.div>
-            
-            <motion.div className="rfid-glass-panel rfid-pricing-card-premium highlighted" variants={fadeInUp}>
-              <div className="rfid-popular-badge-animated">MOST POPULAR</div>
-              <div className="rfid-pricing-header">
-                <h3>Premium Holder</h3>
-                <div className="rfid-price">₹250<span>/unit</span></div>
-                <p className="rfid-pricing-sub rfid-text-highlight">Maximum durability & style.</p>
-              </div>
-              <ul className="rfid-pricing-features">
-                <li><Check size={18} className="text-accent" /> Heat Resistant up to 85°C</li>
-                <li><Check size={18} className="text-accent" /> Signal Neutral Design</li>
-                <li><Check size={18} className="text-accent" /> Titanium Silver Aesthetic</li>
-                <li><Check size={18} className="text-accent" /> Priority Support</li>
-                <li><Check size={18} className="text-accent" /> 3-Year Warranty</li>
-              </ul>
-              <button className="rfid-btn-pricing rfid-btn-primary" onClick={() => handleProceedPayment("Premium Holder")}>Select Variant</button>
-            </motion.div>
-            
-            <motion.div className="rfid-glass-panel rfid-pricing-card-premium" variants={fadeInUp}>
-              <div className="rfid-pricing-header">
-                <h3>Commercial Vehicle</h3>
-                <div className="rfid-price">₹350<span>/unit</span></div>
-                <p className="rfid-pricing-sub">Heavy duty logistics grade.</p>
-              </div>
-              <ul className="rfid-pricing-features">
-                <li><Check size={18} className="text-accent" /> Reinforced Edges</li>
-                <li><Check size={18} className="text-accent" /> Heavy Duty Locking Mechanism</li>
-                <li><Check size={18} className="text-accent" /> Bulk Asset Management Integration</li>
-                <li><Check size={18} className="text-accent" /> API Transit Integration capable</li>
-                <li><Check size={18} className="text-accent" /> Dedicated Account Manager</li>
-              </ul>
-              <button className="rfid-btn-pricing rfid-btn-outline" onClick={() => handleProceedPayment("Commercial Holder")}>Select Variant</button>
-            </motion.div>
+            <h2 className="rfid-section-title-v3">Premium <span>FASTag Holder</span></h2>
+            <div className="rfid-title-accent-line"></div>
+            <p className="rfid-section-desc-v3">The perfect mounting solution for your vehicle's FASTag.</p>
           </motion.div>
+          
+          <div className="rfid-showcase-v3">
+            <motion.div 
+              className="rfid-showcase-left"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="rfid-product-visual-box">
+                <div className="rfid-hologram-glow"></div>
+                <div className="rfid-scan-line"></div>
+                <Image 
+                  src="/assets/Fastag_image.png" 
+                  alt="FASTag Holder Premium" 
+                  width={500} 
+                  height={500} 
+                  className="rfid-main-img-v3"
+                />
+                <div className="rfid-img-reflection"></div>
+
+                <div className="rfid-visual-stats-v3">
+                  <div className="rfid-v-stat-v3">
+                    <span className="rfid-v-stat-val-v3">85°C</span>
+                    <span className="rfid-v-stat-lbl-v3">Heat Resistance</span>
+                  </div>
+                  <div className="rfid-v-stat-v3">
+                    <span className="rfid-v-stat-val-v3">3M</span>
+                    <span className="rfid-v-stat-lbl-v3">Adhesive Grip</span>
+                  </div>
+                  <div className="rfid-v-stat-v3">
+                    <span className="rfid-v-stat-val-v3">100%</span>
+                    <span className="rfid-v-stat-lbl-v3">Signal Reliable</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div 
+              className="rfid-showcase-right"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="rfid-header-v3">
+                <div className="rfid-premium-badge-v3">
+                  <Shield size={12} fill="currentColor" fillOpacity={0.2} />
+                  <span>OFFICIAL ACCESSORY</span>
+                </div>
+                <div className="rfid-pricing-tag-v3">
+                  <span className="rfid-p-tag-label">Special Launch Price</span>
+                  <div className="rfid-p-tag-val">₹150 <span className="rfid-p-tag-sub">/ Unit</span></div>
+                </div>
+              </div>
+
+              <h3 className="rfid-p-name-v3">Premium FASTag Holder</h3>
+              <p className="rfid-p-summary-v3">
+                Durable, heat-resistant, and easy to install. Our premium FASTag holder provides a secure mounting solution that keeps your windshield organized and your tag protected.
+              </p>
+
+              <div className="rfid-p-benefits-v3">
+                {[
+                  { icon: <Shield size={18} />, text: "Strong Adhesive Grip" },
+                  { icon: <Zap size={18} />, text: "Heat Resistant Build" },
+                  { icon: <Clock size={18} />, text: "Easy FASTag Placement" },
+                  { icon: <Truck size={18} />, text: "Durable Material Quality" }
+                ].map((item, idx) => (
+                  <div key={idx} className="rfid-p-benefit-item-v3">
+                    <div className="rfid-p-b-icon">{item.icon}</div>
+                    <span>{item.text}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="rfid-interaction-box-v3">
+                <div className="rfid-q-wrap-v3">
+                  <label>QUANTITY</label>
+                  <div className="rfid-q-control-v3">
+                    <button onClick={() => setQuantity(Math.max(1, quantity - 1))}><Minus size={16} /></button>
+                    <span>{quantity}</span>
+                    <button onClick={() => setQuantity(quantity + 1)}><Plus size={16} /></button>
+                  </div>
+                </div>
+
+                <button className="rfid-buy-btn-v3" onClick={handleProceedPayment}>
+                  <span className="rfid-btn-content">
+                    <ShoppingCart size={22} />
+                    <span>Proceed to Secure Checkout</span>
+                    <ArrowRight size={20} className="rfid-btn-arrow" />
+                  </span>
+                  <div className="rfid-btn-glow-v3"></div>
+                </button>
+
+                <div className="rfid-security-badges-v3">
+                  <div className="rfid-s-badge"><Lock size={14} /> <span>256-Bit SSL</span></div>
+                  <div className="rfid-s-badge"><CheckCircle2 size={14} /> <span>Razorpay Verified</span></div>
+                  <div className="rfid-s-badge"><Package size={14} /> <span>Trackable Shipping</span></div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
       
-      {/* 7. Final CTA Section - Updated with Background Image */}
+      {/* 7. Final CTA Section */}
       <section className="rfid-section bg-dark-1 border-t border-white/5">
         <div className="rfid-container">
           <motion.div 
@@ -354,14 +478,14 @@ export default function RFIDHolderPage() {
             <div className="rfid-cta-particle-bg"></div>
             
             <div className="rfid-cta-content relative z-10">
-              <h2 className="rfid-cta-heading">Protect Your FASTag with Premium Holders</h2>
+              <h2 className="rfid-cta-heading">Clean Windshield, Secure Mounting</h2>
               <p className="rfid-cta-desc">
-                Integrate with India's most reliable mobility infrastructure. Deploy enterprise-grade tolling accessories today for your elite vehicle fleet.
+                Upgrade your vehicle with our premium FASTag holders. Designed for all vehicle types and built to last through every journey.
               </p>
               
               <div className="rfid-cta-actions">
-                <button className="rfid-btn-glow-premium lg" onClick={() => {document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}}>
-                  <span className="flex items-center justify-center gap-3">Shop the Collection <ArrowRight size={24} /></span>
+                <button className="rfid-btn-glow-premium lg" onClick={() => {document.getElementById('purchase')?.scrollIntoView({ behavior: 'smooth' })}}>
+                  <span className="flex items-center justify-center gap-3">Buy Now <ArrowRight size={24} /></span>
                 </button>
               </div>
               
@@ -398,91 +522,123 @@ export default function RFIDHolderPage() {
                   </div>
                 </motion.div>
                 <h3>Order Confirmed</h3>
-                <p>Your RFID Holder order has been placed successfully. Dispatch details will be sent to your registered contact protocol.</p>
+                <p>Your FASTag Holder order has been placed successfully. Dispatch details will be sent to your registered contact protocol.</p>
                 <div className="rfid-secure-badge mt-6" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#64748B', fontSize: '0.85rem', justifyContent: 'center', marginTop: '24px' }}><Lock size={14} /> 256-bit Encrypted Transmission</div>
               </div>
             ) : (
               <>
                 <div className="rfid-modal-header">
                   <h3>Checkout</h3>
-                  <p>Ordering <span>{selectedPlan}</span></p>
+                  <p>Ordering <span>{quantity}x {selectedPlan}</span></p>
+                  <div className="rfid-total-amount">Total: ₹{quantity * 150}</div>
                 </div>
                 
                 <form className="rfid-modal-form" onSubmit={handleSubmit}>
                   <div className="rfid-form-grid">
                     <div className="rfid-form-group">
-                      <label>Full Name</label>
-                      <input type="text" placeholder="Legal full name" required className="rfid-premium-input" />
+                      <label>Full Name *</label>
+                      <input 
+                        type="text" 
+                        placeholder="Legal full name" 
+                        required 
+                        className="rfid-premium-input" 
+                        value={fullName}
+                        onChange={(e) => setFullName(e.target.value)}
+                      />
                     </div>
                     
                     <div className="rfid-form-group">
-                      <label className="flex items-center gap-1.5"><Mail size={14} /> Email Address</label>
-                      <input type="email" placeholder="your@email.com" required className="rfid-premium-input" />
+                      <label className="flex items-center gap-1.5"><Phone size={14} /> Mobile Number *</label>
+                      <input 
+                        type="tel" 
+                        placeholder="10-digit mobile number" 
+                        required 
+                        pattern="[0-9]{10}" 
+                        className="rfid-premium-input" 
+                        value={mobileNumber}
+                        onChange={(e) => setMobileNumber(e.target.value)}
+                      />
                     </div>
                     
                     <div className="rfid-form-group">
-                      <label>Contact Number</label>
-                      <input type="tel" placeholder="10-digit mobile number" required pattern="[0-9]{10}" className="rfid-premium-input" />
+                      <label className="flex items-center gap-1.5"><Mail size={14} /> Email Address (Optional)</label>
+                      <input 
+                        type="email" 
+                        placeholder="your@email.com" 
+                        className="rfid-premium-input" 
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                      />
                     </div>
-                    
+
                     <div className="rfid-form-group">
-                      <label>Quantity</label>
-                      <select required defaultValue="1" className="rfid-premium-input">
-                        <option value="1">1 Unit</option>
-                        <option value="2">2 Units</option>
-                        <option value="5">5 Units</option>
-                        <option value="10">10 Units (Bulk)</option>
-                      </select>
-                    </div>
- 
-                    <div className="rfid-form-group">
-                      <label>Shipping Pincode</label>
+                      <label>Shipping Pincode *</label>
                       <input 
                         type="text" 
                         placeholder="e.g. 400001" 
                         required 
                         className="rfid-premium-input"
+                        value={pincode}
+                        onChange={(e) => setPincode(e.target.value)}
                       />
                     </div>
  
                     <div className="rfid-form-group" style={{ gridColumn: 'span 2' }}>
-                      <label>Complete Address</label>
-                      <textarea placeholder="Enter your full delivery address" rows={2} required className="rfid-premium-input" style={{ resize: 'none' }}></textarea>
+                      <label>Delivery Address *</label>
+                      <textarea 
+                        placeholder="Enter your full delivery address" 
+                        rows={2} 
+                        required 
+                        className="rfid-premium-input" 
+                        style={{ resize: 'none' }}
+                        value={address}
+                        onChange={(e) => setAddress(e.target.value)}
+                      ></textarea>
+                    </div>
+
+                    <div className="rfid-form-group" style={{ gridColumn: 'span 2' }}>
+                      <label className="flex items-center gap-1.5"><MessageSquare size={14} /> Notes / Instructions (Optional)</label>
+                      <input 
+                        type="text" 
+                        placeholder="Any specific delivery instructions" 
+                        className="rfid-premium-input" 
+                        value={notes}
+                        onChange={(e) => setNotes(e.target.value)}
+                      />
                     </div>
                   </div>
- 
-                  <div className="rfid-payment-method-section" style={{ marginTop: '30px' }}>
+  
+                  <div className="rfid-payment-method-section" style={{ marginTop: '24px' }}>
                     <label style={{ fontSize: '0.85rem', fontWeight: '600', color: 'var(--rfid-text-secondary)', marginBottom: '12px', display: 'block' }}>Select Payment Method</label>
                     <div className="rfid-payment-options">
                       <div className={`rfid-payment-option ${paymentMethod === 'upi' ? 'active' : ''}`} onClick={() => setPaymentMethod('upi')}>
-                        <Smartphone size={20} /> UPI / QR
+                        <Smartphone size={18} /> UPI / QR
                       </div>
                       <div className={`rfid-payment-option ${paymentMethod === 'card' ? 'active' : ''}`} onClick={() => setPaymentMethod('card')}>
-                        <CreditCard size={20} /> Credit Card
+                        <CreditCard size={18} /> Card
                       </div>
                       <div className={`rfid-payment-option ${paymentMethod === 'net' ? 'active' : ''}`} onClick={() => setPaymentMethod('net')}>
-                        <Landmark size={20} /> Net Banking
+                        <Landmark size={18} /> Net Banking
                       </div>
                     </div>
                   </div>
                   
-                  <button type="submit" disabled={isProcessing} className="rfid-btn-glow-premium lg w-full" style={{ width: '100%', marginTop: '30px', padding: "18px" }}>
+                  <button type="submit" disabled={isProcessing} className="rfid-btn-glow-premium lg w-full" style={{ width: '100%', marginTop: '24px', padding: "16px" }}>
                     {isProcessing ? (
                       <span className="flex items-center justify-center gap-3">
                         <Loader2 className="animate-spin" size={20} />
-                        Processing Securely...
+                        Processing...
                       </span>
                     ) : (
                       <span className="flex items-center justify-center gap-3">
-                      <Lock size={18} /> Confirm Order
+                      <Lock size={18} /> Pay ₹{quantity * 150}
                       </span>
                     )}
                   </button>
                   
                   <div className="rfid-secure-checkout-footer">
-                    <span>Secured via</span>
-                    <div className="rfid-razorpay-placeholder">Razorpay</div>
-                    <span>• Enterprise SSL Encryption Standard</span>
+                    <span>Secured via Razorpay</span>
+                    <span>• SSL Encrypted</span>
                   </div>
                 </form>
               </>
@@ -493,5 +649,3 @@ export default function RFIDHolderPage() {
     </div>
   );
 }
-
-

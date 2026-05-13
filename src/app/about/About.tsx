@@ -155,7 +155,7 @@ export default function About() {
                     <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
                       <CheckCircle2 size={20} color="#3b82f6" style={{ marginTop: '2px', flexShrink: 0 }} />
                       <span style={{ color: '#94a3b8', fontSize: '0.95rem', lineHeight: 1.5 }}>
-                        <span style={{ color: 'white', fontWeight: 500 }}>Premium Accessories:</span> Signal-neutral, heat-resistant RFID holders designed for extreme durability.
+                        <span style={{ color: 'white', fontWeight: 500 }}>Premium Accessories:</span> Signal-neutral, heat-resistant FASTag holders designed for extreme durability.
                       </span>
                     </li>
                   </ul>

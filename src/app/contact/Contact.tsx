@@ -21,7 +21,7 @@ export default function Contact() {
             Get <span className="contact-highlight">Connected</span> with Transetu
           </h2>
           <p className="contact-desc">
-            We’re here to help with FASTag services, GPS tracking solutions, and RFID accessories.
+            We’re here to help with FASTag services, GPS tracking solutions, and FASTag accessories.
           </p>
         </div>
 
@@ -33,7 +33,7 @@ export default function Contact() {
               <div className="info-icon-wrapper"><Phone className="info-icon" /></div>
               <div className="info-content">
                 <h3>Phone Support</h3>
-                <p>+91 800-TRANSETU</p>
+                <p>+91 8985350585</p>
               </div>
             </div>
             
@@ -41,7 +41,7 @@ export default function Contact() {
               <div className="info-icon-wrapper"><MessageSquare className="info-icon" /></div>
               <div className="info-content">
                 <h3>WhatsApp Support</h3>
-                <p>+91 98765-43210</p>
+                <p>+91 8985350585</p>
               </div>
             </div>
 
@@ -49,7 +49,7 @@ export default function Contact() {
               <div className="info-icon-wrapper"><Mail className="info-icon" /></div>
               <div className="info-content">
                 <h3>Email Address</h3>
-                <p>support@transetu.com</p>
+                <p>hello@transetu.com</p>
               </div>
             </div>
 
@@ -96,8 +96,7 @@ export default function Contact() {
                     <option value="" disabled>Select a Service</option>
                     <option value="fastag">FASTag Services</option>
                     <option value="gps">GPS Tracking</option>
-                    <option value="rfid">RFID Holders</option>
-                    <option value="business">Business Inquiry</option>
+                    <option value="rfid">FASTag Holders</option>
                   </select>
                 </div>
 

@@ -541,7 +541,7 @@ export default function SignupPage() {
           
           <h1>Smart Highway Services Start Here</h1>
           <p>
-            Access FASTag services, GPS tracking, RFID products, and secure account management with Transetu.
+            Access FASTag services, GPS tracking, FASTag products, and secure account management with Transetu.
           </p>
 
           <div className="trust-badges">

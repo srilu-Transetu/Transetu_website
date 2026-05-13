@@ -30,11 +30,11 @@ export default function Footer() {
             <ul className="footer-contact">
               <li>
                 <Phone size={18} style={{ color: 'var(--color-accent-blue)' }} /> 
-                <span>+91 1800 123 4567</span>
+                <span>+91 8985350585</span>
               </li>
               <li>
                 <Mail size={18} style={{ color: 'var(--color-accent-blue)' }} /> 
-                <span>support@transetu.com</span>
+                <span>hello@transetu.com</span>
               </li>
               <li>
                 <MapPin size={18} style={{ color: 'var(--color-accent-blue)', marginTop: '4px' }} /> 
