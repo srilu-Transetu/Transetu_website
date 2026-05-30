@@ -38,7 +38,7 @@ export default function Footer() {
               </li>
               <li>
                 <MapPin size={18} style={{ color: 'var(--color-accent-blue)', marginTop: '4px' }} /> 
-                <span>Mumbai, India</span>
+                <span>Anakapalli, Andhra Pradesh, INDIA</span>
               </li>
             </ul>
           </div>

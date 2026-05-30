@@ -137,7 +137,7 @@ export default function Contact() {
         <div className="bottom-info-bar">
           <div className="bar-item">
             <MapPin size={16} className="bar-icon" />
-            <span>HQ: Cyber City, Gurugram, Haryana</span>
+            <span>HQ: Anakapalli, Andhra Pradesh, INDIA</span>
           </div>
           <div className="bar-item divider"></div>
           <div className="bar-item">

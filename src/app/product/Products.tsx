@@ -13,12 +13,26 @@ export default function Products() {
       features: [
         "Easy to Use",
         "Instant Activation",
-        "Recharge Anytime"
+        "Fast Delivery"
       ],
       price: "₹500",
       image: "/products/fastags.png",
       bestSeller: true,
       href: "/product/fastag",
+      buttonText: "View Details"
+    },
+    {
+      name: "FASTag Holder",
+      tagline: "Durable and stylish holders to protect your FASTag while driving.",
+      features: [
+        "Premium Quality",
+        "Long Lasting",
+        "Lightweight"
+      ],
+      price: "₹150",
+      image: "/products/rfid-holders-new.png",
+      bestSeller: false,
+      href: "/product/rfid-holder",
       buttonText: "View Details"
     },
     {
@@ -32,21 +46,8 @@ export default function Products() {
       price: "₹10,500",
       image: "/products/gps-tracker.png",
       bestSeller: false,
+      isComingSoon: true,
       href: "/product/gps-tracker",
-      buttonText: "View Details"
-    },
-    {
-      name: "FASTag Holder",
-      tagline: "Durable and stylish holders to protect your FASTag while driving.",
-      features: [
-        "Premium Quality",
-        "Long Lasting",
-        "Lightweight"
-      ],
-      price: "₹150",
-      image: "/products/rfid-holders.png",
-      bestSeller: false,
-      href: "/product/rfid-holder",
       buttonText: "View Details"
     }
   ];
@@ -89,6 +90,10 @@ export default function Products() {
                   className="product-display-img"
                   priority={index === 0}
                 />
+                {product.isComingSoon && (
+                  <div className="coming-soon-badge">Coming Soon</div>
+                )}
+                <div className="product-price-badge">{product.price}</div>
               </div>
 
               <div className="product-details">
@@ -105,21 +110,6 @@ export default function Products() {
                     </li>
                   ))}
                 </ul>
-
-                <div className="product-purchase-footer">
-                  <span className="product-price-value">{product.price}</span>
-                  {product.href ? (
-                    <Link href={product.href} className="product-buy-button" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <ShoppingCart size={18} fill="currentColor" />
-                      <span>{product.buttonText || "Buy Now"}</span>
-                    </Link>
-                  ) : (
-                    <button className="product-buy-button">
-                      <ShoppingCart size={18} fill="currentColor" />
-                      <span>{product.buttonText || "Buy Now"}</span>
-                    </button>
-                  )}
-                </div>
               </div>
             </motion.div>
           ))}
