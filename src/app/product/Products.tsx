@@ -1,61 +1,59 @@
 "use client";
 
-import { Check, ShoppingCart, CreditCard, Car, MoveRight } from "lucide-react";
+import { ShoppingCart, CreditCard, Car, MoveRight, Smartphone, Shield, Truck, Navigation } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+import ProductOrderForm from "@/components/ProductOrderForm";
 
 export default function Products() {
+  const [selectedProduct, setSelectedProduct] = useState<{
+    name: string;
+    price: number;
+    image: string;
+    tagline: string;
+  } | null>(null);
+
   const products = [
     {
       name: "FASTag",
-      tagline: "Cashless toll payments with instant deduction and seamless travel.",
-      features: [
-        "Easy to Use",
-        "Instant Activation",
-        "Fast Delivery"
-      ],
+      tagline: "Cashless toll payments with instant deduction and seamless highway travel.",
       price: "₹500",
+      numericPrice: 500,
       image: "/products/fastags.png",
       bestSeller: true,
-      href: "/product/fastag",
-      buttonText: "View Details"
+      buttonText: "Buy FASTag",
+      icon: CreditCard
     },
     {
       name: "FASTag Holder",
-      tagline: "Durable and stylish holders to protect your FASTag while driving.",
-      features: [
-        "Premium Quality",
-        "Long Lasting",
-        "Lightweight"
-      ],
+      tagline: "Durable and stylish transparent acrylic holder to protect your FASTag.",
       price: "₹150",
+      numericPrice: 150,
       image: "/products/rfid-holders-new.png",
       bestSeller: false,
-      href: "/product/rfid-holder",
-      buttonText: "View Details"
+      buttonText: "Buy FASTag Holder",
+      icon: Car
     },
     {
       name: "GPS Trackers",
-      tagline: "Real-time vehicle tracking for safety, security and better control.",
-      features: [
-        "Live Tracking",
-        "History Reports",
-        "AIS - 140 GPS Tracker"
-      ],
+      tagline: "Real-time AIS-140 certified vehicle tracking for safety, security, and fleet monitoring.",
       price: "₹10,500",
+      numericPrice: 10500,
       image: "/products/gps-tracker.png",
       bestSeller: false,
       isComingSoon: true,
       href: "/product/gps-tracker",
-      buttonText: "View Details"
+      buttonText: "View Details",
+      icon: Navigation
     }
   ];
 
   return (
     <section id="products" className="products-section">
       <div className="container">
-        <motion.div 
+        <motion.div
           className="products-header"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -67,56 +65,88 @@ export default function Products() {
             Smart <span className="text-highlight">Solutions</span> for Every Journey
           </h2>
           <p className="section-desc">
-            Explore our range of products designed to make toll payments easier, 
+            Explore our range of products designed to make toll payments easier,
             monitor vehicles smarter, and keep your essentials in place.
           </p>
         </motion.div>
 
         <div className="products-grid">
-          {products.map((product, index) => (
-            <motion.div 
-              key={index} 
-              className="product-card-v2"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <div className="product-image-container">
-                <Image 
-                  src={product.image} 
-                  alt={product.name} 
-                  fill
-                  className="product-display-img"
-                  priority={index === 0}
-                />
-                {product.isComingSoon && (
-                  <div className="coming-soon-badge">Coming Soon</div>
-                )}
-                <div className="product-price-badge">{product.price}</div>
-              </div>
+          {products.map((product, index) => {
+            const IconComponent = product.icon || ShoppingCart;
+            
+            return (
+              <motion.div
+                key={index}
+                className="product-card-v2 group"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <div className="product-image-container">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="product-display-img"
+                    priority={index === 0}
+                  />
+                  {product.isComingSoon && (
+                    <div className="coming-soon-badge">Coming Soon</div>
+                  )}
+                </div>
 
-              <div className="product-details">
-                <h3 className="product-title">{product.name}</h3>
-                <p className="product-description">{product.tagline}</p>
-                
-                <ul className="product-feature-list">
-                  {product.features.map((feature, fIndex) => (
-                    <li key={fIndex}>
-                      <div className="check-circle-mini">
-                        <Check size={12} strokeWidth={4} />
-                      </div>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </motion.div>
-          ))}
+                <div className="product-details">
+                  <div>
+                    <h3 className="product-title">{product.name}</h3>
+                    <p className="product-description">{product.tagline}</p>
+                  </div>
+
+                  <div className="product-card-footer">
+                    <span className="product-card-price">
+                      {product.price}
+                    </span>
+
+                    {product.name === "GPS Trackers" ? (
+                      <Link
+                        href="/product/gps-tracker"
+                        className="product-card-button"
+                        aria-label="View details for GPS Trackers"
+                      >
+                        <IconComponent size={18} strokeWidth={2.2} />
+                        <span>View Details</span>
+                      </Link>
+                    ) : (
+                      <button
+                        onClick={() => {
+                          setSelectedProduct({
+                            name: product.name,
+                            price: product.numericPrice,
+                            image: product.image,
+                            tagline: product.tagline
+                          });
+                        }}
+                        className={`product-card-button ${
+                          product.name === "FASTag Holder"
+                            ? "product-card-button-holder"
+                            : ""
+                        }`}
+                        aria-label={`Buy ${product.name}`}
+                      >
+                        <IconComponent size={18} strokeWidth={2.2} />
+                        <span>{product.buttonText}</span>
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
 
-        {/* Process Banner Redesign */}
-        <motion.div 
+        {/* Process Banner */}
+        <motion.div
           className="premium-fastag-banner"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -125,32 +155,31 @@ export default function Products() {
         >
           {/* LEFT SECTION: Dark Tunnel Automotive Theme */}
           <div className="banner-left-automotive">
-            <Image 
-              src="/assets/Car_image.png" 
-              alt="FASTag Enabled Car" 
+            <Image
+              src="/assets/Car_image.png"
+              alt="FASTag Enabled Car"
               fill
               className="object-cover object-left"
             />
             
             {/* Animated Scanning Beam */}
             <div className="absolute inset-0 z-10 w-full h-full pointer-events-none overflow-hidden rounded-l-3xl">
-              <motion.div 
+              <motion.div
                 className="relative w-full h-full"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
               >
-                {/* The Scanning Beam Line */}
-                <motion.div 
+                <motion.div
                   className="absolute left-0 w-full h-[1px] bg-[#0057FF] shadow-[0_0_15px_#0057FF,0_0_30px_#0057FF]"
-                  animate={{ 
+                  animate={{
                     top: ["0%", "95%", "0%"],
                     opacity: [0.8, 1, 0.8]
                   }}
-                  transition={{ 
-                    duration: 3, 
-                    repeat: Infinity, 
-                    ease: "linear" 
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "linear"
                   }}
                 >
                   <div className="absolute top-1/2 left-0 -translate-y-1/2 w-full h-[4px] bg-[#0057FF]/30 blur-[2px]" />
@@ -175,7 +204,7 @@ export default function Products() {
               <div className="banner-steps-flow">
                 {/* Step 1 */}
                 <div className="banner-step-item">
-                  <motion.div 
+                  <motion.div
                     className="banner-step-icon"
                     whileHover={{ scale: 1.1, y: -5 }}
                   >
@@ -191,7 +220,7 @@ export default function Products() {
 
                 {/* Step 2 */}
                 <div className="banner-step-item">
-                  <motion.div 
+                  <motion.div
                     className="banner-step-icon"
                     whileHover={{ scale: 1.1, y: -5 }}
                   >
@@ -207,11 +236,11 @@ export default function Products() {
 
                 {/* Step 3 */}
                 <div className="banner-step-item">
-                  <motion.div 
+                  <motion.div
                     className="banner-step-icon"
                     whileHover={{ scale: 1.1, y: -5 }}
                   >
-                    <Check size={26} strokeWidth={3} />
+                    <Shield size={26} strokeWidth={2.5} />
                   </motion.div>
                   <div className="banner-step-text">
                     <span className="banner-step-num">03</span>
@@ -223,6 +252,18 @@ export default function Products() {
           </div>
         </motion.div>
       </div>
+
+      {/* Product Order Form */}
+      {selectedProduct && (
+        <ProductOrderForm
+          isOpen={!!selectedProduct}
+          onClose={() => setSelectedProduct(null)}
+          productName={selectedProduct.name}
+          productPrice={selectedProduct.price}
+          productImage={selectedProduct.image}
+          productTagline={selectedProduct.tagline}
+        />
+      )}
     </section>
   );
 }
