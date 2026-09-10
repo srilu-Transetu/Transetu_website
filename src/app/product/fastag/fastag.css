@@ -8,8 +8,8 @@
   --fastag-charcoal: #1c1c21;
   --fastag-graphite: #3f3f46;
   --fastag-slate: #94a3b8;
-  --fastag-accent: #2EB3E8;
-  --fastag-accent-glow: rgba(46, 179, 232, 0.3);
+  --fastag-accent: #10B981;
+  --fastag-accent-glow: rgba(16, 185, 129, 0.3);
   --fastag-text-primary: #ffffff;
   --fastag-text-secondary: #94a3b8;
   --fastag-border: rgba(255, 255, 255, 0.08);
@@ -149,13 +149,13 @@
 
 .fastag-orb-1 {
   width: 500px; height: 500px;
-  background: #1e3a8a;
+  background: #064e3b;
   top: -100px; left: -100px;
 }
 
 .fastag-orb-2 {
   width: 400px; height: 400px;
-  background: #1e40af;
+  background: #047857;
   bottom: -50px; right: -50px;
   animation-delay: -5s;
 }
@@ -264,7 +264,7 @@
   position: relative;
   overflow: hidden;
   border: none;
-  box-shadow: 0 4px 15px rgba(46, 179, 232, 0.3), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .fastag-btn-glow-premium::before {
@@ -279,7 +279,7 @@
 .fastag-btn-glow-premium:hover {
   transform: translateY(-4px) scale(1.02);
   box-shadow: 0 12px 30px rgba(46, 179, 232, 0.5);
-  background: linear-gradient(135deg, #38bdf8 0%, var(--fastag-accent) 100%);
+  background: linear-gradient(135deg, #34D399 0%, var(--fastag-accent) 100%);
 }
 
 .fastag-btn-glow-premium:hover::before {

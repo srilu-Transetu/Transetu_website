@@ -8,9 +8,9 @@
   --gps-charcoal: #27272a;
   --gps-graphite: #3f3f46;
   --gps-slate: #94a3b8;
-  --gps-accent: #38bdf8;
-  --gps-accent-deep: #0284c7;
-  --gps-accent-glow: rgba(56, 189, 248, 0.3);
+  --gps-accent: #34D399;
+  --gps-accent-deep: #059669;
+  --gps-accent-glow: rgba(52, 211, 153, 0.3);
   --gps-text-primary: #ffffff;
   --gps-text-secondary: #a1a1aa;
   --gps-border: rgba(255, 255, 255, 0.06);
@@ -259,7 +259,7 @@
 .gps-btn-glow-premium:hover {
   transform: translateY(-4px) scale(1.02);
   box-shadow: 0 12px 30px rgba(46, 179, 232, 0.5);
-  background: linear-gradient(135deg, #38bdf8 0%, var(--gps-accent) 100%);
+  background: linear-gradient(135deg, #34D399 0%, var(--gps-accent) 100%);
 }
 
 .gps-btn-glow-premium:hover::before {
@@ -685,7 +685,7 @@
 .gps-status-red { background: #EF4444; box-shadow: 0 0 8px #EF4444; animation: pulseRed 2s infinite; }
 
 @keyframes pulseGreen { 0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.2); } 70% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); } 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); } }
-@keyframes pulseBlue { 0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1); } 70% { box-shadow: 0 0 0 6px rgba(46, 179, 232, 0); } 100% { box-shadow: 0 0 0 0 rgba(46, 179, 232, 0); } }
+@keyframes pulseBlue { 0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1); } 70% { box-shadow: 0 0 0 6px rgba(52, 211, 153, 0); } 100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); } }
 @keyframes pulseRed { 0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.3); } 70% { box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); } 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); } }
 
 /* Right: Live Map UI */
@@ -1163,7 +1163,7 @@
 
 .ais-140-badge {
   background: rgba(56, 189, 248, 0.1);
-  border: 1px solid rgba(56, 189, 248, 0.3);
+  border: 1px solid rgba(52, 211, 153, 0.3);
   color: var(--gps-accent);
   padding: 6px 18px;
   border-radius: 100px;
@@ -1328,7 +1328,7 @@
 .gps-hub-btn-gov {
   background: linear-gradient(135deg, var(--gps-accent) 0%, #0369a1 100%);
   color: #fff;
-  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);
+  box-shadow: 0 10px 25px rgba(52, 211, 153, 0.3);
 }
 
 .gps-hub-btn-gov:hover {

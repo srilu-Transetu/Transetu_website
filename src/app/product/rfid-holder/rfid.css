@@ -8,8 +8,8 @@
   --rfid-charcoal: #1c1c21;
   --rfid-graphite: #3f3f46;
   --rfid-slate: #94a3b8;
-  --rfid-accent: #2EB3E8;
-  --rfid-accent-glow: rgba(46, 179, 232, 0.3);
+  --rfid-accent: #10B981;
+  --rfid-accent-glow: rgba(16, 185, 129, 0.3);
   --rfid-text-primary: #ffffff;
   --rfid-text-secondary: #94a3b8;
   --rfid-border: rgba(255, 255, 255, 0.08);
@@ -149,13 +149,13 @@
 
 .rfid-orb-1 {
   width: 500px; height: 500px;
-  background: #1e3a8a;
+  background: #064e3b;
   top: -100px; left: -100px;
 }
 
 .rfid-orb-2 {
   width: 400px; height: 400px;
-  background: #1e40af;
+  background: #047857;
   bottom: -50px; right: -50px;
   animation-delay: -5s;
 }
@@ -254,7 +254,7 @@
   position: relative;
   overflow: hidden;
   border: none;
-  box-shadow: 0 4px 15px rgba(46, 179, 232, 0.3), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .rfid-btn-glow-premium::before {
@@ -269,7 +269,7 @@
 .rfid-btn-glow-premium:hover {
   transform: translateY(-4px) scale(1.02);
   box-shadow: 0 12px 30px rgba(46, 179, 232, 0.5);
-  background: linear-gradient(135deg, #38bdf8 0%, var(--rfid-accent) 100%);
+  background: linear-gradient(135deg, #34D399 0%, var(--rfid-accent) 100%);
 }
 
 .rfid-btn-glow-premium:hover::before {
@@ -912,7 +912,7 @@
 
 .rfid-v-stat-v3:hover {
   background: rgba(46, 179, 232, 0.08);
-  border-color: rgba(46, 179, 232, 0.3);
+  border-color: rgba(16, 185, 129, 0.3);
   transform: translateY(-5px);
 }
 

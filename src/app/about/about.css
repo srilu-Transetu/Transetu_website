@@ -20,7 +20,7 @@
   height: 420px;
   background-image: radial-gradient(
     circle,
-    rgba(59, 130, 246, 0.22) 1.6px,
+    rgba(16, 185, 129, 0.22) 1.6px,
     transparent 1.6px
   );
   background-size: 22px 22px;
@@ -54,7 +54,7 @@
 }
 
 .about-label {
-  color: #3b82f6;
+  color: #10B981;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 1px;
@@ -72,7 +72,7 @@
 }
 
 .about-title-highlight {
-  color: #3b82f6;
+  color: #10B981;
 }
 
 .about-description {
@@ -84,7 +84,7 @@
 }
 
 .about-btn {
-  background-color: #1d4ed8;
+  background-color: #059669;
   color: #ffffff;
   border: none;
   border-radius: 4px;
@@ -99,7 +99,7 @@
 }
 
 .about-btn:hover {
-  background-color: #2563eb;
+  background-color: #047857;
   transform: translateY(-1px);
 }
 
@@ -133,13 +133,13 @@
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  border: 1px solid rgba(59, 130, 246, 0.3);
+  border: 1px solid rgba(16, 185, 129, 0.3);
   background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 16px;
-  color: #3b82f6;
+  color: #10B981;
   position: relative;
 }
 
@@ -149,7 +149,7 @@
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  border: 1px solid rgba(59, 130, 246, 0.6);
+  border: 1px solid rgba(16, 185, 129, 0.6);
 }
 
 .about-feature-title {
@@ -184,7 +184,7 @@
   background: #0b172a;
   z-index: 1001;
   box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
-  border-left: 1px solid rgba(59, 130, 246, 0.2);
+  border-left: 1px solid rgba(16, 185, 129, 0.2);
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -224,8 +224,8 @@
 }
 
 .about-slider-close:hover {
-  background: rgba(59, 130, 246, 0.2);
-  color: #3b82f6;
+  background: rgba(16, 185, 129, 0.2);
+  color: #10B981;
   transform: rotate(90deg);
 }
 
@@ -265,8 +265,8 @@
   display: flex;
   gap: 24px;
   align-items: flex-start;
-  background: linear-gradient(145deg, rgba(59, 130, 246, 0.1), rgba(255, 255, 255, 0.02));
-  border: 1px solid rgba(59, 130, 246, 0.25);
+  background: linear-gradient(145deg, rgba(16, 185, 129, 0.1), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(16, 185, 129, 0.25);
   border-radius: 16px;
   padding: 24px;
   margin-bottom: 24px;
@@ -282,7 +282,7 @@
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid rgba(59, 130, 246, 0.45);
+  border: 3px solid rgba(16, 185, 129, 0.45);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
@@ -290,7 +290,7 @@
   position: absolute;
   bottom: 4px;
   right: 4px;
-  background: #1d4ed8;
+  background: #059669;
   color: white;
   font-size: 0.7rem;
   font-weight: 700;
@@ -313,7 +313,7 @@
 }
 
 .leadership-role {
-  color: #3b82f6;
+  color: #10B981;
   font-size: 0.95rem;
   font-weight: 600;
   margin: 0 0 6px 0;
@@ -336,17 +336,17 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(59, 130, 246, 0.12);
-  color: #93c5fd;
+  background: rgba(16, 185, 129, 0.12);
+  color: #a7f3d0;
   font-size: 0.78rem;
   font-weight: 500;
   padding: 5px 12px;
   border-radius: 20px;
-  border: 1px solid rgba(59, 130, 246, 0.2);
+  border: 1px solid rgba(16, 185, 129, 0.2);
 }
 
 .meta-item svg {
-  color: #3b82f6;
+  color: #10B981;
 }
 
 .leadership-experience {
@@ -379,7 +379,7 @@
 }
 
 .check-icon {
-  color: #3b82f6;
+  color: #10B981;
   flex-shrink: 0;
   margin-top: 2px;
 }
@@ -407,8 +407,8 @@
 }
 
 .about-slider-card:hover {
-  border-color: rgba(59, 130, 246, 0.35);
-  background: rgba(59, 130, 246, 0.06);
+  border-color: rgba(16, 185, 129, 0.35);
+  background: rgba(16, 185, 129, 0.06);
 }
 
 .about-slider-card h4 {

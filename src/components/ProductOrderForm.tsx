@@ -110,19 +110,19 @@ function OrderSummarySidebar({
         <div className="order-summary-badges">
           <div>
             <div className="order-summary-badge-icon">
-              <Truck size={18} className="text-[#1565C0]" />
+              <Truck size={18} className="text-[#059669]" />
             </div>
             <p>Fast Delivery</p>
           </div>
           <div>
             <div className="order-summary-badge-icon">
-              <ShieldCheck size={18} className="text-[#1565C0]" />
+              <ShieldCheck size={18} className="text-[#059669]" />
             </div>
             <p>Secure Payments</p>
           </div>
           <div>
             <div className="order-summary-badge-icon">
-              <Headphones size={18} className="text-[#1565C0]" />
+              <Headphones size={18} className="text-[#059669]" />
             </div>
             <p>24/7 Support</p>
           </div>
@@ -225,7 +225,7 @@ function ProductInfoSidebar({
         <ul>
           {features.map((f) => (
             <li key={f.title}>
-              <CheckCircle2 size={14} className="text-[#1565C0] shrink-0 mt-0.5" />
+              <CheckCircle2 size={14} className="text-[#059669] shrink-0 mt-0.5" />
               <div>
                 <span className="product-info-feature-title">{f.title}</span>
                 <span className="product-info-feature-desc">{f.desc}</span>
@@ -236,7 +236,7 @@ function ProductInfoSidebar({
       </div>
 
       <div className="product-info-footer">
-        <ShieldCheck size={14} className="text-[#1565C0] shrink-0" />
+        <ShieldCheck size={14} className="text-[#059669] shrink-0" />
         <span>Genuine product • Secure checkout • Fast delivery</span>
       </div>
     </div>
@@ -279,7 +279,7 @@ function UploadTile({
           ) : (
             <div className={`pan-upload-icon ${hasFile ? "has-file" : ""}`}>
               {hasFile ? (
-                <FileText size={15} className="text-[#1565C0]" />
+                <FileText size={15} className="text-[#059669]" />
               ) : (
                 <Icon size={15} className="text-gray-400" />
               )}
@@ -332,7 +332,7 @@ function UploadTile({
         ) : fileName ? (
           <div className="upload-tile-file">
             <div className="upload-tile-icon-box upload-tile-icon-box--active">
-              <FileText size={22} className="text-[#1565C0]" />
+              <FileText size={22} className="text-[#059669]" />
             </div>
             <p className="upload-tile-filename">{fileName}</p>
           </div>
@@ -585,7 +585,7 @@ export default function ProductOrderForm({
 
               <div className="success-card">
                 <div className="success-card-header">
-                  <FileText size={16} className="text-[#1565C0]" />
+                  <FileText size={16} className="text-[#059669]" />
                   <span>Order Details</span>
                 </div>
                 <div className="success-card-rows">
@@ -633,7 +633,7 @@ export default function ProductOrderForm({
                   )}
                 </div>
                 <div className="success-card-footer">
-                  <ShieldCheck size={14} className="text-[#1565C0]" />
+                  <ShieldCheck size={14} className="text-[#059669]" />
                   <span>Secure order • Genuine product • Fast delivery</span>
                 </div>
               </div>
@@ -912,7 +912,7 @@ export default function ProductOrderForm({
                       <div className="order-form-vehicle-docs">
                         <div className="order-form-vehicle-docs-header">
                           <div className="order-form-vehicle-docs-title">
-                            <FileText size={15} className="text-[#1565C0]" />
+                            <FileText size={15} className="text-[#059669]" />
                             <span>
                               Upload Documents <span className="upload-required">*</span>
                             </span>
@@ -995,7 +995,7 @@ export default function ProductOrderForm({
                     >
                       <div className="payment-header">
                         <div className="payment-header-icon">
-                          <CreditCard size={18} className="text-[#1565C0]" />
+                          <CreditCard size={18} className="text-[#059669]" />
                         </div>
                         <div>
                           <h4>Payment Method</h4>
@@ -1074,7 +1074,7 @@ export default function ProductOrderForm({
 
                       <div className="payment-order-summary">
                         <div className="payment-order-summary-header">
-                          <Tag size={14} className="text-[#1565C0]" />
+                          <Tag size={14} className="text-[#059669]" />
                           <span>Order Summary</span>
                         </div>
                         <div className="payment-order-summary-rows">
