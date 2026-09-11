@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
 .about-section {
-  background-color: #030b15;
+  background-color: #E0F8E7;
   position: relative;
   overflow: hidden;
   padding: 80px 0;
   font-family: "Inter", sans-serif;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid #DCEAD9;
+  border-bottom: 1px solid #DCEAD9;
   width: 100%;
 }
 
@@ -20,7 +20,7 @@
   height: 420px;
   background-image: radial-gradient(
     circle,
-    rgba(16, 185, 129, 0.22) 1.6px,
+    rgba(5, 162, 35, 0.15) 1.6px,
     transparent 1.6px
   );
   background-size: 22px 22px;
@@ -54,7 +54,7 @@
 }
 
 .about-label {
-  color: #10B981;
+  color: #05A223;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 1px;
@@ -64,7 +64,7 @@
 }
 
 .about-title {
-  color: #ffffff;
+  color: #142018;
   font-size: 2.2rem;
   font-weight: 700;
   line-height: 1.25;
@@ -72,11 +72,11 @@
 }
 
 .about-title-highlight {
-  color: #10B981;
+  color: #05A223;
 }
 
 .about-description {
-  color: #94a3b8;
+  color: #5A6B62;
   font-size: 0.9rem;
   line-height: 1.6;
   margin-bottom: 28px;
@@ -84,7 +84,7 @@
 }
 
 .about-btn {
-  background-color: #059669;
+  background-color: #05A223;
   color: #ffffff;
   border: none;
   border-radius: 4px;
@@ -99,7 +99,7 @@
 }
 
 .about-btn:hover {
-  background-color: #047857;
+  background-color: #048A1E;
   transform: translateY(-1px);
 }
 
@@ -126,20 +126,20 @@
   top: 15%;
   height: 70%;
   width: 1px;
-  background-color: rgba(255, 255, 255, 0.06);
+  background-color: #DCEAD9;
 }
 
 .about-icon-container {
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  border: 1px solid rgba(16, 185, 129, 0.3);
-  background-color: transparent;
+  border: 1px solid rgba(5, 162, 35, 0.3);
+  background-color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 16px;
-  color: #10B981;
+  color: #05A223;
   position: relative;
 }
 
@@ -149,18 +149,18 @@
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  border: 1px solid rgba(16, 185, 129, 0.6);
+  border: 1px solid rgba(5, 162, 35, 0.5);
 }
 
 .about-feature-title {
-  color: #ffffff;
+  color: #142018;
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: 8px;
 }
 
 .about-feature-text {
-  color: #94a3b8;
+  color: #5A6B62;
   font-size: 0.8rem;
   line-height: 1.5;
 }
@@ -169,7 +169,7 @@
 .about-slider-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(4px);
   z-index: 1000;
 }
@@ -181,10 +181,10 @@
   height: 100vh;
   width: 100%;
   max-width: 550px;
-  background: #0b172a;
+  background: #FFFFFF;
   z-index: 1001;
-  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
-  border-left: 1px solid rgba(16, 185, 129, 0.2);
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.12);
+  border-left: 1px solid #DCEAD9;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -192,25 +192,25 @@
 
 .about-slider-header {
   padding: 24px 40px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid #DCEAD9;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: sticky;
   top: 0;
-  background: rgba(11, 23, 42, 0.95);
+  background: rgba(255, 255, 255, 0.97);
   backdrop-filter: blur(10px);
   z-index: 10;
 }
 
 .about-slider-title {
-  color: #ffffff;
+  color: #142018;
   font-size: 1.25rem;
   font-weight: 700;
 }
 
 .about-slider-close {
-  background: rgba(255, 255, 255, 0.05);
+  background: #F4FBF2;
   border: none;
   border-radius: 50%;
   width: 36px;
@@ -218,14 +218,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #94a3b8;
+  color: #5A6B62;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .about-slider-close:hover {
-  background: rgba(16, 185, 129, 0.2);
-  color: #10B981;
+  background: rgba(5, 162, 35, 0.12);
+  color: #05A223;
   transform: rotate(90deg);
 }
 
@@ -236,21 +236,21 @@
 
 .slider-main-title {
   font-size: 1.8rem;
-  color: white;
+  color: #142018;
   font-weight: 700;
   margin-bottom: 20px;
   line-height: 1.3;
 }
 
 .about-slider-text {
-  color: #94a3b8;
+  color: #5A6B62;
   font-size: 1rem;
   line-height: 1.7;
   margin-bottom: 20px;
 }
 
 .about-slider-highlight {
-  color: #ffffff;
+  color: #142018;
   font-weight: 500;
 }
 
@@ -258,15 +258,15 @@
 .leadership-section {
   margin: 32px 0 36px;
   padding-top: 28px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid #DCEAD9;
 }
 
 .leadership-card {
   display: flex;
   gap: 24px;
   align-items: flex-start;
-  background: linear-gradient(145deg, rgba(16, 185, 129, 0.1), rgba(255, 255, 255, 0.02));
-  border: 1px solid rgba(16, 185, 129, 0.25);
+  background: linear-gradient(145deg, rgba(5, 162, 35, 0.06), rgba(244, 251, 242, 0.5));
+  border: 1px solid rgba(5, 162, 35, 0.2);
   border-radius: 16px;
   padding: 24px;
   margin-bottom: 24px;
@@ -282,21 +282,21 @@
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid rgba(16, 185, 129, 0.45);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  border: 3px solid rgba(5, 162, 35, 0.35);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 .leadership-badge {
   position: absolute;
   bottom: 4px;
   right: 4px;
-  background: #059669;
+  background: #05A223;
   color: white;
   font-size: 0.7rem;
   font-weight: 700;
   padding: 3px 9px;
   border-radius: 20px;
-  border: 2px solid #0b172a;
+  border: 2px solid #FFFFFF;
   letter-spacing: 0.5px;
 }
 
@@ -306,21 +306,21 @@
 }
 
 .leadership-name {
-  color: #ffffff;
+  color: #142018;
   font-size: 1.3rem;
   font-weight: 700;
   margin: 0 0 4px 0;
 }
 
 .leadership-role {
-  color: #10B981;
+  color: #05A223;
   font-size: 0.95rem;
   font-weight: 600;
   margin: 0 0 6px 0;
 }
 
 .leadership-tagline {
-  color: #94a3b8;
+  color: #5A6B62;
   font-size: 0.85rem;
   margin: 0 0 16px 0;
   line-height: 1.4;
@@ -336,28 +336,28 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(16, 185, 129, 0.12);
-  color: #a7f3d0;
+  background: rgba(5, 162, 35, 0.08);
+  color: #3A6B42;
   font-size: 0.78rem;
   font-weight: 500;
   padding: 5px 12px;
   border-radius: 20px;
-  border: 1px solid rgba(16, 185, 129, 0.2);
+  border: 1px solid rgba(5, 162, 35, 0.15);
 }
 
 .meta-item svg {
-  color: #10B981;
+  color: #05A223;
 }
 
 .leadership-experience {
-  background: rgba(255, 255, 255, 0.025);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: #F4FBF2;
+  border: 1px solid #DCEAD9;
   border-radius: 14px;
   padding: 22px;
 }
 
 .experience-title {
-  color: #ffffff;
+  color: #142018;
   font-size: 1.05rem;
   font-weight: 600;
   margin: 0 0 16px 0;
@@ -379,13 +379,13 @@
 }
 
 .check-icon {
-  color: #10B981;
+  color: #05A223;
   flex-shrink: 0;
   margin-top: 2px;
 }
 
 .experience-list span {
-  color: #94a3b8;
+  color: #5A6B62;
   font-size: 0.9rem;
   line-height: 1.55;
 }
@@ -399,27 +399,27 @@
 }
 
 .about-slider-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: #FFFFFF;
+  border: 1px solid #DCEAD9;
   padding: 22px;
   border-radius: 12px;
   transition: all 0.3s ease;
 }
 
 .about-slider-card:hover {
-  border-color: rgba(16, 185, 129, 0.35);
-  background: rgba(16, 185, 129, 0.06);
+  border-color: rgba(5, 162, 35, 0.35);
+  background: rgba(5, 162, 35, 0.04);
 }
 
 .about-slider-card h4 {
-  color: #ffffff;
+  color: #142018;
   margin-bottom: 8px;
   font-size: 1.05rem;
   font-weight: 600;
 }
 
 .about-slider-card p {
-  color: #94a3b8;
+  color: #5A6B62;
   font-size: 0.85rem;
   line-height: 1.5;
 }
@@ -427,7 +427,7 @@
 /* Ecosystem */
 .ecosystem-title {
   font-size: 1.15rem;
-  color: white;
+  color: #142018;
   font-weight: 600;
   margin-bottom: 18px;
 }
@@ -448,13 +448,13 @@
 }
 
 .ecosystem-list span {
-  color: #94a3b8;
+  color: #5A6B62;
   font-size: 0.95rem;
   line-height: 1.55;
 }
 
 .ecosystem-list strong {
-  color: #ffffff;
+  color: #142018;
   font-weight: 500;
 }
 

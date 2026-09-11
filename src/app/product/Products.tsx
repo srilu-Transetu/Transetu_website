@@ -171,7 +171,7 @@ export default function Products() {
                 transition={{ delay: 0.5 }}
               >
                 <motion.div
-                  className="absolute left-0 w-full h-[1px] bg-[#10B981] shadow-[0_0_15px_#10B981,0_0_30px_#10B981]"
+                  className="absolute left-0 w-full h-[1px] bg-[#05A223] shadow-[0_0_15px_#05A223,0_0_30px_#05A223]"
                   animate={{
                     top: ["0%", "95%", "0%"],
                     opacity: [0.8, 1, 0.8]
@@ -182,7 +182,7 @@ export default function Products() {
                     ease: "linear"
                   }}
                 >
-                  <div className="absolute top-1/2 left-0 -translate-y-1/2 w-full h-[4px] bg-[#10B981]/30 blur-[2px]" />
+                  <div className="absolute top-1/2 left-0 -translate-y-1/2 w-full h-[4px] bg-[#05A223]/30 blur-[2px]" />
                 </motion.div>
               </motion.div>
             </div>

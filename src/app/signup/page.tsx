@@ -100,9 +100,9 @@ export default function SignupPage() {
         .signup-page {
           display: flex;
           min-height: 100vh;
-          background-color: #0B172A;
+          background-color: #FFFFFF;
           font-family: 'Inter', sans-serif;
-          color: white;
+          color: #142018;
           overflow: hidden;
         }
 
@@ -132,7 +132,7 @@ export default function SignupPage() {
           left: 0;
           width: 100%;
           height: 100%;
-          background: linear-gradient(135deg, rgba(11, 23, 42, 0.95) 0%, rgba(11, 23, 42, 0.4) 100%);
+          background: linear-gradient(135deg, rgba(244, 251, 242, 0.95) 0%, rgba(244, 251, 242, 0.6) 100%);
           z-index: 2;
         }
 
@@ -147,14 +147,14 @@ export default function SignupPage() {
           font-weight: 800;
           line-height: 1.1;
           margin-bottom: 24px;
-          background: linear-gradient(to bottom right, #FFFFFF, #94A3B8);
+          background: linear-gradient(to bottom right, #142018, #05A223);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
 
         .left-content p {
           font-size: 18px;
-          color: #94A3B8;
+          color: #5A6B62;
           line-height: 1.6;
           margin-bottom: 48px;
         }
@@ -169,18 +169,18 @@ export default function SignupPage() {
           display: flex;
           align-items: center;
           gap: 10px;
-          background: rgba(255, 255, 255, 0.05);
+          background: rgba(5, 162, 35, 0.08);
           padding: 10px 18px;
           border-radius: 100px;
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(5, 162, 35, 0.15);
           backdrop-filter: blur(10px);
           font-size: 14px;
-          font-weight: 500;
-          color: #E2E8F0;
+          font-weight: 600;
+          color: #05A223;
         }
 
         .badge svg {
-          color: #10B981;
+          color: #05A223;
         }
 
         .right-panel {
@@ -191,18 +191,18 @@ export default function SignupPage() {
           padding: 40px;
           position: relative;
           z-index: 10;
-          background: radial-gradient(circle at center, rgba(16, 185, 129, 0.15), transparent 70%);
+          background: #F4FBF2;
         }
 
         .auth-card {
           width: 100%;
           max-width: 480px;
-          background: rgba(15, 32, 57, 0.6);
-          backdrop-filter: blur(30px);
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          background: #FFFFFF;
+          backdrop-filter: none;
+          border: 1px solid #DCEAD9;
           border-radius: 28px;
           padding: 48px;
-          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
           position: relative;
           overflow: hidden;
         }
@@ -214,7 +214,7 @@ export default function SignupPage() {
           left: -50%;
           width: 200%;
           height: 200%;
-          background: radial-gradient(circle at center, rgba(16, 185, 129, 0.1), transparent 50%);
+          background: radial-gradient(circle at center, rgba(5, 162, 35, 0.1), transparent 50%);
           pointer-events: none;
         }
 
@@ -229,7 +229,7 @@ export default function SignupPage() {
         }
 
         .form-header p {
-          color: #94A3B8;
+          color: #5A6B62;
           font-size: 15px;
         }
 
@@ -241,32 +241,33 @@ export default function SignupPage() {
           display: block;
           font-size: 14px;
           font-weight: 600;
-          color: #94A3B8;
+          color: #5A6B62;
           margin-bottom: 10px;
         }
 
         .phone-input-wrapper {
           display: flex;
-          background: rgba(0, 0, 0, 0.2);
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          background: #FFFFFF;
+          border: 1.5px solid #DCEAD9;
           border-radius: 14px;
           padding: 4px;
           transition: all 0.3s ease;
         }
 
         .phone-input-wrapper:focus-within {
-          border-color: #10B981;
-          box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15);
+          border-color: #05A223;
+          box-shadow: 0 0 0 4px rgba(5, 162, 35, 0.15);
         }
 
         .country-code {
           padding: 12px 16px;
-          border-right: 1px solid rgba(255, 255, 255, 0.1);
+          border-right: 1px solid #DCEAD9;
           font-weight: 600;
-          color: #FFFFFF;
+          color: #142018;
           display: flex;
           align-items: center;
           gap: 8px;
+          background: transparent;
         }
 
         .phone-input {
@@ -274,17 +275,21 @@ export default function SignupPage() {
           background: transparent;
           border: none;
           padding: 12px 16px;
-          color: white;
+          color: #142018;
           font-size: 16px;
           font-weight: 500;
           letter-spacing: 0.05em;
           outline: none;
         }
 
+        .phone-input::placeholder {
+          color: #8A9B92;
+        }
+
         .btn-submit {
           width: 100%;
-          background: linear-gradient(135deg, #10B981 0%, #059669 100%);
-          color: white;
+          background: linear-gradient(135deg, #05A223 0%, #05A223 100%);
+          color: #142018;
           border: none;
           padding: 16px;
           border-radius: 14px;
@@ -296,12 +301,12 @@ export default function SignupPage() {
           align-items: center;
           justify-content: center;
           gap: 10px;
-          box-shadow: 0 10px 20px -5px rgba(16, 185, 129, 0.5);
+          box-shadow: 0 10px 20px -5px rgba(5, 162, 35, 0.5);
         }
 
         .btn-submit:hover:not(:disabled) {
           transform: translateY(-2px);
-          box-shadow: 0 15px 30px -5px rgba(16, 185, 129, 0.6);
+          box-shadow: 0 15px 30px -5px rgba(5, 162, 35, 0.6);
         }
 
         .btn-submit:disabled {
@@ -319,21 +324,21 @@ export default function SignupPage() {
         .otp-input {
           width: 50px;
           height: 60px;
-          background: rgba(0, 0, 0, 0.2);
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          background: #FFFFFF;
+          border: 1.5px solid #DCEAD9;
           border-radius: 12px;
           text-align: center;
           font-size: 24px;
           font-weight: 700;
-          color: white;
+          color: #142018;
           outline: none;
           transition: all 0.3s ease;
         }
 
         .otp-input:focus {
-          border-color: #10B981;
-          background: rgba(16, 185, 129, 0.05);
-          box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15);
+          border-color: #05A223;
+          background: #FFFFFF;
+          box-shadow: 0 0 0 4px rgba(5, 162, 35, 0.12);
         }
 
         .otp-footer {
@@ -345,7 +350,7 @@ export default function SignupPage() {
         }
 
         .resend-timer {
-          color: #94A3B8;
+          color: #5A6B62;
           display: flex;
           align-items: center;
           gap: 6px;
@@ -354,7 +359,7 @@ export default function SignupPage() {
         .btn-resend {
           background: transparent;
           border: none;
-          color: #10B981;
+          color: #05A223;
           font-weight: 600;
           cursor: pointer;
           display: flex;
@@ -364,14 +369,14 @@ export default function SignupPage() {
         }
 
         .btn-resend:disabled {
-          color: #4B5563;
+          color: #8A9B92;
           cursor: not-allowed;
         }
 
         .btn-change-num {
           background: transparent;
           border: none;
-          color: #94A3B8;
+          color: #5A6B62;
           font-size: 13px;
           cursor: pointer;
           display: flex;
@@ -383,7 +388,7 @@ export default function SignupPage() {
         }
 
         .btn-change-num:hover {
-          color: white;
+          color: #142018;
         }
 
         .bottom-section {
@@ -393,7 +398,7 @@ export default function SignupPage() {
 
         .security-text {
           font-size: 12px;
-          color: #4B5563;
+          color: #8A9B92;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -410,14 +415,14 @@ export default function SignupPage() {
 
         .feature-item {
           font-size: 13px;
-          color: #94A3B8;
+          color: #5A6B62;
           display: flex;
           align-items: center;
           gap: 8px;
         }
 
         .feature-item svg {
-          color: #10B981;
+          color: #05A223;
         }
 
         .loading-spinner {
@@ -425,7 +430,7 @@ export default function SignupPage() {
           height: 20px;
           border: 3px solid rgba(255, 255, 255, 0.3);
           border-radius: 50%;
-          border-top-color: white;
+          border-top-color: #142018;
           animation: spin 1s linear infinite;
         }
 
@@ -439,7 +444,7 @@ export default function SignupPage() {
           }
           .right-panel {
             flex: 1;
-            background: #0B172A;
+            background: #FFFFFF;
           }
         }
 
@@ -456,37 +461,37 @@ export default function SignupPage() {
           align-items: center;
           gap: 12px;
           padding: 12px 24px;
-          background: rgba(15, 23, 42, 0.6);
+          background: #FFFFFF;
           backdrop-filter: blur(16px);
           -webkit-backdrop-filter: blur(16px);
-          border: 1px solid rgba(16, 185, 129, 0.4);
+          border: 1px solid #DCEAD9;
           border-radius: 12px;
-          color: #E2E8F0;
+          color: #142018;
           text-decoration: none;
           font-size: 15px;
           font-weight: 500;
           letter-spacing: 0.02em;
           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           white-space: nowrap;
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
         }
 
         :global(.back-home-btn:hover) {
-          color: #FFFFFF;
-          background: rgba(15, 23, 42, 0.8);
-          border-color: #34D399;
+          color: #05A223;
+          background: #F4FBF2;
+          border-color: #05A223;
           transform: translateX(-5px);
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(52, 211, 153, 0.3);
+          box-shadow: 0 6px 20px rgba(5, 162, 35, 0.12);
         }
 
         :global(.back-home-btn svg) {
           transition: transform 0.3s ease;
-          color: #34D399;
+          color: #05A223;
         }
 
         :global(.back-home-btn:hover svg) {
           transform: scale(1.1);
-          color: #FFFFFF;
+          color: #05A223;
         }
 
         :global(.back-home-btn:active) {

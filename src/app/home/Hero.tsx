@@ -16,7 +16,7 @@ export default function Hero() {
           playsInline
           className="hero-bg-video-el"
         >
-          <source src="/assets/Bg_video.mp4" type="video/mp4" />
+          <source src="/assets/new.mp4" type="video/mp4" />
         </video>
       </div>
 

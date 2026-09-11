@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-column">
-            <img src="/assets/Footer_logo_green.png" alt="Transetu" className="footer-logo" />
+            <img src="/assets/Footer_logo.png" alt="Transetu" className="footer-logo" />
             <p className="footer-desc">
               Seamless travel solutions including FASTag, GPS tracking, and premium accessories for your journey.
             </p>
@@ -29,15 +29,15 @@ export default function Footer() {
             <h4>Contact Info</h4>
             <ul className="footer-contact">
               <li>
-                <Phone size={18} className="footer-contact-icon" style={{ color: 'var(--color-accent-blue)' }} /> 
+                <Phone size={18} className="footer-contact-icon" style={{ color: 'var(--color-accent-green)' }} /> 
                 <span>+91 8985350585</span>
               </li>
               <li>
-                <Mail size={18} className="footer-contact-icon" style={{ color: 'var(--color-accent-blue)' }} /> 
+                <Mail size={18} className="footer-contact-icon" style={{ color: 'var(--color-accent-green)' }} /> 
                 <span>hello@transetu.com</span>
               </li>
               <li>
-                <MapPin size={18} className="footer-contact-icon" style={{ color: 'var(--color-accent-blue)' }} /> 
+                <MapPin size={18} className="footer-contact-icon" style={{ color: 'var(--color-accent-green)' }} /> 
                 <span>Anakapalli, Andhra Pradesh, INDIA</span>
               </li>
             </ul>

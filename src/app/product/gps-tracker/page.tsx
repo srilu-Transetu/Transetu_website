@@ -445,7 +445,7 @@ export default function GPSDetail() {
                 className="gps-floating-notification f-notif-1"
                 animate={{ y: [0, -10, 0] }} transition={{ duration: 4, repeat: Infinity }}
               >
-                <CheckCircle2 size={16} color="#10B981" /> Delivery Completed
+                <CheckCircle2 size={16} color="#05A223" /> Delivery Completed
               </motion.div>
               <motion.div 
                 className="gps-floating-notification f-notif-2"
@@ -666,7 +666,7 @@ export default function GPSDetail() {
               <div className="gps-modal-success">
                 <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: "spring", stiffness: 200, delay: 0.2 }}>
                   <div className="gps-success-icon-wrap">
-                    <CheckCircle2 size={60} color="#10B981" />
+                    <CheckCircle2 size={60} color="#05A223" />
                     <div className="gps-success-pulse"></div>
                   </div>
                 </motion.div>
