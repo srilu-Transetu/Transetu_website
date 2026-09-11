@@ -25,7 +25,7 @@
   min-height: 128px;
   padding: 22px 38px !important;
   position: relative;
-  background: linear-gradient(115deg, #022c22 0%, #064e3b 42%, #059669 100%);
+  background: linear-gradient(115deg, #022c22 0%, #064e3b 42%, #72D83A 100%);
   color: #fff;
   flex-shrink: 0;
   overflow: hidden;
@@ -125,12 +125,12 @@
   flex-shrink: 0;
 }
 .order-form-step-circle.active {
-  background: #059669;
+  background: #72D83A;
   color: #fff;
   box-shadow: 0 0 0 4px rgba(5, 150, 105, 0.15);
 }
 .order-form-step-circle.completed {
-  background: #10b981;
+  background: #59C71C;
   color: #fff;
 }
 .order-form-step-label {
@@ -141,10 +141,10 @@
   white-space: nowrap;
 }
 .order-form-step-label.active {
-  color: #059669;
+  color: #72D83A;
 }
 .order-form-step-label.completed {
-  color: #10b981;
+  color: #59C71C;
 }
 .order-form-step-line {
   flex: 1;
@@ -155,7 +155,7 @@
   min-width: 20px;
 }
 .order-form-step-line.completed {
-  background: #10b981;
+  background: #59C71C;
 }
 .order-form-grid {
   display: grid;
@@ -198,7 +198,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #059669;
+  background: #72D83A;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -208,7 +208,7 @@
 .order-form-panel-header h4 {
   font-size: 18px;
   font-weight: 700;
-  color: #0f172a;
+  color: #0D2613;
   line-height: 1.2;
 }
 .order-form-panel-header p {
@@ -225,7 +225,7 @@
   display: block;
   font-size: 13px;
   font-weight: 600;
-  color: #0f172a;
+  color: #0D2613;
   margin-bottom: 6px;
 }
 .order-form-field label > span {
@@ -250,13 +250,13 @@
   border: 1.5px solid #e2e8f0;
   border-radius: 10px;
   font-size: 14px;
-  color: #0f172a;
+  color: #0D2613;
   background: #fff;
   outline: none;
   transition: all 0.2s ease;
 }
 .order-form-input:focus {
-  border-color: #059669;
+  border-color: #72D83A;
   box-shadow: 0 0 0 4px rgba(5, 150, 105, 0.08);
 }
 .order-form-input::placeholder {
@@ -281,7 +281,7 @@
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: #059669;
+  background: #72D83A;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -291,7 +291,7 @@
 .order-form-security-title {
   font-size: 13px;
   font-weight: 700;
-  color: #0f172a;
+  color: #0D2613;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -302,7 +302,7 @@
   align-items: center;
   gap: 4px;
   padding: 1px 8px;
-  background: #10b981;
+  background: #59C71C;
   color: #fff;
   font-size: 10px;
   font-weight: 700;
@@ -326,7 +326,7 @@
   align-items: center;
   gap: 10px;
   padding: 12px 32px;
-  background: #059669;
+  background: #72D83A;
   color: #ffffff;
   font-size: 16px;
   font-weight: 600;
@@ -345,7 +345,7 @@
   background: #0055CC;
 }
 .order-form-continue:disabled {
-  background: #059669 !important;
+  background: #72D83A !important;
   opacity: 0.7 !important;
   box-shadow: none !important;
   color: #ffffff !important;
@@ -368,7 +368,7 @@
   width: 42px;
   height: 42px;
   border-radius: 12px;
-  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  background: linear-gradient(135deg, #72D83A 0%, #047857 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -378,7 +378,7 @@
 .order-form-vehicle-header h4 {
   font-size: 18px;
   font-weight: 700;
-  color: #0f172a;
+  color: #0D2613;
   line-height: 1.2;
 }
 .order-form-vehicle-header p {
@@ -396,7 +396,7 @@
   display: block;
   font-size: 13px;
   font-weight: 600;
-  color: #0f172a;
+  color: #0D2613;
   margin-bottom: 8px;
 }
 .order-form-vehicle-field label span {
@@ -423,7 +423,7 @@
   border: 1.5px solid #e2e8f0;
   border-radius: 12px;
   font-size: 15px;
-  color: #0f172a;
+  color: #0D2613;
   background: #fff;
   outline: none;
   transition: all 0.2s ease;
@@ -433,7 +433,7 @@
   text-transform: uppercase;
 }
 .order-form-vehicle-input:focus {
-  border-color: #059669;
+  border-color: #72D83A;
   box-shadow: 0 0 0 4px rgba(5, 150, 105, 0.1);
 }
 .order-form-vehicle-input::placeholder {
@@ -454,7 +454,7 @@
   border: 1.5px solid #e2e8f0;
   border-radius: 12px;
   font-size: 15px;
-  color: #0f172a;
+  color: #0D2613;
   background: #fff;
   outline: none;
   transition: all 0.2s ease;
@@ -464,7 +464,7 @@
   font-weight: 500;
 }
 .order-form-vehicle-select:focus {
-  border-color: #059669;
+  border-color: #72D83A;
   box-shadow: 0 0 0 4px rgba(5, 150, 105, 0.1);
 }
 .order-form-vehicle-select:hover {
@@ -495,7 +495,7 @@
   gap: 8px;
   font-size: 14px;
   font-weight: 600;
-  color: #0f172a;
+  color: #0D2613;
 }
 .order-form-optional-badge {
   display: inline-flex;
@@ -545,13 +545,13 @@
   text-align: center;
 }
 .upload-tile--square:hover {
-  border-color: #059669;
+  border-color: #72D83A;
   background: #f0f7ff;
   box-shadow: 0 4px 16px rgba(5, 150, 105, 0.1);
 }
 .upload-tile--square.upload-tile--filled {
   border-style: solid;
-  border-color: #059669;
+  border-color: #72D83A;
   background: #ecfdf5;
 }
 .upload-tile-empty {
@@ -583,7 +583,7 @@
 .upload-tile-label {
   font-size: 13px;
   font-weight: 700;
-  color: #0f172a;
+  color: #0D2613;
   line-height: 1.25;
   margin: 0;
 }
@@ -603,7 +603,7 @@
   gap: 5px;
   margin-top: 8px;
   padding: 6px 14px;
-  background: #059669;
+  background: #72D83A;
   color: #fff;
   font-size: 12px;
   font-weight: 600;
@@ -634,7 +634,7 @@
 .upload-tile-filename {
   font-size: 11px;
   font-weight: 600;
-  color: #059669;
+  color: #72D83A;
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -651,7 +651,7 @@
   align-items: center;
   gap: 4px;
   padding: 5px 12px;
-  background: #059669;
+  background: #72D83A;
   color: #fff;
   font-size: 11px;
   font-weight: 600;
@@ -697,7 +697,7 @@
 .payment-header h4 {
   font-size: 17px;
   font-weight: 700;
-  color: #0f172a;
+  color: #0D2613;
   line-height: 1.2;
 }
 .payment-header p {
@@ -728,7 +728,7 @@
   background: #f2faf5;
 }
 .payment-method-card.selected {
-  border-color: #059669;
+  border-color: #72D83A;
   background: #ecfdf5;
   box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.08);
 }
@@ -746,7 +746,7 @@
 }
 .payment-method-icon.selected {
   background: rgba(5, 150, 105, 0.12);
-  color: #059669;
+  color: #72D83A;
 }
 .payment-method-info {
   flex: 1;
@@ -755,7 +755,7 @@
 .payment-method-label {
   font-size: 14px;
   font-weight: 700;
-  color: #0f172a;
+  color: #0D2613;
   margin: 0;
   line-height: 1.25;
 }
@@ -775,8 +775,8 @@
   transition: all 0.2s ease;
 }
 .payment-method-radio.selected {
-  border-color: #059669;
-  background: #059669;
+  border-color: #72D83A;
+  background: #72D83A;
   box-shadow: inset 0 0 0 3px #fff;
 }
 .payment-order-summary {
@@ -791,7 +791,7 @@
   gap: 8px;
   font-size: 14px;
   font-weight: 700;
-  color: #0f172a;
+  color: #0D2613;
   margin-bottom: 12px;
 }
 .payment-order-summary-rows {
@@ -808,7 +808,7 @@
 }
 .payment-order-row span:last-child {
   font-weight: 600;
-  color: #0f172a;
+  color: #0D2613;
 }
 .payment-order-total {
   display: flex;
@@ -819,12 +819,12 @@
   border-top: 1px dashed #cbd5e1;
   font-size: 14px;
   font-weight: 700;
-  color: #0f172a;
+  color: #0D2613;
 }
 .payment-order-total span:last-child {
   font-size: 18px;
   font-weight: 800;
-  color: #059669;
+  color: #72D83A;
 }
 .payment-actions {
   display: flex;
@@ -876,14 +876,14 @@
   font-weight: 700;
   letter-spacing: 0.4px;
   text-transform: uppercase;
-  color: #059669;
+  color: #72D83A;
   background: rgba(5, 150, 105, 0.1);
   border-radius: 999px;
 }
 .product-info-name {
   font-size: 16px;
   font-weight: 700;
-  color: #0f172a;
+  color: #0D2613;
   margin: 0;
   line-height: 1.2;
 }
@@ -898,7 +898,7 @@
   margin-top: 4px;
   font-size: 20px;
   font-weight: 800;
-  color: #059669;
+  color: #72D83A;
 }
 .product-info-features {
   padding: 14px 18px;
@@ -929,7 +929,7 @@
   display: block;
   font-size: 13px;
   font-weight: 600;
-  color: #0f172a;
+  color: #0D2613;
   line-height: 1.25;
 }
 .product-info-feature-desc {
@@ -982,7 +982,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 18px rgba(16, 185, 129, 0.2);
+  box-shadow: 0 6px 18px rgba(89, 199, 28, 0.2);
   flex-shrink: 0;
 }
 .success-banner-text {
@@ -995,7 +995,7 @@
   gap: 5px;
   padding: 3px 9px;
   margin-bottom: 8px;
-  background: #059669;
+  background: #72D83A;
   color: #fff;
   font-size: 11px;
   font-weight: 700;
@@ -1018,7 +1018,7 @@
   max-width: 720px;
 }
 .success-message strong {
-  color: #0f172a;
+  color: #0D2613;
   font-weight: 700;
 }
 .success-grid {
@@ -1066,7 +1066,7 @@
   height: 28px;
   border-radius: 50%;
   background: rgba(5, 150, 105, 0.1);
-  color: #059669;
+  color: #72D83A;
   font-size: 13px;
   font-weight: 700;
   display: flex;
@@ -1078,7 +1078,7 @@
 .success-next-title {
   font-size: 14px;
   font-weight: 700;
-  color: #0f172a;
+  color: #0D2613;
   margin: 0 0 2px;
   line-height: 1.3;
 }
@@ -1109,7 +1109,7 @@
   border-bottom: 1px solid #e2e8f0;
   font-size: 14px;
   font-weight: 700;
-  color: #0f172a;
+  color: #0D2613;
 }
 .success-card-rows {
   padding: 14px 18px 20px;   /* ← only this line changed */
@@ -1128,11 +1128,11 @@
 }
 .success-card-value {
   font-weight: 600;
-  color: #0f172a;
+  color: #0D2613;
   text-align: right;
 }
 .success-card-price {
-  color: #059669;
+  color: #72D83A;
   font-weight: 800;
   font-size: 16px;
 }
@@ -1172,7 +1172,7 @@
   justify-content: center;
   min-width: 160px;
   padding: 12px 32px;
-  background: #059669;
+  background: #72D83A;
   color: #fff;
   font-size: 15px;
   font-weight: 600;
@@ -1208,7 +1208,7 @@
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: #059669;
+  background: #72D83A;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1217,7 +1217,7 @@
 .order-summary-header h4 {
   font-size: 15px;
   font-weight: 700;
-  color: #0f172a;
+  color: #0D2613;
 }
 .order-summary-header p {
   font-size: 11px;
@@ -1262,7 +1262,7 @@
 .order-summary-product-name > span:first-child {
   font-size: 14px;
   font-weight: 700;
-  color: #0f172a;
+  color: #0D2613;
 }
 .order-summary-product-tag {
   font-size: 8px;
@@ -1271,7 +1271,7 @@
   letter-spacing: 0.5px;
   padding: 1px 6px;
   background: rgba(5, 150, 105, 0.1);
-  color: #059669;
+  color: #72D83A;
   border-radius: 4px;
 }
 .order-summary-product-info p {
@@ -1287,7 +1287,7 @@
 .order-summary-product-price {
   font-size: 14px;
   font-weight: 700;
-  color: #0f172a;
+  color: #0D2613;
   flex-shrink: 0;
 }
 .order-summary-price {
@@ -1303,7 +1303,7 @@
   color: #64748b;
 }
 .order-summary-price-row span:last-child {
-  color: #0f172a;
+  color: #0D2613;
   font-weight: 600;
 }
 .order-summary-price-total {
@@ -1316,11 +1316,11 @@
 }
 .order-summary-price-total span:first-child {
   font-weight: 700;
-  color: #0f172a;
+  color: #0D2613;
 }
 .order-summary-price-total span:last-child {
   font-weight: 800;
-  color: #059669;
+  color: #72D83A;
   font-size: 16px;
 }
 .order-summary-badges {
@@ -1375,7 +1375,7 @@
   align-items: center;
   gap: 8px;
   padding: 10px 24px;
-  background: #059669;
+  background: #72D83A;
   color: #fff;
   font-size: 13px;
   font-weight: 600;
@@ -1391,7 +1391,7 @@
   background: #047857;
 }
 .order-form-next-button:disabled {
-  background: #059669 !important;
+  background: #72D83A !important;
   opacity: 0.7 !important;
   box-shadow: none !important;
   color: #ffffff !important;
@@ -1412,7 +1412,7 @@
   border-radius: 10px !important;
 }
 .upload-tile--inline:hover {
-  border-color: #059669 !important;
+  border-color: #72D83A !important;
 }
 .pan-upload {
   width: 100%;
@@ -1432,7 +1432,7 @@
 }
 .pan-upload-field:hover,
 .pan-upload-field.has-file {
-  border-color: #059669;
+  border-color: #72D83A;
 }
 .pan-upload-field.has-file {
   background: #f2faf5;
@@ -1466,7 +1466,7 @@
   white-space: nowrap;
 }
 .pan-upload-name.has-file {
-  color: #0f172a;
+  color: #0D2613;
   font-weight: 600;
 }
 
@@ -1479,7 +1479,7 @@
   height: 100%;
   min-height: 34px;
   padding: 0 18px;
-  background: #059669;
+  background: #72D83A;
   color: #ffffff !important;
   border: none;
   border-radius: 8px;

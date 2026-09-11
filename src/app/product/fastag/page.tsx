@@ -477,7 +477,7 @@ export default function FastagDetail() {
               <div className="fastag-modal-success">
                 <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: "spring", stiffness: 200, delay: 0.2 }}>
                   <div className="fastag-success-icon-wrap">
-                    <CheckCircle2 size={60} color="#10B981" />
+                    <CheckCircle2 size={60} color="#59C71C" />
                     <div className="fastag-success-pulse"></div>
                   </div>
                 </motion.div>

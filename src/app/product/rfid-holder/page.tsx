@@ -535,7 +535,7 @@ export default function FASTagHolderPage() {
               <div className="rfid-modal-success">
                 <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: "spring", stiffness: 200, delay: 0.2 }}>
                   <div className="rfid-success-icon-wrap">
-                    <CheckCircle2 size={60} color="#10B981" />
+                    <CheckCircle2 size={60} color="#59C71C" />
                     <div className="rfid-success-pulse"></div>
                   </div>
                 </motion.div>

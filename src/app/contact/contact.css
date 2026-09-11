@@ -1,14 +1,14 @@
 /* Color Palette - Light Theme Reference
   Background: #F5F7FA
-  Primary Text: #0B172A
+  Primary Text: #071A0C
   Secondary Text: #64748B
-  Accents: #10B981, #34D399
+  Accents: #59C71C, #05A223
 */
 
 .contact-section {
   position: relative;
   background-color: #F8FAFC;
-  color: #0B172A;
+  color: #071A0C;
   padding: 6rem 2rem;
   overflow: hidden;
   font-family: var(--font-inter, sans-serif);
@@ -32,8 +32,8 @@
   width: 100%;
   height: 100%;
   background-image: 
-    linear-gradient(rgba(16, 185, 129, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(16, 185, 129, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(89, 199, 28, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(89, 199, 28, 0.05) 1px, transparent 1px);
   background-size: 40px 40px;
   opacity: 0.8;
 }
@@ -42,7 +42,7 @@
   position: absolute;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(89, 199, 28, 0.08) 0%, transparent 70%);
   border-radius: 50%;
   filter: blur(60px);
 }
@@ -77,7 +77,7 @@
   text-transform: uppercase;
   margin-bottom: 1.25rem;
   padding: 0.35rem 1.25rem;
-  background: rgba(16, 185, 129, 0.1);
+  background: rgba(89, 199, 28, 0.1);
   border-radius: 50px;
 }
 
@@ -86,11 +86,11 @@
   font-weight: 800;
   margin-bottom: 1.25rem;
   line-height: 1.1;
-  color: #0F172A;
+  color: #0D2613;
 }
 
 .contact-highlight {
-  color: #059669;
+  color: #72D83A;
   position: relative;
   display: inline-block;
 }
@@ -102,7 +102,7 @@
   left: 0;
   width: 100%;
   height: 8px;
-  background: rgba(16, 185, 129, 0.1);
+  background: rgba(89, 199, 28, 0.1);
   z-index: -1;
 }
 
@@ -141,7 +141,7 @@
 
 .info-card:hover {
   transform: translateY(-5px);
-  border-color: #059669;
+  border-color: #72D83A;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
@@ -153,12 +153,12 @@
   height: 52px;
   border-radius: 14px;
   background: #ECFDF5;
-  color: #059669;
+  color: #72D83A;
   transition: all 0.3s ease;
 }
 
 .info-card:hover .info-icon-wrapper {
-  background: #059669;
+  background: #72D83A;
   color: #FFFFFF;
 }
 
@@ -170,7 +170,7 @@
 .info-content h3 {
   font-size: 1rem;
   font-weight: 700;
-  color: #0F172A;
+  color: #0D2613;
   margin-bottom: 0.25rem;
 }
 
@@ -222,7 +222,7 @@
   border: 1.5px solid #E2E8F0;
   border-radius: 12px;
   padding: 0.85rem 1.15rem;
-  color: #0F172A;
+  color: #0D2613;
   font-size: 0.95rem;
   font-family: inherit;
   transition: all 0.3s ease;
@@ -245,13 +245,13 @@
 .contact-form select:focus,
 .contact-form textarea:focus {
   outline: none;
-  border-color: #059669;
+  border-color: #72D83A;
   background: #FFFFFF;
-  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
+  box-shadow: 0 0 0 4px rgba(89, 199, 28, 0.1);
 }
 
 .submit-btn {
-  background: #059669;
+  background: #72D83A;
   color: #FFFFFF;
   border: none;
   border-radius: 12px;
@@ -261,13 +261,13 @@
   cursor: pointer;
   transition: all 0.3s ease;
   margin-top: 0.25rem;
-  box-shadow: 0 4px 14px 0 rgba(16, 185, 129, 0.39);
+  box-shadow: 0 4px 14px 0 rgba(89, 199, 28, 0.39);
 }
 
 .submit-btn:hover {
   background: #047857;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.23);
+  box-shadow: 0 6px 20px rgba(89, 199, 28, 0.23);
 }
 
 /* Support Features Strip */
@@ -299,7 +299,7 @@
   height: 36px;
   border-radius: 50%;
   background: #D1FAE5;
-  color: #059669;
+  color: #72D83A;
 }
 
 .feature-item span {
@@ -329,7 +329,7 @@
 }
 
 .bar-icon {
-  color: #059669;
+  color: #72D83A;
 }
 
 .divider {
