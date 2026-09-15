@@ -672,7 +672,7 @@ export default function GPSDetail() {
                 </motion.div>
                 <h3>Application Submitted!</h3>
                 <p>Your GPS Tracker application for <span>{selectedPlan}</span> has been received. Our team will contact you shortly for installation.</p>
-                <div className="gps-secure-badge mt-6" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#64748B', fontSize: '0.85rem', justifyContent: 'center', marginTop: '24px' }}><Lock size={14} /> Application ID: TS-{Math.floor(Math.random() * 100000)}</div>
+                <div className="gps-secure-badge mt-6" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#52665A', fontSize: '0.85rem', justifyContent: 'center', marginTop: '24px' }}><Lock size={14} /> Application ID: TS-{Math.floor(Math.random() * 100000)}</div>
               </div>
             ) : (
               <>

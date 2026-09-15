@@ -20,6 +20,12 @@ export default function Hero() {
         </video>
       </div>
 
+      {/* Subtle diagonal brand motif inspired by visiting card */}
+      <div className="hero-diagonal-accents" aria-hidden="true">
+        <div className="diagonal-band band-primary" />
+        <div className="diagonal-band band-accent" />
+      </div>
+
       <div className="container hero-container">
         <motion.div
           className="hero-content"
@@ -59,16 +65,16 @@ export default function Hero() {
             and premium holders for a smoother journey.
           </motion.p>
 
-          <motion.div
+         {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
             className="hero-cta-wrapper"
           >
-            <Link href="/signup" className="btn-fastag" style={{ textDecoration: 'none' }}>
+            <Link href="/#products" className="btn-fastag" style={{ textDecoration: 'none' }}>
               Check FASTag Status <ArrowRight size={18} />
             </Link>
-          </motion.div>
+          </motion.div> */}
 
           <motion.div
             className="hero-features"

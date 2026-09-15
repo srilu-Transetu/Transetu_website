@@ -283,7 +283,7 @@ export default function SignupPage() {
 
         .btn-submit {
           width: 100%;
-          background: linear-gradient(135deg, #59C71C 0%, #72D83A 100%);
+          background: linear-gradient(135deg, #05A223 0%, #59C71C 100%);
           color: white;
           border: none;
           padding: 16px;
@@ -296,7 +296,7 @@ export default function SignupPage() {
           align-items: center;
           justify-content: center;
           gap: 10px;
-          box-shadow: 0 10px 20px -5px rgba(89, 199, 28, 0.5);
+          box-shadow: 0 10px 20px -5px rgba(5, 162, 35, 0.5);
         }
 
         .btn-submit:hover:not(:disabled) {

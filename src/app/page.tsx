@@ -2,7 +2,6 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/app/home/Hero";
 import Products from "@/app/product/Products";
 import About from "./about/About";
-import Contact from "@/app/contact/Contact";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -12,7 +11,6 @@ export default function Home() {
       <Hero />
       <Products />
       <About />
-      <Contact />
       <Footer />
     </main>
   );

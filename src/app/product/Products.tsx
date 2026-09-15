@@ -6,8 +6,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import ProductOrderForm from "@/components/ProductOrderForm";
+import FastagEnquiryModal from "@/components/FastagEnquiryModal";
 
 export default function Products() {
+  const [isFastagEnquiryOpen, setIsFastagEnquiryOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<{
     name: string;
     price: number;
@@ -120,12 +122,16 @@ export default function Products() {
                     ) : (
                       <button
                         onClick={() => {
-                          setSelectedProduct({
-                            name: product.name,
-                            price: product.numericPrice,
-                            image: product.image,
-                            tagline: product.tagline
-                          });
+                          if (product.name === "FASTag" || product.name === "FASTag Holder") {
+                            setIsFastagEnquiryOpen(true);
+                          } else {
+                            setSelectedProduct({
+                              name: product.name,
+                              price: product.numericPrice,
+                              image: product.image,
+                              tagline: product.tagline
+                            });
+                          }
                         }}
                         className={`product-card-button ${
                           product.name === "FASTag Holder"
@@ -253,7 +259,13 @@ export default function Products() {
         </motion.div>
       </div>
 
-      {/* Product Order Form */}
+      {/* FASTag Enquiry Form Modal (No payment required) */}
+      <FastagEnquiryModal
+        isOpen={isFastagEnquiryOpen}
+        onClose={() => setIsFastagEnquiryOpen(false)}
+      />
+
+      {/* Product Order Form (Preserved for existing accessory workflows) */}
       {selectedProduct && (
         <ProductOrderForm
           isOpen={!!selectedProduct}
