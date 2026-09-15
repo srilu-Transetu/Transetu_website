@@ -262,7 +262,7 @@ export default function About() {
                 {/* 3. ISO & Uptime Cards */}
                 <div className="about-slider-grid">
                   <div className="about-slider-card">
-                    <ShieldCheck size={28} className="mb-4" color="#10B981" />
+                    <ShieldCheck size={28} className="mb-4" color="#59C71C" />
                     <h4>ISO Certified</h4>
                     <p>
                       Our hardware and software ecosystems meet the highest
@@ -270,7 +270,7 @@ export default function About() {
                     </p>
                   </div>
                   <div className="about-slider-card">
-                    <Zap size={28} className="mb-4" color="#10B981" />
+                    <Zap size={28} className="mb-4" color="#59C71C" />
                     <h4>99.9% Uptime</h4>
                     <p>
                       Redundant server architecture ensures our tracking and
@@ -284,21 +284,21 @@ export default function About() {
                   <h4 className="ecosystem-title">Our Mobility Ecosystem</h4>
                   <ul className="ecosystem-list">
                     <li>
-                      <CheckCircle2 size={20} color="#10B981" className="check-icon" />
+                      <CheckCircle2 size={20} color="#59C71C" className="check-icon" />
                       <span>
                         <strong>Commercial Fleet Management:</strong> Real-time
                         telemetry, geofencing, and automated toll expense tracking.
                       </span>
                     </li>
                     <li>
-                      <CheckCircle2 size={20} color="#10B981" className="check-icon" />
+                      <CheckCircle2 size={20} color="#59C71C" className="check-icon" />
                       <span>
                         <strong>Private Vehicle Security:</strong> Premium
                         anti-theft GPS hardware integrated with emergency response protocols.
                       </span>
                     </li>
                     <li>
-                      <CheckCircle2 size={20} color="#10B981" className="check-icon" />
+                      <CheckCircle2 size={20} color="#59C71C" className="check-icon" />
                       <span>
                         <strong>Premium Accessories:</strong> Signal-neutral,
                         heat-resistant FASTag holders designed for extreme durability.

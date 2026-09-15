@@ -6,8 +6,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import ProductOrderForm from "@/components/ProductOrderForm";
+import FastagEnquiryModal from "@/components/FastagEnquiryModal";
 
 export default function Products() {
+  const [isFastagEnquiryOpen, setIsFastagEnquiryOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<{
     name: string;
     price: number;
@@ -120,12 +122,16 @@ export default function Products() {
                     ) : (
                       <button
                         onClick={() => {
-                          setSelectedProduct({
-                            name: product.name,
-                            price: product.numericPrice,
-                            image: product.image,
-                            tagline: product.tagline
-                          });
+                          if (product.name === "FASTag" || product.name === "FASTag Holder") {
+                            setIsFastagEnquiryOpen(true);
+                          } else {
+                            setSelectedProduct({
+                              name: product.name,
+                              price: product.numericPrice,
+                              image: product.image,
+                              tagline: product.tagline
+                            });
+                          }
                         }}
                         className={`product-card-button ${
                           product.name === "FASTag Holder"
@@ -171,7 +177,7 @@ export default function Products() {
                 transition={{ delay: 0.5 }}
               >
                 <motion.div
-                  className="absolute left-0 w-full h-[1px] bg-[#10B981] shadow-[0_0_15px_#10B981,0_0_30px_#10B981]"
+                  className="absolute left-0 w-full h-[1px] bg-[#59C71C] shadow-[0_0_15px_#59C71C,0_0_30px_#59C71C]"
                   animate={{
                     top: ["0%", "95%", "0%"],
                     opacity: [0.8, 1, 0.8]
@@ -182,7 +188,7 @@ export default function Products() {
                     ease: "linear"
                   }}
                 >
-                  <div className="absolute top-1/2 left-0 -translate-y-1/2 w-full h-[4px] bg-[#10B981]/30 blur-[2px]" />
+                  <div className="absolute top-1/2 left-0 -translate-y-1/2 w-full h-[4px] bg-[#59C71C]/30 blur-[2px]" />
                 </motion.div>
               </motion.div>
             </div>
@@ -253,7 +259,13 @@ export default function Products() {
         </motion.div>
       </div>
 
-      {/* Product Order Form */}
+      {/* FASTag Enquiry Form Modal (No payment required) */}
+      <FastagEnquiryModal
+        isOpen={isFastagEnquiryOpen}
+        onClose={() => setIsFastagEnquiryOpen(false)}
+      />
+
+      {/* Product Order Form (Preserved for existing accessory workflows) */}
       {selectedProduct && (
         <ProductOrderForm
           isOpen={!!selectedProduct}

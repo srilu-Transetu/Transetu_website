@@ -8,8 +8,8 @@
   --fastag-charcoal: #1c1c21;
   --fastag-graphite: #3f3f46;
   --fastag-slate: #94a3b8;
-  --fastag-accent: #10B981;
-  --fastag-accent-glow: rgba(16, 185, 129, 0.3);
+  --fastag-accent: #59C71C;
+  --fastag-accent-glow: rgba(89, 199, 28, 0.3);
   --fastag-text-primary: #ffffff;
   --fastag-text-secondary: #94a3b8;
   --fastag-border: rgba(255, 255, 255, 0.08);
@@ -155,7 +155,7 @@
 
 .fastag-orb-2 {
   width: 400px; height: 400px;
-  background: #047857;
+  background: #05A223;
   bottom: -50px; right: -50px;
   animation-delay: -5s;
 }
@@ -264,7 +264,7 @@
   position: relative;
   overflow: hidden;
   border: none;
-  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(89, 199, 28, 0.3), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .fastag-btn-glow-premium::before {
@@ -279,7 +279,7 @@
 .fastag-btn-glow-premium:hover {
   transform: translateY(-4px) scale(1.02);
   box-shadow: 0 12px 30px rgba(46, 179, 232, 0.5);
-  background: linear-gradient(135deg, #34D399 0%, var(--fastag-accent) 100%);
+  background: linear-gradient(135deg, #05A223 0%, var(--fastag-accent) 100%);
 }
 
 .fastag-btn-glow-premium:hover::before {
@@ -1183,7 +1183,7 @@
 .fastag-modal-success { text-align: center; padding: 40px 0; }
 .fastag-success-icon-wrap { position: relative; width: 100px; height: 100px; margin: 0 auto 30px; display: flex; align-items: center; justify-content: center; }
 .fastag-success-pulse {
-  position: absolute; inset: 0; background: #10B981; border-radius: 50%; opacity: 0.2; animation: successPulseFastag 2s infinite;
+  position: absolute; inset: 0; background: #59C71C; border-radius: 50%; opacity: 0.2; animation: successPulseFastag 2s infinite;
 }
 
 @keyframes successPulseFastag {

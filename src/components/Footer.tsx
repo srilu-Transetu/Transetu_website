@@ -19,9 +19,8 @@ export default function Footer() {
             <h4>Quick Links</h4>
             <ul className="footer-links">
               <li><Link href="/" className="footer-link">Home</Link></li>
-              <li><Link href="#products" className="footer-link">Products</Link></li>
-              <li><Link href="#about" className="footer-link">About Us</Link></li>
-              <li><Link href="#contact" className="footer-link">Contact Us</Link></li>
+              <li><Link href="/#products" className="footer-link">Products</Link></li>
+              <li><Link href="/#about" className="footer-link">About Us</Link></li>
             </ul>
           </div>
 
@@ -29,15 +28,15 @@ export default function Footer() {
             <h4>Contact Info</h4>
             <ul className="footer-contact">
               <li>
-                <Phone size={18} className="footer-contact-icon" style={{ color: 'var(--color-accent-blue)' }} /> 
+                <Phone size={18} className="footer-contact-icon" style={{ color: '#59C71C' }} /> 
                 <span>+91 8985350585</span>
               </li>
               <li>
-                <Mail size={18} className="footer-contact-icon" style={{ color: 'var(--color-accent-blue)' }} /> 
+                <Mail size={18} className="footer-contact-icon" style={{ color: '#59C71C' }} /> 
                 <span>hello@transetu.com</span>
               </li>
               <li>
-                <MapPin size={18} className="footer-contact-icon" style={{ color: 'var(--color-accent-blue)' }} /> 
+                <MapPin size={18} className="footer-contact-icon" style={{ color: '#59C71C' }} /> 
                 <span>Anakapalli, Andhra Pradesh, INDIA</span>
               </li>
             </ul>
