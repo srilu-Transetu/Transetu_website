@@ -75,7 +75,7 @@ export default function Navbar() {
     <nav className={`navbar ${(mounted && isScrolled) ? "scrolled" : ""} ${isMenuOpen ? "menu-open" : ""}`}>
       <div className="container">
         <Link href="/" className="nav-logo" onClick={() => handleLinkClick("home")}>
-          <img src="/assets/Nav_logo_green.png" alt="Transetu" />
+          <img src="/assets/Nav_logo.png" alt="Transetu" />
         </Link>
 
         {/* Desktop Links */}

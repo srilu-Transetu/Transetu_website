@@ -3,15 +3,15 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FastagEnquiryModal from "@/components/FastagEnquiryModal";
 import { 
-  Check, Zap, Shield, Globe, 
+  Check, Shield, Globe, 
   ArrowRight, ArrowLeft, X, MousePointerClick, 
   MapPin, Clock, LayoutDashboard, Bell, 
   Truck, Bus, Package, Building2, 
   Settings, Signal, Wrench, PlayCircle, Loader2, CheckCircle2,
   Smartphone, Activity, Navigation, Lock, Server, BarChart3, Users,
-  ChevronRight, CreditCard, Landmark, Wallet, ShieldCheck, Upload,
-  Zap as ZapIcon
+  ChevronRight, CreditCard, Landmark, Wallet, ShieldCheck, Upload
 } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
@@ -19,6 +19,7 @@ import "./gps.css";
 import Link from "next/link";
 
 export default function GPSDetail() {
+  const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
   const [showPaymentForm, setShowPaymentForm] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState("");
   const [selectedPrice, setSelectedPrice] = useState("");
@@ -111,11 +112,14 @@ export default function GPSDetail() {
             <h1 className="gps-title">Real-Time Fleet Intelligence<br /><span>for Modern Transport</span></h1>
             <p className="gps-subtitle">Monitor, manage, and secure your vehicles with enterprise-grade GPS Trackers built for real-world transport operations and smart mobility infrastructure.</p>
             <div className="gps-hero-buttons">
-              <Link href="#pricing" className="gps-btn-glow-premium">
-                <span className="flex items-center justify-center gap-2">Explore Plans <ArrowRight size={20} /></span>
-              </Link>
-              <button className="gps-btn-glow-secondary" onClick={() => handleProceedPayment("Basic Tracker", "₹4,500")}>
-                <span className="flex items-center justify-center gap-2">Request Enterprise Demo <ZapIcon size={20} /></span>
+              <button
+                type="button"
+                className="gps-btn-glow-premium"
+                onClick={() => setIsEnquiryOpen(true)}
+              >
+                <span className="flex items-center justify-center gap-2">
+                  Send Message <ArrowRight size={20} />
+                </span>
               </button>
             </div>
 
@@ -190,7 +194,7 @@ export default function GPSDetail() {
       </section>
 
       {/* 2. Why Choose Us Section */}
-      <section className="gps-section bg-dark-1 overflow-hidden">
+      <section className="gps-section bg-dark-1 overflow-hidden" style={{ display: "none" }}>
         <div className="gps-container">
           <motion.div 
             initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}
@@ -402,10 +406,7 @@ export default function GPSDetail() {
                 </li>
               </ul>
               
-              <div className="gps-mobile-badges">
-                <div className="gps-store-badge">Get it on Google Play</div>
-                <div className="gps-store-badge">Download on App Store</div>
-              </div>
+
             </motion.div>
             
             <motion.div 
@@ -529,93 +530,6 @@ export default function GPSDetail() {
         </div>
       </section>
 
-      {/* 8. Pricing Section */}
-      <section id="pricing" className="gps-section bg-gradient-blue relative">
-        <div className="gps-container">
-          <motion.div 
-            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}
-            className="text-center mb-16"
-          >
-            <div className="ais-140-badge-wrapper mb-6">
-              <span className="ais-140-badge">AIS-140 GPS TRACKER</span>
-            </div>
-            <h2 className="gps-section-title">Subscription <span>Plans</span></h2>
-            <p className="gps-section-desc max-w-2xl mx-auto text-center">Transparent pricing tailored for personal and government-compliant tracking.</p>
-          </motion.div>
-          
-          <motion.div 
-            className="gps-deployment-hub-container"
-            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}
-          >
-            <div className="gps-deployment-hub">
-              {/* Left Side: Basic Tracker */}
-              <div className="gps-hub-plan basic">
-                <div className="gps-hub-plan-content">
-                  <div className="gps-hub-header">
-                    <div className="gps-hub-badge">Personal Mobility</div>
-                    <div className="gps-hub-icon-wrap"><Shield size={40} /></div>
-                    <h3>Basic Tracker</h3>
-                    <p className="gps-hub-price">₹4,500 <span className="gps-hub-unit">One-time Deployment</span></p>
-                  </div>
-                  
-                  <div className="gps-hub-body">
-                    <p className="gps-hub-desc">Professional grade tracking for individual vehicle security and fleet visibility.</p>
-                    <ul className="gps-hub-feature-list">
-                      <li><CheckCircle2 size={18} /> Real-time GNSS Positioning</li>
-                      <li><CheckCircle2 size={18} /> 90-Day Telemetry Storage</li>
-                      <li><CheckCircle2 size={18} /> Instant Geo-Fence Alerts</li>
-                      <li><CheckCircle2 size={18} /> Engine Immobilization Ready</li>
-                      <li><CheckCircle2 size={18} /> Mobile App Control Center</li>
-                    </ul>
-                  </div>
-
-                  <button className="gps-hub-btn-basic" onClick={() => handleProceedPayment("Basic Tracker", "₹4,500")}>
-                    Apply Now <ArrowRight size={20} />
-                  </button>
-                </div>
-              </div>
-
-              {/* Central Divider */}
-              <div className="gps-hub-divider">
-                <div className="gps-hub-divider-line top"></div>
-                <div className="gps-hub-divider-center">
-                  <div className="gps-hub-orb">
-                    <Zap size={24} />
-                  </div>
-                </div>
-                <div className="gps-hub-divider-line bottom"></div>
-              </div>
-
-              {/* Right Side: Government Tracker */}
-              <div className="gps-hub-plan government">
-                <div className="gps-hub-plan-content">
-                  <div className="gps-hub-header">
-                    <div className="gps-hub-badge premium">Government Compliance</div>
-                    <div className="gps-hub-icon-wrap"><Building2 size={40} /></div>
-                    <h3>Government Tracker</h3>
-                    <p className="gps-hub-price">₹10,500 <span className="gps-hub-unit">Compliance Package</span></p>
-                  </div>
-
-                  <div className="gps-hub-body">
-                    <p className="gps-hub-desc">Certified AIS-140 infrastructure for commercial fleets and government mandates.</p>
-                    <ul className="gps-hub-feature-list highlight">
-                      <li><CheckCircle2 size={18} /> AIS-140 Certified Hardware</li>
-                      <li><CheckCircle2 size={18} /> Integrated SOS / Panic Button</li>
-                      <li><CheckCircle2 size={18} /> Multi-IP Data Transmission</li>
-                      <li><CheckCircle2 size={18} /> CDAC & State Server Sync</li>
-                      <li><CheckCircle2 size={18} /> 2-Year Platform Warranty</li>
-                    </ul>
-                  </div>
-
-                  <button className="gps-hub-btn-gov" onClick={() => handleProceedPayment("Government Tracker", "₹10,500")}>
-                    Secure Compliance <ArrowRight size={20} />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* 9. Enhanced CTA Section */}
       <section className="gps-section bg-dark-1 border-t border-white/5">
@@ -633,8 +547,14 @@ export default function GPSDetail() {
               </p>
               
               <div className="gps-cta-actions">
-                <button className="gps-btn-glow-premium lg" onClick={() => handleProceedPayment("Basic Tracker", "₹4,500")}>
-                  <span className="flex items-center justify-center gap-3">Start Your Transformation <ArrowRight size={24} /></span>
+                <button
+                  type="button"
+                  className="gps-btn-glow-premium lg"
+                  onClick={() => setIsEnquiryOpen(true)}
+                >
+                  <span className="flex items-center justify-center gap-3">
+                    Send Message <ArrowRight size={24} />
+                  </span>
                 </button>
               </div>
               
@@ -649,6 +569,12 @@ export default function GPSDetail() {
       </section>
 
       <Footer />
+
+      <FastagEnquiryModal
+        isOpen={isEnquiryOpen}
+        onClose={() => setIsEnquiryOpen(false)}
+        type="gps"
+      />
 
       {/* 10. Enhanced Payment & Subscription Modal */}
       {showPaymentForm && (
@@ -672,7 +598,7 @@ export default function GPSDetail() {
                 </motion.div>
                 <h3>Application Submitted!</h3>
                 <p>Your GPS Tracker application for <span>{selectedPlan}</span> has been received. Our team will contact you shortly for installation.</p>
-                <div className="gps-secure-badge mt-6" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#52665A', fontSize: '0.85rem', justifyContent: 'center', marginTop: '24px' }}><Lock size={14} /> Application ID: TS-{Math.floor(Math.random() * 100000)}</div>
+                <div className="gps-secure-badge mt-6" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#263D35', fontSize: '0.85rem', justifyContent: 'center', marginTop: '24px' }}><Lock size={14} /> Application ID: TS-{Math.floor(Math.random() * 100000)}</div>
               </div>
             ) : (
               <>

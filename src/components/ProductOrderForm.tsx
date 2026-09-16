@@ -339,7 +339,7 @@ function UploadTile({
         ) : (
           <div className="upload-tile-empty">
             <div className="upload-tile-icon-box">
-              <Icon size={22} className="text-[#52665A]" />
+              <Icon size={22} className="text-[#263D35]" />
             </div>
             <p className="upload-tile-label">
               {label} <span className="upload-required">*</span>
@@ -533,7 +533,7 @@ export default function ProductOrderForm({
           <div className="success-screen">
             <div className="success-banner">
               <div className="success-icon-ring">
-                <CheckCircle2 size={34} className="text-emerald-600" />
+                <CheckCircle2 size={34} className="text-[#16A34A]" />
               </div>
               <div className="success-banner-text">
                 <div className="success-banner-kicker">

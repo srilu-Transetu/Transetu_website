@@ -10,6 +10,7 @@ import FastagEnquiryModal from "@/components/FastagEnquiryModal";
 
 export default function Products() {
   const [isFastagEnquiryOpen, setIsFastagEnquiryOpen] = useState(false);
+  const [selectedProductType, setSelectedProductType] = useState<"fastag" | "fastag-holder">("fastag");
   const [selectedProduct, setSelectedProduct] = useState<{
     name: string;
     price: number;
@@ -122,7 +123,11 @@ export default function Products() {
                     ) : (
                       <button
                         onClick={() => {
-                          if (product.name === "FASTag" || product.name === "FASTag Holder") {
+                          if (product.name === "FASTag") {
+                            setSelectedProductType("fastag");
+                            setIsFastagEnquiryOpen(true);
+                          } else if (product.name === "FASTag Holder") {
+                            setSelectedProductType("fastag-holder");
                             setIsFastagEnquiryOpen(true);
                           } else {
                             setSelectedProduct({
@@ -177,7 +182,7 @@ export default function Products() {
                 transition={{ delay: 0.5 }}
               >
                 <motion.div
-                  className="absolute left-0 w-full h-[1px] bg-[#59C71C] shadow-[0_0_15px_#59C71C,0_0_30px_#59C71C]"
+                  className="absolute left-0 w-full h-[1px] bg-[#59C71C] shadow-[0_0_8px_#59C71C]"
                   animate={{
                     top: ["0%", "95%", "0%"],
                     opacity: [0.8, 1, 0.8]
@@ -259,10 +264,11 @@ export default function Products() {
         </motion.div>
       </div>
 
-      {/* FASTag Enquiry Form Modal (No payment required) */}
+      {/* FASTag / FASTag Holder Form Modal */}
       <FastagEnquiryModal
         isOpen={isFastagEnquiryOpen}
         onClose={() => setIsFastagEnquiryOpen(false)}
+        type={selectedProductType}
       />
 
       {/* Product Order Form (Preserved for existing accessory workflows) */}

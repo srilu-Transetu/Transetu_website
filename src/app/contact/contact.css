@@ -2,20 +2,20 @@
   Primary Green: #05A223
   Bright Accent: #59C71C
   White: #FFFFFF
-  Subtle Green: #F4FBF2
-  Primary Text: #102116
-  Secondary Text: #52665A
-  Border: #D7E8D8
+  Subtle Green: #EAF4EE
+  Primary Text: #10231D
+  Secondary Text: #263D35
+  Border: #DCE8E1
 */
 
 .contact-section {
   position: relative;
-  background-color: #F4FBF2;
-  color: #102116;
+  background-color: #EAF4EE;
+  color: #10231D;
   padding: 6rem 2rem;
   overflow: hidden;
   font-family: var(--font-inter, sans-serif);
-  border-top: 1px solid #D7E8D8;
+  border-top: 1px solid #DCE8E1;
 }
 
 /* Background Effects - Subtle for Light Mode */
@@ -90,7 +90,7 @@
   font-weight: 800;
   margin-bottom: 1.25rem;
   line-height: 1.1;
-  color: #102116;
+  color: #10231D;
 }
 
 .contact-highlight {
@@ -112,7 +112,7 @@
 
 .contact-desc {
   font-size: 1.125rem;
-  color: #52665A;
+  color: #263D35;
   line-height: 1.7;
 }
 
@@ -137,7 +137,7 @@
   gap: 1.25rem;
   padding: 1.5rem;
   background: #FFFFFF;
-  border: 1px solid #D7E8D8;
+  border: 1px solid #DCE8E1;
   border-radius: 20px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 6px -1px rgba(5, 162, 35, 0.03), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
@@ -156,10 +156,10 @@
   width: 52px;
   height: 52px;
   border-radius: 14px;
-  background: #F4FBF2;
+  background: #EAF4EE;
   color: #05A223;
   transition: all 0.3s ease;
-  border: 1px solid #D7E8D8;
+  border: 1px solid #DCE8E1;
 }
 
 .info-card:hover .info-icon-wrapper {
@@ -176,20 +176,20 @@
 .info-content h3 {
   font-size: 1rem;
   font-weight: 700;
-  color: #102116;
+  color: #10231D;
   margin-bottom: 0.25rem;
 }
 
 .info-content p {
   font-size: 1rem;
-  color: #52665A;
+  color: #263D35;
   font-weight: 500;
 }
 
 /* Right Side - Form */
 .form-glass-card {
   background: #FFFFFF;
-  border: 1.5px solid #D7E8D8;
+  border: 1.5px solid #DCE8E1;
   border-radius: 28px;
   padding: 2.25rem;
   box-shadow: 0 25px 50px -12px rgba(5, 162, 35, 0.08);
@@ -216,7 +216,7 @@
 
 .form-group label {
   font-size: 0.9rem;
-  color: #102116;
+  color: #10231D;
   font-weight: 600;
 }
 
@@ -225,10 +225,10 @@
 .contact-form textarea {
   width: 100%;
   background: #FFFFFF;
-  border: 1.5px solid #D7E8D8;
+  border: 1.5px solid #DCE8E1;
   border-radius: 12px;
   padding: 0.85rem 1.15rem;
-  color: #102116;
+  color: #10231D;
   font-size: 0.95rem;
   font-family: inherit;
   transition: all 0.3s ease;
@@ -244,7 +244,7 @@
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-  color: #52665A;
+  color: #263D35;
 }
 
 .contact-form input:focus,
@@ -271,9 +271,9 @@
 }
 
 .submit-btn:hover {
-  background: #59C71C;
+  background: #087A3E;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(89, 199, 28, 0.35);
+  box-shadow: 0 6px 20px rgba(5, 162, 35, 0.25);
 }
 
 /* Support Features Strip */
@@ -282,7 +282,7 @@
   justify-content: space-between;
   align-items: center;
   background: #FFFFFF;
-  border: 1px solid #D7E8D8;
+  border: 1px solid #DCE8E1;
   border-radius: 100px;
   padding: 1.25rem 2.5rem;
   margin-top: 1rem;
@@ -304,15 +304,15 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: #F4FBF2;
+  background: #EAF4EE;
   color: #05A223;
-  border: 1px solid #D7E8D8;
+  border: 1px solid #DCE8E1;
 }
 
 .feature-item span {
   font-size: 0.95rem;
   font-weight: 600;
-  color: #102116;
+  color: #10231D;
 }
 
 /* Bottom Info Bar */
@@ -322,7 +322,7 @@
   align-items: center;
   gap: 3rem;
   padding-top: 2.5rem;
-  border-top: 1.5px dashed #D7E8D8;
+  border-top: 1.5px dashed #DCE8E1;
   flex-wrap: wrap;
 }
 
@@ -330,7 +330,7 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  color: #52665A;
+  color: #263D35;
   font-size: 0.95rem;
   font-weight: 500;
 }
@@ -343,7 +343,7 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: #D7E8D8;
+  background: #DCE8E1;
 }
 
 /* ===================== RESPONSIVE UPDATES ===================== */

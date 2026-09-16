@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
   padding: 18px;
-  background: rgba(16, 33, 22, 0.65);
+  background: rgba(11, 23, 42, 0.65);
   backdrop-filter: blur(7px);
   -webkit-backdrop-filter: blur(7px);
   overflow-y: auto;
@@ -18,20 +18,20 @@
   width: min(94vw, 780px);
   max-height: min(90dvh, 860px);
   background: #ffffff;
-  border: 1.5px solid #D7E8D8;
+  border: 1.5px solid #DCE8E1;
   border-radius: 24px;
   box-shadow: 0 28px 70px rgba(5, 162, 35, 0.2);
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  color: #102116;
+  color: #10231D;
 }
 
 .fastag-enquiry-header {
   position: relative;
   min-height: 124px;
   padding: 24px 36px;
-  background: #0C2116;
+  background: #0B172A;
   border-bottom: 2px solid #05A223;
   display: flex;
   align-items: center;
@@ -60,9 +60,9 @@
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(10, 26, 17, 0.88) 0%,
-    rgba(12, 33, 22, 0.65) 50%,
-    rgba(10, 26, 17, 0.82) 100%
+    rgba(11, 23, 42, 0.92) 0%,
+    rgba(8, 122, 62, 0.65) 50%,
+    rgba(11, 23, 42, 0.88) 100%
   );
   pointer-events: none;
 }
@@ -109,7 +109,7 @@
 .fastag-enquiry-title-wrap p {
   margin: 4px 0 0;
   font-size: 15px;
-  color: #F4FBF2;
+  color: #EAF4EE;
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
 }
 
@@ -118,31 +118,44 @@
   z-index: 1;
   width: 36px;
   height: 36px;
+  padding: 0;
+  margin: 0;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(11, 23, 42, 0.45);
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.2s ease;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  flex-shrink: 0;
+  outline: none;
+}
+
+.fastag-enquiry-close-btn svg {
+  display: block;
+  flex-shrink: 0;
 }
 
 .fastag-enquiry-close-btn:hover {
-  background: #59C71C;
-  border-color: #59C71C;
+  background: rgba(5, 162, 35, 0.25);
+  border-color: rgba(5, 162, 35, 0.6);
   color: #ffffff;
-  transform: rotate(90deg);
+}
+
+.fastag-enquiry-close-btn:focus-visible {
+  border-color: #05A223;
+  box-shadow: 0 0 0 2px rgba(5, 162, 35, 0.35);
 }
 
 .fastag-enquiry-body {
   padding: 24px 30px 28px;
   overflow-y: auto;
   flex: 1;
-  background: linear-gradient(180deg, #ffffff 0%, #F4FBF2 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #EAF4EE 100%);
 }
 
 .fastag-alert-error {
@@ -151,7 +164,7 @@
   background: rgba(239, 68, 68, 0.08);
   border: 1px solid rgba(239, 68, 68, 0.28);
   border-radius: 12px;
-  color: #b91c1c;
+  color: #DC2626;
   font-size: 13px;
   display: flex;
   align-items: center;
@@ -177,7 +190,7 @@
 .fastag-input-label {
   font-size: 13px;
   font-weight: 600;
-  color: #102116;
+  color: #10231D;
   display: flex;
   align-items: center;
   gap: 4px;
@@ -185,7 +198,7 @@
 
 .fastag-input-label .required-star,
 .fastag-upload-title .required-star {
-  color: #ef4444;
+  color: #DC2626;
 }
 
 .fastag-input-container {
@@ -193,7 +206,7 @@
   display: flex;
   align-items: center;
   background: #ffffff;
-  border: 1.5px solid #D7E8D8;
+  border: 1.5px solid #DCE8E1;
   border-radius: 12px;
   transition: all 0.2s ease;
 }
@@ -204,7 +217,7 @@
 }
 
 .fastag-input-container.has-error {
-  border-color: #ef4444 !important;
+  border-color: #DC2626 !important;
   box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12) !important;
 }
 
@@ -227,7 +240,7 @@
   border: none;
   font-size: 14px;
   font-family: inherit;
-  color: #102116;
+  color: #10231D;
   outline: none;
 }
 
@@ -265,7 +278,7 @@
   padding: 0 38px 0 42px;
   font-size: 14px;
   font-weight: 500;
-  color: #102116;
+  color: #10231D;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -290,7 +303,7 @@
   right: 0;
   z-index: 60;
   background: #ffffff;
-  border: 1.5px solid #D7E8D8;
+  border: 1.5px solid #DCE8E1;
   border-radius: 14px;
   box-shadow: 0 16px 36px -4px rgba(5, 162, 35, 0.12), 0 6px 16px -2px rgba(0, 0, 0, 0.06);
   padding: 6px;
@@ -311,18 +324,18 @@
   cursor: pointer;
   font-size: 13.5px;
   font-weight: 500;
-  color: #102116;
+  color: #10231D;
   text-align: left;
   transition: all 0.15s ease;
 }
 
 .fastag-custom-select-option:hover {
-  background: #F4FBF2;
+  background: #EAF4EE;
   color: #05A223;
 }
 
 .fastag-custom-select-option.is-selected {
-  background: #EBF7E9;
+  background: #EAF4EE;
   color: #05A223;
   font-weight: 600;
 }
@@ -345,11 +358,11 @@
 
 .fastag-field-input::placeholder,
 .fastag-field-textarea::placeholder {
-  color: #52665A;
+  color: #263D35;
 }
 
 .fastag-error-msg {
-  color: #ef4444;
+  color: #DC2626;
   font-size: 11.5px;
   font-weight: 500;
   margin-top: 2px;
@@ -357,8 +370,8 @@
 
 .fastag-document-section {
   margin-top: 24px;
-  background: #F4FBF2;
-  border: 1px solid #D7E8D8;
+  background: #EAF4EE;
+  border: 1px solid #DCE8E1;
   border-radius: 18px;
   padding: 18px 18px 14px;
 }
@@ -386,13 +399,13 @@
   margin: 0;
   font-size: 17px;
   font-weight: 700;
-  color: #102116;
+  color: #10231D;
 }
 
 .fastag-doc-header p {
   margin: 2px 0 0;
   font-size: 12px;
-  color: #52665A;
+  color: #263D35;
 }
 
 .fastag-document-grid {
@@ -421,7 +434,7 @@
 .fastag-upload-title {
   font-size: 13px;
   font-weight: 600;
-  color: #102116;
+  color: #10231D;
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -432,7 +445,7 @@
   align-items: center;
   gap: 12px;
   padding: 12px 12px 12px 10px;
-  border: 1.5px dashed #D7E8D8;
+  border: 1.5px dashed #DCE8E1;
   border-radius: 14px;
   background: #ffffff;
   transition: all 0.2s ease;
@@ -474,7 +487,7 @@
   height: 46px;
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid #D7E8D8;
+  border: 1px solid #DCE8E1;
   background: #f3f4f6;
   flex-shrink: 0;
 }
@@ -496,7 +509,7 @@
 
 .fastag-upload-file-name {
   font-size: 12px;
-  color: #102116;
+  color: #10231D;
   font-weight: 600;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -505,7 +518,7 @@
 
 .fastag-upload-helper {
   font-size: 11px;
-  color: #52665A;
+  color: #263D35;
   line-height: 1.35;
 }
 
@@ -529,7 +542,7 @@
 }
 
 .fastag-upload-button:hover {
-  background: #59C71C;
+  background: #087A3E;
 }
 
 .fastag-upload-input {
@@ -566,8 +579,8 @@
 
 .fastag-submit-btn:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 14px 30px -6px rgba(89, 199, 28, 0.4);
-  background: #59C71C;
+  box-shadow: 0 10px 24px -6px rgba(5, 162, 35, 0.3);
+  background: #087A3E;
 }
 
 .fastag-submit-btn:disabled {
@@ -582,7 +595,7 @@
   justify-content: center;
   gap: 8px;
   font-size: 12px;
-  color: #52665A;
+  color: #263D35;
 }
 
 .fastag-success-view {
@@ -611,13 +624,13 @@
   margin: 0 0 8px;
   font-size: 24px;
   font-weight: 700;
-  color: #102116;
+  color: #10231D;
 }
 
 .fastag-success-view p {
   margin: 0 0 24px;
   font-size: 14px;
-  color: #52665A;
+  color: #263D35;
   max-width: 480px;
   line-height: 1.5;
 }
@@ -626,7 +639,7 @@
   width: 100%;
   max-width: 460px;
   background: #ffffff;
-  border: 1px solid #D7E8D8;
+  border: 1px solid #DCE8E1;
   border-radius: 14px;
   padding: 16px 20px;
   text-align: left;
@@ -640,7 +653,7 @@
   gap: 12px;
   padding: 8px 0;
   font-size: 13px;
-  border-bottom: 1px solid #D7E8D8;
+  border-bottom: 1px solid #DCE8E1;
 }
 
 .fastag-success-row:last-child {
@@ -648,12 +661,12 @@
 }
 
 .fastag-success-row span:first-child {
-  color: #52665A;
+  color: #263D35;
   flex-shrink: 0;
 }
 
 .fastag-success-row span:last-child {
-  color: #102116;
+  color: #10231D;
   font-weight: 600;
   text-align: right;
   word-break: break-word;
