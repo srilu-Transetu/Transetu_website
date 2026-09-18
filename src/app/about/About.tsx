@@ -257,6 +257,139 @@ export default function About() {
                       </li>
                     </ul>
                   </div>
+
+                  {/* Sai Trinath Saka Profile */}
+                  <div className="leadership-card" style={{ marginTop: "24px" }}>
+                    <div className="leadership-image-wrapper">
+                      <Image
+                        src="/assets/sai.png"
+                        alt="Sai Trinath Saka - Co-Founder & CTO"
+                        width={140}
+                        height={140}
+                        className="leadership-image"
+                      />
+                      <div className="leadership-badge">CTO</div>
+                    </div>
+
+                    <div className="leadership-info">
+                      <h3 className="leadership-name">Sai Trinath Saka</h3>
+                      <p className="leadership-role">Co-Founder & CTO</p>
+                      <p className="leadership-tagline">
+                        Technology &amp; Digital Platform Leader
+                      </p>
+
+                      <div className="leadership-meta">
+                        <div className="meta-item">
+                          <Award size={16} />
+                          <span>B.Tech. in Computer Science</span>
+                        </div>
+                        <div className="meta-item">
+                          <Briefcase size={16} />
+                          <span>6+ Years Experience</span>
+                          <a
+                            href="https://www.linkedin.com/in/saitrinathsaka/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Sai Trinath Saka LinkedIn Profile"
+                            title="LinkedIn Profile"
+                            style={{
+                              display: "inline-flex",
+                              alignItems: "center",
+                              gap: "5px",
+                              color: "#05A223",
+                              marginLeft: "8px",
+                              paddingLeft: "8px",
+                              borderLeft: "1px solid #DCE8E1",
+                              textDecoration: "none",
+                              cursor: "pointer",
+                            }}
+                          >
+                            <svg
+                              width="14"
+                              height="14"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            >
+                              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                              <rect x="2" y="9" width="4" height="12" />
+                              <circle cx="4" cy="4" r="2" />
+                            </svg>
+                            <span>LinkedIn</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="leadership-experience">
+                    <h4 className="experience-title">Professional Highlights</h4>
+                    <ul className="experience-list">
+                      <li>
+                        <CheckCircle2 size={18} className="check-icon" />
+                        <span>
+                          6+ years of experience in software engineering and building technology systems.
+                        </span>
+                      </li>
+                      <li>
+                        <CheckCircle2 size={18} className="check-icon" />
+                        <span>
+                          Co-Founder &amp; CTO responsible for the technology and digital platform direction of TranSetu.
+                        </span>
+                      </li>
+                      <li>
+                        <CheckCircle2 size={18} className="check-icon" />
+                        <span>
+                          Strong focus on building reliable and scalable digital platforms for TranSetu&apos;s products and services.
+                        </span>
+                      </li>
+                      <li>
+                        <CheckCircle2 size={18} className="check-icon" />
+                        <span>
+                          Experience in developing technology solutions that support FASTag, digital payments and last-mile financial services.
+                        </span>
+                      </li>
+                      <li>
+                        <CheckCircle2 size={18} className="check-icon" />
+                        <span>
+                          Focused on creating simple and efficient digital experiences for customers, agents and business partners.
+                        </span>
+                      </li>
+                      <li>
+                        <CheckCircle2 size={18} className="check-icon" />
+                        <span>
+                          Experience in building and improving scalable systems that support business operations and customer services.
+                        </span>
+                      </li>
+                      <li>
+                        <CheckCircle2 size={18} className="check-icon" />
+                        <span>
+                          Strong focus on technology-driven product development and continuous improvement.
+                        </span>
+                      </li>
+                      <li>
+                        <CheckCircle2 size={18} className="check-icon" />
+                        <span>
+                          Works on translating business requirements into practical and scalable technology solutions.
+                        </span>
+                      </li>
+                      <li>
+                        <CheckCircle2 size={18} className="check-icon" />
+                        <span>
+                          Focused on building secure, reliable and customer-oriented digital infrastructure.
+                        </span>
+                      </li>
+                      <li>
+                        <CheckCircle2 size={18} className="check-icon" />
+                        <span>
+                          Responsible for supporting TranSetu&apos;s long-term growth through technology and digital innovation.
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
 
                 {/* 3. ISO & Uptime Cards */}
