@@ -251,6 +251,30 @@ section {
   box-shadow: 0 4px 14px rgba(89, 199, 28, 0.35);
 }
 
+.btn-onboarding {
+  background-color: #05A223;
+  color: #FFFFFF;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(5, 162, 35, 0.25);
+}
+
+.btn-onboarding:hover {
+  background-color: #087A3E;
+  color: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(89, 199, 28, 0.38);
+}
+
 .btn-signup {
   background: transparent;
   color: #05A223;
@@ -1378,7 +1402,8 @@ body.menu-open {
 
   .nav-links,
   .nav-actions .btn-contact,
-  .nav-actions .btn-signup {
+  .nav-actions .btn-signup,
+  .nav-actions .btn-onboarding {
     display: none;
   }
 
