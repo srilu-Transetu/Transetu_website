@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import OnboardingModal from "@/components/OnboardingModal";
+import { getAssetPath } from "@/utils/assetPath";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -77,7 +78,7 @@ export default function Navbar() {
     <nav className={`navbar ${(mounted && isScrolled) ? "scrolled" : ""} ${isMenuOpen ? "menu-open" : ""}`}>
       <div className="container">
         <Link href="/" className="nav-logo" onClick={() => handleLinkClick("home")}>
-          <img src="/assets/Nav_logo.png" alt="Transetu" />
+          <img src={getAssetPath("/assets/Nav_logo.png")} alt="Transetu" />
         </Link>
 
         {/* Desktop Links */}

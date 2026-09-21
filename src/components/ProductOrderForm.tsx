@@ -28,6 +28,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import "./ProductOrderForm.css";
+import { getAssetPath } from "@/utils/assetPath";
 
 interface ProductOrderFormProps {
   isOpen: boolean;
@@ -52,10 +53,10 @@ function OrderSummarySidebar({
   const displayImage =
     productImage ||
     (productName === "FASTag"
-      ? "/products/fastags.png"
+      ? getAssetPath("/products/fastags.png")
       : productName === "FASTag Holder"
-      ? "/products/rfid-holders-new.png"
-      : "/products/gps-tracker.png");
+      ? getAssetPath("/products/rfid-holders-new.png")
+      : getAssetPath("/products/gps-tracker.png"));
 
   return (
     <div className="order-summary">
@@ -148,10 +149,10 @@ function ProductInfoSidebar({
   const displayImage =
     productImage ||
     (productName === "FASTag"
-      ? "/products/fastags.png"
+      ? getAssetPath("/products/fastags.png")
       : isHolder
-      ? "/products/rfid-holders-new.png"
-      : "/products/gps-tracker.png");
+      ? getAssetPath("/products/rfid-holders-new.png")
+      : getAssetPath("/products/gps-tracker.png"));
 
   const features = isHolder
     ? [
@@ -495,7 +496,7 @@ export default function ProductOrderForm({
         <div className="order-form-header">
           <div className="order-form-header-image">
             <Image
-              src="/assets/Car_image.png"
+              src={getAssetPath("/assets/Car_image.png")}
               alt="Highway"
               fill
               className="object-cover object-right"

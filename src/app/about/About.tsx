@@ -16,6 +16,7 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import "./about.css";
+import { getAssetPath } from "@/utils/assetPath";
 
 export default function About() {
   const [isSliderOpen, setIsSliderOpen] = useState(false);
@@ -162,7 +163,7 @@ export default function About() {
                   <div className="leadership-card">
                     <div className="leadership-image-wrapper">
                       <Image
-                        src="/assets/siva.png"
+                        src={getAssetPath("/assets/siva.png")}
                         alt="Gopi Siva Shankar Gogula - Managing Director"
                         width={140}
                         height={140}
@@ -262,7 +263,7 @@ export default function About() {
                   <div className="leadership-card" style={{ marginTop: "24px" }}>
                     <div className="leadership-image-wrapper">
                       <Image
-                        src="/assets/sai.png"
+                        src={getAssetPath("/assets/sai.png")}
                         alt="Sai Trinath Saka - Co-Founder & CTO"
                         width={140}
                         height={140}

@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useState } from "react";
 import ProductOrderForm from "@/components/ProductOrderForm";
 import FastagEnquiryModal from "@/components/FastagEnquiryModal";
+import { getAssetPath } from "@/utils/assetPath";
 
 export default function Products() {
   const [isFastagEnquiryOpen, setIsFastagEnquiryOpen] = useState(false);
@@ -24,7 +25,7 @@ export default function Products() {
       tagline: "Cashless toll payments with instant deduction and seamless highway travel.",
       price: "₹500",
       numericPrice: 500,
-      image: "/products/fastags.png",
+      image: getAssetPath("/products/fastags.png"),
       bestSeller: true,
       buttonText: "Buy FASTag",
       icon: CreditCard
@@ -34,7 +35,7 @@ export default function Products() {
       tagline: "Durable and stylish transparent acrylic holder to protect your FASTag.",
       price: "₹150",
       numericPrice: 150,
-      image: "/products/rfid-holders-new.png",
+      image: getAssetPath("/products/rfid-holders-new.png"),
       bestSeller: false,
       buttonText: "Buy FASTag Holder",
       icon: Car
@@ -44,7 +45,7 @@ export default function Products() {
       tagline: "Real-time AIS-140 certified vehicle tracking for safety, security, and fleet monitoring.",
       price: "₹10,500",
       numericPrice: 10500,
-      image: "/products/gps-tracker.png",
+      image: getAssetPath("/products/gps-tracker.png"),
       bestSeller: false,
       isComingSoon: true,
       href: "/product/gps-tracker",
@@ -167,7 +168,7 @@ export default function Products() {
           {/* LEFT SECTION: Dark Tunnel Automotive Theme */}
           <div className="banner-left-automotive">
             <Image
-              src="/assets/Car_image.png"
+              src={getAssetPath("/assets/Car_image.png")}
               alt="FASTag Enabled Car"
               fill
               className="object-cover object-left"
