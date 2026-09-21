@@ -17,6 +17,7 @@ import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import "./gps.css";
 import Link from "next/link";
+import { getAssetPath } from "@/utils/assetPath";
 
 export default function GPSDetail() {
   const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
@@ -98,7 +99,10 @@ export default function GPSDetail() {
           <ArrowLeft size={20} />
           <span>Back to Products</span>
         </Link>
-        <div className="gps-hero-bg-elements">
+        <div
+          className="gps-hero-bg-elements"
+          style={{ backgroundImage: `url(${getAssetPath("/assets/cta_bg.png")})` }}
+        >
           <div className="gps-hero-overlay-dark"></div>
           <div className="gps-cta-particle-bg"></div>
           <div className="gps-hero-glow-orb orb-1"></div>

@@ -19,6 +19,7 @@ import {
   RefreshCw
 } from "lucide-react";
 import Link from "next/link";
+import { getAssetPath } from "@/utils/assetPath";
 
 export default function SignupPage() {
   const [step, setStep] = useState(1);
@@ -521,9 +522,9 @@ export default function SignupPage() {
 
       {/* Left Panel - Cinematic Visuals */}
       <div className="left-panel">
-        <img 
-          src="/assets/signup-bg.png" 
-          alt="Transetu Highway" 
+        <img
+          src={getAssetPath("/assets/signup-bg.png")}
+          alt="Transetu Highway"
           className="bg-image"
         />
         <div className="overlay"></div>
@@ -536,7 +537,7 @@ export default function SignupPage() {
         >
           <div className="mb-8">
             <Link href="/">
-              <img src="/assets/logo.png" alt="Transetu" className="h-12 w-auto brightness-125" />
+              <img src={getAssetPath("/assets/Nav_logo.png")} alt="Transetu" className="h-12 w-auto brightness-125" />
             </Link>
           </div>
           

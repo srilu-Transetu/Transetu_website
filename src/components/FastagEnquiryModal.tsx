@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import "./FastagEnquiryModal.css";
+import { getAssetPath } from "@/utils/assetPath";
 
 export interface FastagEnquiryModalProps {
   isOpen: boolean;
@@ -44,7 +45,7 @@ function getModalContent(type: "fastag" | "fastag-holder" | "gps") {
       subtitle:
         "Interested in our upcoming GPS Tracker or have questions? Send us a message and our team will get in touch.",
       submitButtonText: "Send Message",
-      image: "/products/gps-tracker.png",
+      image: getAssetPath("/products/gps-tracker.png"),
       imageAlt: "GPS Tracker",
     };
   }
@@ -53,7 +54,7 @@ function getModalContent(type: "fastag" | "fastag-holder" | "gps") {
       title: "Buy FASTag Holder",
       subtitle: "Submit your details for rapid doorstep issuance & activation",
       submitButtonText: "Submit Details",
-      image: "/assets/Fastag_image.png",
+      image: getAssetPath("/assets/Fastag_image.png"),
       imageAlt: "FASTag Holder",
     };
   }
@@ -62,7 +63,7 @@ function getModalContent(type: "fastag" | "fastag-holder" | "gps") {
     title: "Buy FASTag",
     subtitle: "Submit your details for rapid doorstep issuance & activation",
     submitButtonText: "Submit Details",
-    image: "/assets/Fastag_image.png",
+    image: getAssetPath("/assets/Fastag_image.png"),
     imageAlt: "FASTag",
   };
 }

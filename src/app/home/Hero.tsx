@@ -4,6 +4,7 @@ import { CreditCard, MapPin, Box, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import TrustBar from "./TrustBar";
+import { getAssetPath } from "@/utils/assetPath";
 
 export default function Hero() {
   return (
@@ -16,7 +17,7 @@ export default function Hero() {
           playsInline
           className="hero-bg-video-el"
         >
-          <source src="/assets/bg_video.mp4" type="video/mp4" />
+          <source src={getAssetPath("/assets/bg_video.mp4")} type="video/mp4" />
         </video>
       </div>
 

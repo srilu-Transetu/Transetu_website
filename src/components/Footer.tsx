@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { getAssetPath } from "@/utils/assetPath";
 
 export default function Footer() {
   return (
@@ -9,7 +10,7 @@ export default function Footer() {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-column">
-            <img src="/assets/Footer_logo.png" alt="Transetu" className="footer-logo" />
+            <img src={getAssetPath("/assets/Footer_logo.png")} alt="Transetu" className="footer-logo" />
             <p className="footer-desc">
               Seamless travel solutions including FASTag, GPS tracking, and premium accessories for your journey.
             </p>

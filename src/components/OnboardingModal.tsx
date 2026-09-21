@@ -33,6 +33,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import "./OnboardingModal.css";
+import { getAssetPath } from "@/utils/assetPath";
 
 export interface OnboardingModalProps {
   isOpen: boolean;
@@ -471,7 +472,7 @@ export default function OnboardingModal({
         <div className="onboarding-header">
           <div className="onboarding-header-image">
             <Image
-              src="/assets/Fastag_image.png"
+              src={getAssetPath("/assets/Fastag_image.png")}
               alt="TranSetu FASTag"
               fill
               sizes="100vw"
