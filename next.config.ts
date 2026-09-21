@@ -7,9 +7,10 @@ const repoName = process.env.GITHUB_REPOSITORY
   ? process.env.GITHUB_REPOSITORY.split("/")[1]
   : "Transetu_website";
 
+const envBasePath = process.env.NEXT_PUBLIC_BASE_PATH;
 const rawBasePath =
-  process.env.NEXT_PUBLIC_BASE_PATH !== undefined
-    ? process.env.NEXT_PUBLIC_BASE_PATH
+  envBasePath !== undefined
+    ? envBasePath
     : !isVercel && (isGitHubActions || isGitHubPages)
     ? `/${repoName}`
     : "";
@@ -19,6 +20,11 @@ const basePath = rawBasePath.startsWith("/")
   : rawBasePath
   ? `/${rawBasePath}`
   : "";
+
+// Ensure process.env.NEXT_PUBLIC_BASE_PATH is set for the compilation process
+if (basePath && !process.env.NEXT_PUBLIC_BASE_PATH) {
+  process.env.NEXT_PUBLIC_BASE_PATH = basePath;
+}
 
 const nextConfig: NextConfig = {
   output: "export",
